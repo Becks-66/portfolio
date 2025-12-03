@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rebecca Guerrini - UX Designer with a foundation in Psychology, based in Zurich" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <title>Rebecca Guerrini | UX Designer</title>
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-wrapper">
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <p class="header__logo">REBECCA GUERRINI</p>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-button nav-button--active" aria-current="page">Home</a>
+            <a href="#" class="nav-button">My projects</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Side Frame (Illustration Panel) -->
+      <aside class="side-frame" aria-hidden="true">
+        <div class="side-frame__inner">
+          <img 
+            src="/images/illustration.png" 
+            alt="Illustrated portrait of Rebecca Guerrini" 
+            class="side-frame__image"
+          />
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main-content" role="main">
+        <section class="hero" aria-labelledby="greeting">
+          <h1 id="greeting" class="hero__title">Hi, I'm Rebecca!</h1>
+          <div class="hero__description">
+            <p>I'm a UX Designer with a deep foundation in Psychology. After years of studying why people do what they do, I decided to start building the tools that help them do it better!</p>
+            <p>Originally from Italy and now moving to Zurich, I am seeking my first full-time role.</p>
+          </div>
+        </section>
+
+        <!-- Mobile illustration (visible only on mobile) -->
+        <div class="mobile-illustration">
+          <img 
+            src="/images/illustration.png" 
+            alt="Illustrated portrait of Rebecca Guerrini" 
+            class="mobile-illustration__image"
+          />
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__email" aria-label="Contact email: reb.guerrini@gmail.com">
+            <img 
+              src="/images/icon-email.svg" 
+              alt="" 
+              aria-hidden="true" 
+              class="footer__icon"
+            />
+            <span class="footer__email-text">reb.guerrini@gmail.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
