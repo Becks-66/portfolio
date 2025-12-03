@@ -247,6 +247,7 @@ img {
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
+  background-color: var(--color-white)
 }
 
 /* =============================================
@@ -267,10 +268,18 @@ img {
   gap: var(--space-sm);
 }
 
-.footer__icon {
+.footer__icon-wrapper {
   flex-shrink: 0;
   width: 28px;
   height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__icon {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .footer__email-text {
