@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Runnable - A UX case study for a running app focused on safety and route discovery" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <title>Runnable Case Study | Rebecca Guerrini</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="case-study-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-wrapper">
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <p class="header__logo">REBECCA GUERRINI</p>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="projects.html" class="nav-button nav-button--active" aria-current="page">My projects</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="case-study-main" role="main">
+        <!-- Hero Card -->
+        <section class="case-study-hero" aria-labelledby="hero-title">
+          <div class="case-study-hero__image-container">
+            <img 
+              src="/images/runnable/Register-New route.png" 
+              alt="Runnable app showing the route registration screen with performance metrics" 
+              class="case-study-hero__image"
+            />
+          </div>
+          <div class="case-study-hero__info">
+            <div class="case-study-hero__details">
+              <div class="case-study-hero__title-group">
+                <h1 id="hero-title" class="case-study-hero__title">Runnable</h1>
+                <p class="case-study-hero__subtitle">Building a running app for safer outdoor workouts.</p>
+              </div>
+              <div class="case-study-hero__meta">
+                <span class="case-study-hero__label">Type of project:</span>
+                <span class="case-study-hero__value">UX Project</span>
+              </div>
+              <div class="case-study-hero__meta">
+                <span class="case-study-hero__label">Process:</span>
+                <span class="case-study-hero__value">From scratch</span>
+              </div>
+              <div class="case-study-hero__meta">
+                <span class="case-study-hero__label">Client:</span>
+                <span class="case-study-hero__tag">Personal project</span>
+              </div>
+            </div>
+            <p class="case-study-hero__reading-time">Reading time: 10 minutes</p>
+          </div>
+        </section>
+
+        <!-- Back Link -->
+        <a href="projects.html" class="back-link" aria-label="Back to projects">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.5 21L10.5 14L17.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Case Study Content -->
+        <div class="case-study-content">
+          
+          <!-- User Story Section -->
+          <section class="section" aria-labelledby="user-story-title">
+            <h2 id="user-story-title" class="section__title">User story</h2>
+            <p class="section__text">
+              Serena, 25 years old, has just moved to a new town. She is very <strong>active</strong> and has always <strong>loved running</strong>: she goes for a jog three times a week, and she loves exploring new routes on her longest run. However, since she moved, <strong>she struggles to find routes near her that cover her usual distances and, more importantly, make her feel safe during her solo runs.</strong><br>
+              She doesn't know any runners in the area, and she doesn't want to give up her outdoor workouts just because she feels unsafe and disoriented.<br>
+              How can we help her?
+            </p>
+          </section>
+
+          <!-- Problem Section -->
+          <section class="section" aria-labelledby="problem-title">
+            <h2 id="problem-title" class="section__title">Problem</h2>
+            <p class="section__text">People who start running or change their preferred running routes often struggle to find new routes that match their running preferences, such as distance, elevation, and scenery.</p>
+            <p class="section__text">For solo runners, finding routes that also feel safe becomes a significant challenge, especially when they lack local guidance or someone to ask.</p>
+            <p class="section__text section__text--bold">How can we create an app that helps solo runners find new running routes that match their preferences and also make them feel safe?</p>
+          </section>
+
+          <!-- Target Users Section -->
+          <section class="section" aria-labelledby="target-users-title">
+            <h2 id="target-users-title" class="section__title">Target users</h2>
+            <p class="section__text">
+              The target users for the app are <strong>running enthusiast of every age</strong> who want to discover new routes near their location and are concerned about the condition and the safety of the route.
+            </p>
+          </section>
+
+          <!-- Customer Journey Section -->
+          <section class="section" aria-labelledby="journey-title">
+            <h2 id="journey-title" class="section__title">Costumer journey</h2>
+            <p class="section__text">For the user, I hypothesized 5 steps of their experience with the app:</p>
+            <div class="step-list">
+              <div class="step-box step-box--violet">
+                <p><strong>Consider:</strong> the user considers trying a new running route.</p>
+              </div>
+              <div class="step-box step-box--violet">
+                <p><strong>Research:</strong> the user searches for a running route.</p>
+              </div>
+              <div class="step-box step-box--violet">
+                <p><strong>Choose a route:</strong> the user selects the route that best suits their workout.</p>
+              </div>
+              <div class="step-box step-box--violet">
+                <p><strong>Run:</strong> the user goes for a run on the chosen route.</p>
+              </div>
+              <div class="step-box step-box--violet">
+                <p><strong>Register and rate:</strong> the user logs their workout and rates the route.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Primary Research Section -->
+          <section class="section section--large-gap" aria-labelledby="research-title">
+            <h2 id="research-title" class="section__title">Primary research</h2>
+            
+            <!-- Objectives -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Objectives</h3>
+              <p class="section__text">I wanted to understand key aspects of safety perception and route selection during running:</p>
+              <div class="step-list">
+                <div class="step-box step-box--green">
+                  <p><strong class="step-box__label">Safety perception</strong>: how runners perceive safety, which may differ from actual safety and varies by gender, age, and experience.</p>
+                </div>
+                <div class="step-box step-box--green">
+                  <p><strong class="step-box__label">Search process</strong>: how runners look for new routes.</p>
+                </div>
+                <div class="step-box step-box--green">
+                  <p><strong class="step-box__label">Decision</strong>: how runners choose a route for their workout.</p>
+                </div>
+                <div class="step-box step-box--green">
+                  <p><strong class="step-box__label">Activity registration</strong>: which details of the run users want to record.</p>
+                </div>
+                <div class="step-box step-box--green">
+                  <p><strong class="step-box__label">Communication</strong>: how users describe and share route information with friends or fellow runners.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Set up -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Set up</h3>
+              <ul class="section__list">
+                <li><strong>Participants</strong>: due to the project's small scale and the lack of monetary incentives, the study involved 3 participants (1 male, 2 females).</li>
+                <li><strong>Type of research</strong>: semi-structured interview</li>
+              </ul>
+            </div>
+
+            <!-- Insights and suggestions -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Insights and suggestions</h3>
+              
+              <!-- Insight 1 -->
+              <div class="insight-group">
+                <div class="insight-box">
+                  <p>Everyone has a different safe perception, which can be influenced by gender or age.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p>Don't rely solely on a safety perception rating. Instead, <strong class="step-box__label">have users evaluate routes based also on objective factors that influence safety perception,</strong> such as the presence of other people and pedestrian-friendly areas.</p>
+                </div>
+              </div>
+
+              <!-- Insight 2 -->
+              <div class="insight-group">
+                <div class="insight-box">
+                  <p>People tend to report to other runners the characteristics of a route that they find important, and do not change their description based on the listener.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p>Information to register for each run:</p>
+                  <ul class="suggestion-box__list">
+                    <li><strong class="step-box__label">Route-based:</strong> mileage, distance from the starting point, inclination, type of road, number of drinking fountains, beauty of the landscape.</li>
+                    <li><strong class="step-box__label">Performance-based:</strong> pace (average and for km), calories burned, heart rate, distance covered.</li>
+                    <li><strong class="step-box__label">Safety related aspects:</strong> presence of other people, presence of other runners, number of streetlights, presence of vehicles.</li>
+                    <li><strong class="step-box__label">Others:</strong> weather of the day, mood before and after the run, perceived fatigue during the run.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Insight 3 -->
+              <div class="insight-group">
+                <div class="insight-box insight-box--dark">
+                  <p>Runners are different:</p>
+                  <ul class="insight-box__list">
+                    <li>Not every runner plans their runs (this often depends on their experience and weekly mileage - the more they run, the more they tend to plan).</li>
+                    <li>Exploring new routes without knowing what to expect is more common when visiting new places or when they have no time constraints, such as on holidays or weekends.</li>
+                    <li>Searching for new routes isn't always methodical, because some runners simply start running and explore.</li>
+                  </ul>
+                </div>
+                <div class="suggestion-box">
+                  <p>This information helped defining <strong class="step-box__label">four types of user personas</strong>.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Personas Section -->
+          <section class="section" aria-labelledby="personas-title">
+            <h2 id="personas-title" class="section__title">Personas</h2>
+            
+            <div class="persona-row">
+              <img src="/images/runnable/Humaaans - Standing copia.png" alt="Illustration of a new runner" class="persona-image" />
+              <p class="persona-text"><strong>Newbies</strong>: people new to running who want to find the best and safest routes for their workouts.</p>
+            </div>
+            
+            <div class="persona-row persona-row--reverse">
+              <p class="persona-text"><strong class="step-box__label">Experienced runners</strong>: those who run longer distances and need to plan routes that match their scheduled mileage.</p>
+              <img src="/images/runnable/Humaaans - Standing 1.png" alt="Illustration of an experienced runner" class="persona-image" />
+            </div>
+            
+            <div class="persona-row">
+              <img src="/images/runnable/Humaaans - Standing.png" alt="Illustration of a solitary runner" class="persona-image" />
+              <p class="persona-text"><strong class="step-box__label">Solitary runners</strong>: runners who run alone and don't feel safe.</p>
+            </div>
+            
+            <div class="persona-row persona-row--reverse">
+              <p class="persona-text"><strong class="step-box__label">Explorers and Spontaneous runners</strong>: Runners who enjoy discovering new places in their area or when visiting new locations for leisure or work. They are open to sharing their routes with friends and the community.</p>
+              <img src="/images/runnable/Humaaans - Standing copia 2.png" alt="Illustration of an explorer runner" class="persona-image" />
+            </div>
+          </section>
+
+          <!-- Competitor Analysis Section -->
+          <section class="section" aria-labelledby="competitor-title">
+            <h2 id="competitor-title" class="section__title">Competitor analysis</h2>
+            
+            <div class="competitor-content">
+              <p class="section__text"><strong class="step-box__label">Strava</strong> and <strong class="step-box__label">Komoot</strong> have been identified as the two main competitor given their relevance on the market, the features proposed, and their marketing strategies.</p>
+              
+              <div class="competitor-table-wrapper">
+                <div class="competitor-table">
+                  <!-- Competitor Column -->
+                  <div class="competitor-table__column competitor-table__column--competitor">
+                    <div class="competitor-table__header">Competitor</div>
+                    <div class="competitor-table__cell competitor-table__cell--violet"><strong>Strava</strong></div>
+                    <div class="competitor-table__cell competitor-table__cell--violet"><strong>Komoot</strong></div>
+                  </div>
+                  
+                  <!-- Features Column -->
+                  <div class="competitor-table__column">
+                    <div class="competitor-table__header">Features</div>
+                    <div class="competitor-table__cell">
+                      <ul>
+                        <li>Register and share your workouts</li>
+                        <li>Visualize your workout history</li>
+                        <li>Create and save new routes</li>
+                        <li>Progress tracking</li>
+                        <li>Monthly challenges</li>
+                        <li>Interaction with other users</li>
+                      </ul>
+                    </div>
+                    <div class="competitor-table__cell">
+                      <ul>
+                        <li>Search new routes</li>
+                        <li>Plan workouts (save a route for another day)</li>
+                        <li>Register your activity</li>
+                        <li>Create and save new routes</li>
+                        <li>Rate the routes</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <!-- Marketing Column -->
+                  <div class="competitor-table__column">
+                    <div class="competitor-table__header">Selling points and marketing themes</div>
+                    <div class="competitor-table__cell">
+                      <ul>
+                        <li>Focus on community interaction</li>
+                        <li>Partnership with influencers</li>
+                        <li>Ambassadors participate to running events</li>
+                        <li>"Social-media" - like interaction structure</li>
+                        <li>Community-driven contents</li>
+                      </ul>
+                    </div>
+                    <div class="competitor-table__cell">
+                      <ul>
+                        <li>Adventure and exploration</li>
+                        <li>Focus on sport activities you can do in the mountains</li>
+                        <li>Simple UX</li>
+                        <li>Great for planning your outdoor activities</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <!-- Focus Column -->
+                  <div class="competitor-table__column competitor-table__column--focus">
+                    <div class="competitor-table__header">Focus</div>
+                    <div class="competitor-table__cell competitor-table__cell--center">Run, Swim, Walk, Hike, Cycling</div>
+                    <div class="competitor-table__cell competitor-table__cell--center">Run (more trail run), Hike, Cycling (mountain bike)</div>
+                  </div>
+                </div>
+              </div>
+              
+              <p class="section__text">Unlike competitors, our app focuses on two main themes: <strong class="step-box__label">safety</strong> and <strong class="step-box__label">exploration</strong>.</p>
+              <p class="section__text">Planning your workout in advance not only enhances your perception of safety but also enables you to discover new parts of your city or a new place without the fear of the unknown. Viewing comments and feedback from other users helps you better plan your runs and feel safer, especially when running alone. For spontaneous runners, registering and sharing new routes benefits others who want to explore your area.</p>
+            </div>
+          </section>
+
+          <!-- Sitemaps and Userflows Section -->
+          <section class="section" aria-labelledby="sitemaps-title">
+            <h2 id="sitemaps-title" class="section__title">Sitemaps and userflows</h2>
+            <p class="section__text">Here is the sitemap of the app and the userflows for the two main features: <strong>search</strong> (and save) and <strong>register</strong> the workout.</p>
+            <div class="placeholder-box">
+              <p>Sitemap and userflow diagrams placeholder</p>
+            </div>
+          </section>
+
+          <!-- Lean Branding Section -->
+          <section class="section section--large-gap" aria-labelledby="branding-title">
+            <h2 id="branding-title" class="section__title">Lean branding</h2>
+            
+            <!-- Values -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Values</h3>
+              <div class="values-table">
+                <div class="values-table__column">
+                  <div class="values-table__header values-table__header--green">We are</div>
+                  <div class="values-table__cell">
+                    <ul>
+                      <li>Reliable</li>
+                      <li>Simple</li>
+                      <li>Communal</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="values-table__column">
+                  <div class="values-table__header values-table__header--red">We are not</div>
+                  <div class="values-table__cell">
+                    <ul>
+                      <li>Overcomplicated</li>
+                      <li>Uninspiring</li>
+                      <li>Exclusive</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Color Palette -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Primary color palette</h3>
+              <img src="/images/runnable/Palette.png" alt="Runnable app primary color palette" class="palette-image" />
+            </div>
+          </section>
+
+          <!-- Designs Section -->
+          <section class="section" aria-labelledby="designs-title">
+            <h2 id="designs-title" class="section__title">Designs</h2>
+            
+            <!-- Search -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Search</h3>
+              
+              <div class="mockup-row">
+                <p class="mockup-row__text">One of the app's most important features is the search function: users should be able to find the ideal route based on their <strong>current location</strong>, <strong>desired distance from the route's starting point</strong>, and <strong>preferred route characteristics</strong>.</p>
+                <div class="mockup-image-placeholder mockup-image--phone">
+                  <p>Search mockup 1</p>
+                </div>
+              </div>
+              
+              <div class="mockup-row">
+                <p class="mockup-row__text">The results are displayed both <strong>on the map</strong> and <strong>as cards</strong>: users can click on either to view route details and <strong>save the route for later</strong>.</p>
+                <div class="mockup-image-placeholder mockup-image--phone">
+                  <p>Search mockup 2</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Activity -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Activity</h3>
+              
+              <div class="mockup-row mockup-row--reverse">
+                <div class="mockup-image-placeholder mockup-image--phone">
+                  <p>Activity mockup</p>
+                </div>
+                <p class="mockup-row__text">In the Activity section, users can view <strong>details of their past workouts</strong> saved in the app, as well as <strong>the routes they plan to try</strong> in upcoming sessions.</p>
+              </div>
+            </div>
+
+            <!-- Registration -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Registration</h3>
+              
+              <div class="mockup-row">
+                <p class="mockup-row__text">When starting a run - whether on a chosen route or a new one - users can <strong>register their activity</strong>. They must activate GPS and have also the option to connect a smartwatch or sensor to track heart rate and calories burned.</p>
+                <div class="mockup-image-placeholder mockup-image--phone">
+                  <p>Registration mockup 1</p>
+                </div>
+              </div>
+              
+              <div class="mockup-row">
+                <p class="mockup-row__text">After the run, the user can choose to <strong>save the workout data</strong> and complete a questionnaire to <strong>rate the route and overall experience</strong>.</p>
+                <div class="mockup-image-placeholder mockup-image--phone">
+                  <p>Registration mockup 2</p>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text">When the registered run is done on a new route, the user also needs to <strong>choose and enter a name for the route</strong> and <strong>answer an additional question in the questionnaire.</strong></p>
+                <div class="mockup-grid">
+                  <img src="/images/runnable/Register-New route.png" alt="Route naming screen" class="mockup-image mockup-image--medium" />
+                  <img src="/images/runnable/Register-New route-Type of road copia.png" alt="Road type questionnaire screen" class="mockup-image mockup-image--medium" />
+                </div>
+              </div>
+              
+              <div class="mockup-row">
+                <p class="mockup-row__text">If the user decides to <strong>skip the questionnaire or certain parts of it</strong>, the details screen will display a button inviting the user to complete the questionnaire.</p>
+                <img src="/images/runnable/Activity - Past Runs - Detaills.png" alt="Activity details screen with incomplete questionnaire prompt" class="mockup-image mockup-image--small" />
+              </div>
+            </div>
+
+            <!-- Homescreen and Community -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Homescreen and community</h3>
+              
+              <p class="section__text">Finally, there are two additional sections: the <strong>Homescreen</strong>, where users can view their profile picture, badges, and running program (selected at onboarding and editable in settings); and the <strong>Community section</strong>, where users can view posts from others and find local running groups to join. The Community feature is designed for solo runners who want to connect with others for workouts.</p>
+              
+              <div class="mockup-grid">
+                <img src="/images/runnable/Home.png" alt="Homescreen showing user profile and running program" class="mockup-image mockup-image--small" />
+                <img src="/images/runnable/Community-Groups.png" alt="Community groups screen" class="mockup-image mockup-image--medium" />
+                <img src="/images/runnable/Community-Your Feed.png" alt="Community feed screen" class="mockup-image mockup-image--medium" />
+              </div>
+            </div>
+          </section>
+
+          <!-- Testing Section -->
+          <section class="section section--large-gap" aria-labelledby="testing-title">
+            <h2 id="testing-title" class="section__title">Testing</h2>
+            
+            <!-- Methods -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Methods</h3>
+              <p class="section__text">After developing the first version and prototypes, a first round of testing is needed before the next design iteration. It is essential to determine if the app's two main features—the search and registration—are intuitive and function well.</p>
+            </div>
+
+            <!-- Experimental Design -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Experimental design</h3>
+              <ul class="section__list">
+                <li><strong>Participants</strong>: at this stage, 5 participants are enough to gather major insights and highlight major usability issues.</li>
+                <li><strong>Testing duration</strong>: 1 hour.</li>
+                <li><strong>Instructions</strong>: after answering a few demographic questions, participants will be instructed to open the Home screen and explore the app for a few minutes (e.g., examining the toolbar) while thinking aloud. Next, they will complete two tasks: first, they will use the search section to find and save a specific route; then, they will locate the saved route in the Activity section, simulate starting a run, register the activity, and review the questionnaire. Participants should continue to think aloud throughout the tasks.</li>
+              </ul>
+            </div>
+
+            <!-- Measures -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Measures</h3>
+              <ul class="section__list">
+                <li><strong>Task success rate</strong>: whether participants complete each task successfully without help.</li>
+                <li><strong>Time on task</strong>: how long it takes for participants to complete each task.</li>
+                <li><strong>Error rate and types</strong>: keeping track of user errors or misunderstandings during tasks, such as mis-clicks, navigation mistakes, or confusion about UI elements.</li>
+                <li><strong>Think-aloud data</strong>: analysis of participants' verbal comments for pain points, confusion, and feedback.</li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__email">
+            <div class="footer__icon-wrapper">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer__icon" aria-hidden="true">
+                <path d="M4.66667 7.00001L14 14.5833L23.3333 7.00001M4.66667 21H23.3333C24.622 21 25.6667 19.9553 25.6667 18.6667V9.33334C25.6667 8.04468 24.622 7.00001 23.3333 7.00001H4.66667C3.378 7.00001 2.33333 8.04468 2.33333 9.33334V18.6667C2.33333 19.9553 3.378 21 4.66667 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="footer__email-text">reb.guerrini@gmail.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
