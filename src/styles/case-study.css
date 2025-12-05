@@ -804,12 +804,12 @@
 
 /* Size variants */
 .deco-rect--wide {
-  width: 1300px;
+  width: 900px;
   height: 588px;
 }
 
 .deco-rect--medium {
-  width: 800px;
+  width: 600px;
   height: 1196px;
 }
 
@@ -934,9 +934,12 @@
 .mockup-column {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  align-items: center;
+  gap: 40px;
   width: 100%;
+}
+
+.mockup-column + .mockup-column {
+  margin-top: 40px;
 }
 
 /* Mockup grid - Mobile */
