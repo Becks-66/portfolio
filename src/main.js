@@ -28,7 +28,7 @@ function initPageTransitions() {
     if (link.target === '_blank') return;
     if (link.href.startsWith('mailto:')) return;
     if (link.href.startsWith('tel:')) return;
-    if (link.href.startsWith('#')) return;
+    if (link.href.includes('#')) return;
     if (link.hasAttribute('download')) return;
     
     // Check if it's an internal link (same origin)
@@ -104,4 +104,48 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initCaseStudyFooter);
 } else {
   initCaseStudyFooter();
+}
+
+// =============================================
+// Homepage Navigation Active State on Scroll
+// =============================================
+function initHomepageNavigation() {
+  const projectsSection = document.getElementById('projects');
+  const homeButton = document.querySelector('.nav-button[href="#main-content"]');
+  const projectsButton = document.querySelector('.nav-button[href="#projects"]');
+  
+  // Only run on homepage where these elements exist
+  if (!projectsSection || !homeButton || !projectsButton) return;
+
+  function updateActiveNav() {
+    const projectsSectionTop = projectsSection.getBoundingClientRect().top;
+    const threshold = window.innerHeight * 0.5; // Switch when projects section is halfway up the viewport
+
+    if (projectsSectionTop <= threshold) {
+      // User is in the projects section
+      homeButton.classList.remove('nav-button--active');
+      homeButton.removeAttribute('aria-current');
+      projectsButton.classList.add('nav-button--active');
+      projectsButton.setAttribute('aria-current', 'page');
+    } else {
+      // User is in the hero section
+      homeButton.classList.add('nav-button--active');
+      homeButton.setAttribute('aria-current', 'page');
+      projectsButton.classList.remove('nav-button--active');
+      projectsButton.removeAttribute('aria-current');
+    }
+  }
+
+  // Initial check
+  updateActiveNav();
+
+  // Listen for scroll events
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+}
+
+// Initialize homepage navigation
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHomepageNavigation);
+} else {
+  initHomepageNavigation();
 }

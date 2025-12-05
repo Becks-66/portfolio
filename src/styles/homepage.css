@@ -6,16 +6,32 @@
 }
 
 /* =============================================
+   Hero Section
+   ============================================= */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--space-sm);
+  padding-top: calc(var(--space-xl) + var(--space-md));
+  gap: var(--space-md);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* =============================================
    Main Content
    ============================================= */
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: var(--space-sm);
-  padding-top: calc(var(--space-xl) + var(--space-md));
-  gap: var(--space-md);
 }
 
 /* Hero Section */
@@ -64,16 +80,29 @@
    Homepage - Tablet Breakpoint (768px)
    ============================================= */
 @media (min-width: 768px) {
+  /* Hero Section */
+  .hero-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--space-md);
+    padding-top: calc(var(--space-xl) + var(--space-md));
+    gap: var(--space-md);
+  }
+
+  .hero-content {
+    align-items: flex-start;
+  }
+
   /* Side Frame */
   .side-frame {
     display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
+    flex-shrink: 0;
     width: 410px;
-    height: 100vh;
+    height: auto;
+    min-height: 500px;
     background-color: var(--color-white);
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
     overflow: hidden;
   }
@@ -95,12 +124,7 @@
   
   /* Main Content */
   .main-content {
-    margin-left: 410px;
-    padding: var(--space-md);
-    padding-top: calc(var(--space-xl) + var(--space-md));
-    justify-content: center;
-    min-height: 100vh;
-    align-items: flex-start;
+    /* No margin-left needed since side-frame is in hero-section */
   }
   
   .hero {
@@ -129,6 +153,12 @@
    Homepage - Desktop Breakpoint (1024px)
    ============================================= */
 @media (min-width: 1024px) {
+  /* Hero Section */
+  .hero-section {
+    padding: var(--space-lg);
+    padding-top: calc(var(--space-xl) + var(--space-lg));
+  }
+
   /* Side Frame */
   .side-frame {
     width: 480px;
@@ -136,14 +166,6 @@
   
   .side-frame__inner {
     padding: var(--space-md);
-  }
-  
-  /* Main Content */
-  .main-content {
-    margin-left: 480px;
-    padding: var(--space-lg);
-    padding-top: calc(var(--space-xl) + var(--space-lg));
-    align-items: flex-start;
   }
   
   .hero {
@@ -156,7 +178,78 @@
    Homepage - Large Desktop Breakpoint (1360px+)
    ============================================= */
 @media (min-width: 1360px) {
-  .main-content {
-    max-width: calc(880px + 480px);
+  .hero-section {
+    max-width: 1360px;
+    margin: 0 auto;
   }
+}
+
+/* =============================================
+   Projects Section
+   ============================================= */
+.projects-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-sm);
+  padding-bottom: calc(var(--space-xl) + var(--space-md)); /* Space for fixed footer */
+  background-color: var(--color-white);
+}
+
+.projects-section .projects-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+/* =============================================
+   Projects Section - Tablet Breakpoint (768px)
+   ============================================= */
+@media (min-width: 768px) {
+  .projects-section {
+    padding: var(--space-md);
+    padding-bottom: calc(var(--space-xl) + var(--space-md));
+  }
+}
+
+/* =============================================
+   Projects Section - Desktop Breakpoint (1024px)
+   ============================================= */
+@media (min-width: 1024px) {
+  .projects-section {
+    padding: var(--space-lg);
+    padding-bottom: calc(var(--space-xl) + var(--space-lg));
+  }
+}
+
+/* =============================================
+   Projects Section - Large Desktop Breakpoint (1360px+)
+   ============================================= */
+@media (min-width: 1360px) {
+  .projects-section .projects-grid {
+    max-width: 1360px;
+    flex-direction: row;
+    gap: 33px;
+    align-items: stretch;
+  }
+}
+
+/* =============================================
+   Visually Hidden (for screen readers)
+   ============================================= */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

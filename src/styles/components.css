@@ -40,6 +40,7 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
+  width: 100%;
 }
 
 .project-card__tag {
@@ -147,7 +148,7 @@
    ============================================= */
 @media (min-width: 768px) {
   .project-card {
-    width: 422px;
+    max-width: 422px;
   }
 }
 
@@ -157,6 +158,7 @@
 @media (min-width: 1360px) {
   .project-card {
     width: auto;
+    max-width: none;
     flex: 1;
   }
   
