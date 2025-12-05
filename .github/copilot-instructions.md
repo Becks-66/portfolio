@@ -18,16 +18,19 @@ portfolio/
 ├── index.html              # Homepage
 ├── projects.html           # Projects listing page
 ├── runnable.html           # Runnable case study page
+├── journeal.html           # Journeal case study page
 ├── package.json            # Vite dependencies
 ├── docs/                   # Planning documents
 │   ├── homepage.plan.md
 │   ├── projects.plan.md
-│   └── runnable.plan.md
+│   ├── runnable.plan.md
+│   └── journeal.plan.md
 ├── public/
 │   └── images/             # Static assets
 │       ├── illustration.png
 │       ├── mail-icon.svg
-│       └── runnable/       # Runnable case study assets
+│       ├── runnable/       # Runnable case study assets
+│       └── journeal/       # Journeal case study assets
 └── src/
     ├── main.js             # Entry point (imports styles/main.css)
     └── styles/             # Modular CSS architecture
@@ -170,8 +173,19 @@ This project prioritizes accessibility:
 #### Mockups
 - `.mockup-row`: flex, 24px gap, align-items center
 - `.mockup-row--reverse`: flex-direction row-reverse
+- `.mockup-grid--three`: 3 images in a row (tablet+)
+- `.mockup-grid--two`: 2 images in a row (tablet+)
+- `.mockup-grid--two-by-two`: 2x2 grid (tablet+)
 - Images: 16px radius, box-shadow `0px 1px 4px rgba(0,0,0,0.25)`
 - Sizes: phone 278px, medium 252px, small 216px width
+
+#### Decorative Elements
+- `.deco-circle`: rounded decorative backgrounds (Runnable)
+- `.deco-rect`: rectangular decorative backgrounds (Journeal)
+- `.deco-rect--teal`: `#E7F3F5` background
+- `.deco-rect--violet`: `#F3EFF7` background
+- `.deco-rect--violet-dark`: `#D6C7E2` background
+- Size variants: `--wide` (1300×588), `--medium` (800×1196), `--square-lg` (300×300), `--square-sm` (200×200)
 
 #### Back Link
 - 28px SVG icon with text
@@ -188,7 +202,7 @@ The CSS is split into focused modules in `src/styles/`. Import order is managed 
 3. **`components.css`** — `.btn-cta`, `.project-card` and all card elements + breakpoints
 4. **`homepage.css`** — `.main-content`, `.hero`, `.side-frame`, `.mobile-illustration` + breakpoints
 5. **`projects.css`** — `.projects-page` overrides, `.projects-grid` + breakpoints
-6. **`case-study.css`** — All case study components (hero, sections, boxes, personas, tables, mockups, decorative circles) + all breakpoints
+6. **`case-study.css`** — All case study components (hero, sections, boxes, personas, tables, mockups, decorative circles/rectangles) + all breakpoints
 
 ### Organization Principles
 
@@ -251,6 +265,16 @@ Uses BEM-like naming:
 - Uses `<strong>` tags for inline bold text emphasis
 - Tables use horizontal scroll wrapper for wide content
 - Mockup images have fixed widths with auto height
+- Uses `.deco-circle` decorative elements behind mockups
+
+### Case Study Page (journeal.html)
+
+- Same structure as runnable.html
+- Sections include: User Story, Problem, Target Users, Primary Research, Personas, Sitemap, Lean Branding, Designs, Testing
+- Designs section has two subsections: Journaling and Therapy
+- Uses `.deco-rect` decorative rectangles (teal for Journaling, violet squares for Therapy)
+- Includes one video mockup in Journaling section intro
+- Two palette images in Lean Branding section
 
 ## Assets
 
@@ -271,6 +295,16 @@ Images are stored in `public/images/`:
 - `Humaaans - Standing 1.png` - Experienced runners persona
 - `Humaaans - Standing.png` - Solitary runners persona
 - `Humaaans - Standing copia 2.png` - Explorers persona
+
+### Journeal Case Study Images (`public/images/journeal/`)
+- `BlankPage - Visualization1.png` - Hero card image
+- `Journeal - Add an entry.mp4` - Video for Journaling section intro
+- `Humaaans - Space.png` - Strugglers persona
+- `Humaaans - Space copia.png` - Newbies persona
+- `Humaaans - Space copia 2.png` - Non-recorders persona
+- `Journeal-Color palette 1.png` - Primary color palette
+- `Journeal-Color palette 2.png` - Secondary color palette
+- Various mockup images for Journaling and Therapy sections
 
 ## Development Commands
 

@@ -594,8 +594,13 @@
   max-width: 529px;
   height: auto;
   border-radius: 8px;
+  box-shadow: var(--shadow-card);
   display: block;
   margin: 0 auto;
+}
+
+.palette-image + .palette-image {
+  margin-top: 24px;
 }
 
 /* Mockup Layouts - Mobile (stacked) */
@@ -775,6 +780,138 @@
   left: -100px;
 }
 
+/* =============================================
+   Journeal - Decorative Rectangles
+   ============================================= */
+.deco-rect {
+  display: none;
+  position: absolute;
+  border-radius: var(--radius-md);
+  z-index: -1;
+}
+
+.deco-rect--teal {
+  background-color: var(--color-primary-50);
+}
+
+.deco-rect--violet {
+  background-color: var(--color-secondary-50);
+}
+
+.deco-rect--violet-dark {
+  background-color: var(--color-secondary-100);
+}
+
+/* Size variants */
+.deco-rect--wide {
+  width: 1300px;
+  height: 588px;
+}
+
+.deco-rect--medium {
+  width: 800px;
+  height: 1196px;
+}
+
+.deco-rect--square-lg {
+  width: 300px;
+  height: 300px;
+  border-radius: 0;
+}
+
+.deco-rect--square-sm {
+  width: 200px;
+  height: 200px;
+  border-radius: 0;
+}
+
+/* Journeal intro - purple circles positioning */
+.mockup-row__deco-wrapper--journeal-intro .deco-circle--purple-large {
+  top: -100px;
+  right: -120px;
+}
+
+.mockup-row__deco-wrapper--journeal-intro .deco-circle--purple-small {
+  bottom: 50px;
+  left: -80px;
+}
+
+/* Journeal teal rectangles - centered behind mockups */
+.mockup-grid__deco-wrapper--journeal-teal {
+  position: relative;
+}
+
+.mockup-grid__deco-wrapper--journeal-teal .deco-rect--wide {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Journeal violet rectangle - large for 2x2 grid */
+.mockup-grid__deco-wrapper--journeal-violet-large {
+  position: relative;
+}
+
+.mockup-grid__deco-wrapper--journeal-violet-large .deco-rect--medium {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Journeal violet rectangle - wide for 3 images */
+.mockup-grid__deco-wrapper--journeal-violet {
+  position: relative;
+}
+
+.mockup-grid__deco-wrapper--journeal-violet .deco-rect--wide {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Journeal squares - therapy section pattern 1 */
+.mockup-grid__deco-wrapper--journeal-squares {
+  position: relative;
+}
+
+.mockup-grid__deco-wrapper--journeal-squares .deco-rect--square-sm {
+  left: -75px;
+  bottom: -20px;
+}
+
+.mockup-grid__deco-wrapper--journeal-squares .deco-rect--square-lg {
+  left: -50px;
+  top: 150px;
+}
+
+.mockup-grid__deco-wrapper--journeal-squares .deco-rect--square-lg.deco-rect--right {
+  left: auto;
+  right: -75px;
+  top: -15px;
+}
+
+/* Journeal squares - therapy section pattern 2 (alt) */
+.mockup-grid__deco-wrapper--journeal-squares-alt {
+  position: relative;
+}
+
+.mockup-grid__deco-wrapper--journeal-squares-alt .deco-rect--square-lg:first-of-type {
+  left: -75px;
+  bottom: -40px;
+}
+
+.mockup-grid__deco-wrapper--journeal-squares-alt .deco-rect--square-lg.deco-rect--right {
+  left: auto;
+  right: -75px;
+  top: -15px;
+}
+
+.mockup-grid__deco-wrapper--journeal-squares-alt .deco-rect--square-sm.deco-rect--right-sm {
+  left: auto;
+  right: -30px;
+  top: 120px;
+}
+
 .mockup-row__deco-wrapper .mockup-image-placeholder,
 .mockup-row__deco-wrapper .mockup-image {
   position: relative;
@@ -804,6 +941,17 @@
 
 /* Mockup grid - Mobile */
 .mockup-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Journeal grid variants - Mobile (stacked) */
+.mockup-grid--three,
+.mockup-grid--two,
+.mockup-grid--two-by-two {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -1048,6 +1196,33 @@
   /* Show decorative circles on tablet */
   .deco-circle {
     display: block;
+  }
+  
+  /* Show decorative rectangles on tablet */
+  .deco-rect {
+    display: block;
+  }
+  
+  /* Journeal mockup grids - Tablet */
+  .mockup-grid--three {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+  }
+  
+  .mockup-grid--two {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+  }
+  
+  .mockup-grid--two-by-two {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 24px;
+    justify-content: center;
   }
   
   /* Case Study Footer - Tablet (stays at bottom, not fixed) */
