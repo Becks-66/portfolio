@@ -759,6 +759,7 @@ img {
   align-items: center;
   gap: var(--space-xl);
   padding: 0 var(--space-xl);
+  padding-bottom: var(--space-xl);
   width: 100%;
 }
 
@@ -1612,5 +1613,50 @@ img {
 
 .case-study-page .footer__container {
   justify-content: flex-end;
+}
+
+/* Case Study Footer - Fixed state on tablet/desktop */
+@media (min-width: 768px) {
+  .case-study-page .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: auto;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-neutral-200);
+    padding: var(--space-sm) var(--space-md);
+    z-index: 100;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  /* When user scrolls to bottom, footer becomes part of the document flow */
+  .case-study-page .footer.footer--at-bottom {
+    position: relative;
+    width: 100%;
+    border-top: 1px solid var(--color-neutral-200);
+    padding: var(--space-sm) 28px;
+  }
+
+  .case-study-page .footer.footer--at-bottom .footer__container {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .case-study-page .footer {
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  .case-study-page .footer.footer--at-bottom {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .case-study-page .footer {
+    transition: none;
+  }
 }
 
