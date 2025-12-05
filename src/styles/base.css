@@ -133,3 +133,24 @@ img {
   outline: var(--focus-ring);
   outline-offset: 2px;
 }
+
+/* =============================================
+   Page Transitions
+   ============================================= */
+body {
+  transition: opacity 0.3s ease;
+}
+
+body.page-ready {
+  opacity: 1;
+}
+
+body.page-transition-out {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}

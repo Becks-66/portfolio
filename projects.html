@@ -11,6 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
     
     <title>My Projects | Rebecca Guerrini</title>
+    
+    <!-- Prevent FOUC: hide body until CSS loads -->
+    <style>
+      body:not(.page-ready) { opacity: 0; }
+      @media (prefers-reduced-motion: reduce) { body { opacity: 1 !important; } }
+    </style>
   </head>
   <body class="projects-page">
     <!-- Skip to main content for accessibility -->
