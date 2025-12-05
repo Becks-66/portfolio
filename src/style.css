@@ -1106,10 +1106,49 @@ img {
   align-items: center;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 
 .persona-row--reverse {
   flex-direction: row-reverse;
+}
+
+/* Decorative circles behind persona rows */
+.persona-row::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Newbies - teal circle, bottom-left */
+.persona-row:nth-child(2)::before {
+  bottom: 0;
+  left: -20px;
+  background-color: var(--color-primary-50);
+}
+
+/* Experienced runners - green circle, top-right */
+.persona-row:nth-child(3)::before {
+  top: 0;
+  right: -20px;
+  background-color: #E7F8E9;
+}
+
+/* Solitary runners - purple circle, bottom-left */
+.persona-row:nth-child(4)::before {
+  bottom: 0;
+  left: -20px;
+  background-color: var(--color-secondary-50);
+}
+
+/* Explorers - gray circle, top-right */
+.persona-row:nth-child(5)::before {
+  top: -10px;
+  right: -20px;
+  background-color: var(--color-neutral-100);
 }
 
 .persona-image-wrapper {
@@ -1118,42 +1157,6 @@ img {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
-
-.persona-image-wrapper::before {
-  content: '';
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: var(--color-primary-50);
-  z-index: 0;
-}
-
-/* Newbies - circle upper-left */
-.persona-row:nth-child(2) .persona-image-wrapper::before {
-  top: 0;
-  left: 0;
-}
-
-/* Experienced runners - circle upper-right */
-.persona-row:nth-child(3) .persona-image-wrapper::before {
-  top: 0;
-  right: 0;
-  background-color: #F3F4F6;
-}
-
-/* Solitary runners - circle lower-left */
-.persona-row:nth-child(4) .persona-image-wrapper::before {
-  bottom: 10px;
-  left: 0;
-}
-
-/* Explorers - circle lower-right */
-.persona-row:nth-child(5) .persona-image-wrapper::before {
-  bottom: 20px;
-  right: 0;
-  background-color: #F3F4F6;
 }
 
 .persona-image {
@@ -1358,105 +1361,105 @@ img {
 }
 
 .deco-circle--large {
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
   background-color: var(--color-primary-100);
 }
 
 .deco-circle--small {
-  width: 180px;
-  height: 180px;
+  width: 300px;
+  height: 300px;
   background-color: var(--color-primary-50);
 }
 
 /* First mockup row - circle positioning */
 .mockup-row__deco-wrapper--search-1 .deco-circle--large {
-  top: -40px;
-  right: -50px;
+  top: -100px;
+  right: -120px;
 }
 
 .mockup-row__deco-wrapper--search-1 .deco-circle--small {
-  bottom: -30px;
-  left: -30px;
+  bottom: 50px;
+  left: -80px;
 }
 
 /* Second mockup row - circle positioning */
 .mockup-row__deco-wrapper--search-2 .deco-circle--small {
-  top: -30px;
-  left: -25px;
+  top: -50px;
+  left: -80px;
 }
 
 .mockup-row__deco-wrapper--search-2 .deco-circle--large {
-  bottom: -40px;
-  right: -50px;
+  bottom: -80px;
+  right: -120px;
 }
 
 /* Activity section - Green circles */
 .deco-circle--green-large {
-  width: 250px;
-  height: 250px;
-  background-color: var(--color-green-100);
-}
-
-.deco-circle--green-small {
-  width: 180px;
-  height: 180px;
+  width: 400px;
+  height: 400px;
   background-color: var(--color-green-50);
 }
 
+.deco-circle--green-small {
+  width: 300px;
+  height: 300px;
+  background-color: var(--color-green-100);
+}
+
 .mockup-row__deco-wrapper--activity .deco-circle--green-large {
-  top: -40px;
-  left: -50px;
+  top: -80px;
+  right: -100px;
 }
 
 .mockup-row__deco-wrapper--activity .deco-circle--green-small {
-  bottom: -30px;
-  right: -40px;
+  bottom: 50px;
+  left: -120px;
 }
 
 /* Registration section - Purple circles */
 .deco-circle--purple-large {
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
   background-color: var(--color-secondary-100);
 }
 
 .deco-circle--purple-small {
-  width: 180px;
-  height: 180px;
+  width: 300px;
+  height: 300px;
   background-color: var(--color-secondary-50);
 }
 
 .deco-circle--purple-medium {
-  width: 220px;
-  height: 220px;
+  width: 350px;
+  height: 350px;
   background-color: var(--color-secondary-100);
 }
 
 .deco-circle--purple-xs {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   background-color: var(--color-secondary-50);
 }
 
 .mockup-row__deco-wrapper--registration-1 .deco-circle--purple-large {
-  top: -40px;
-  right: -50px;
+  top: -100px;
+  right: -120px;
 }
 
 .mockup-row__deco-wrapper--registration-1 .deco-circle--purple-small {
-  bottom: -30px;
-  left: -25px;
+  bottom: 50px;
+  left: -80px;
 }
 
 .mockup-row__deco-wrapper--registration-2 .deco-circle--purple-small {
-  top: -30px;
-  left: -25px;
+  top: -50px;
+  left: -80px;
 }
 
 .mockup-row__deco-wrapper--registration-2 .deco-circle--purple-large {
-  bottom: -40px;
-  right: -50px;
+  bottom: -80px;
+  right: -120px;
 }
 
 /* Registration grid wrapper for paired images */
@@ -1465,13 +1468,13 @@ img {
 }
 
 .mockup-grid__deco-wrapper .deco-circle--purple-medium {
-  top: 20%;
-  right: -60px;
+  top: 150px;
+  right: -100px;
 }
 
 .mockup-grid__deco-wrapper .deco-circle--purple-xs {
-  bottom: -30px;
-  left: -40px;
+  bottom: -60px;
+  left: -80px;
 }
 
 .mockup-grid__deco-wrapper .mockup-grid {
@@ -1480,31 +1483,31 @@ img {
 }
 
 .mockup-row__deco-wrapper--registration-4 .deco-circle--purple-large {
-  bottom: -50px;
-  left: -50px;
+  bottom: 100px;
+  left: -100px;
 }
 
 /* Homescreen section - Gray circles */
 .deco-circle--gray-large {
-  width: 220px;
-  height: 220px;
+  width: 350px;
+  height: 350px;
   background-color: var(--color-neutral-200);
 }
 
 .deco-circle--gray-small {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   background-color: var(--color-neutral-100);
 }
 
 .mockup-grid__deco-wrapper--homescreen .deco-circle--gray-large {
-  top: -30px;
-  right: -50px;
+  top: -60px;
+  right: -80px;
 }
 
 .mockup-grid__deco-wrapper--homescreen .deco-circle--gray-small {
-  bottom: -40px;
-  left: -40px;
+  bottom: -80px;
+  left: -100px;
 }
 
 .mockup-row__deco-wrapper .mockup-image-placeholder,
@@ -1558,6 +1561,20 @@ img {
 .mockup-image--small {
   width: 216px;
   height: auto;
+}
+
+/* Video mockups */
+.mockup-video {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.mockup-video--phone {
+  width: 278px;
+  height: 572px;
 }
 
 /* Placeholder for mockups without images yet */
