@@ -4,16 +4,19 @@
 :root {
   /* Colors */
   --color-primary-50: #e7f3f5;
+  --color-primary-100: #d0e8eb;
   --color-primary-600: #56929a;
   --color-primary-700: #3d7981;
+  --color-green-50: #d6e8d8;
   --color-green-100: #e7f8e9;
+  --color-secondary-50: #f3eff7;
+  --color-secondary-100: #d6c7e2;
   --color-neutral-100: #f3f4f6;
   --color-neutral-200: #e5e7eb;
   --color-neutral-400: #9ca3af;
   --color-neutral-500: #6b7280;
   --color-neutral-700: #374151;
   --color-neutral-900: #111827;
-  --color-secondary-50: #f3eff7;
   --color-secondary-400: #734f88;
   --color-secondary-hover: #5f4170;
   --color-destructive-100: #fee2e2;
@@ -1108,10 +1111,55 @@ img {
   flex-direction: row-reverse;
 }
 
+.persona-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.persona-image-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--color-primary-50);
+  z-index: 0;
+}
+
+/* Newbies - circle upper-left */
+.persona-row:nth-child(2) .persona-image-wrapper::before {
+  top: 0;
+  left: 0;
+}
+
+/* Experienced runners - circle upper-right */
+.persona-row:nth-child(3) .persona-image-wrapper::before {
+  top: 0;
+  right: 0;
+  background-color: #F3F4F6;
+}
+
+/* Solitary runners - circle lower-left */
+.persona-row:nth-child(4) .persona-image-wrapper::before {
+  bottom: 10px;
+  left: 0;
+}
+
+/* Explorers - circle lower-right */
+.persona-row:nth-child(5) .persona-image-wrapper::before {
+  bottom: 20px;
+  right: 0;
+  background-color: #F3F4F6;
+}
+
 .persona-image {
+  position: relative;
   height: 200px;
   width: auto;
-  flex-shrink: 0;
+  z-index: 1;
 }
 
 .persona-text {
@@ -1279,7 +1327,6 @@ img {
   width: 529px;
   height: auto;
   border-radius: 8px;
-  box-shadow: var(--shadow-palette);
   display: block;
   margin: 0 auto;
 }
@@ -1290,13 +1337,185 @@ img {
   gap: 24px;
   align-items: center;
   width: 100%;
+  position: relative;
 }
 
 .mockup-row--reverse {
   flex-direction: row-reverse;
 }
 
+/* Decorative circles behind mockups */
+.mockup-row__deco-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.deco-circle--large {
+  width: 250px;
+  height: 250px;
+  background-color: var(--color-primary-100);
+}
+
+.deco-circle--small {
+  width: 180px;
+  height: 180px;
+  background-color: var(--color-primary-50);
+}
+
+/* First mockup row - circle positioning */
+.mockup-row__deco-wrapper--search-1 .deco-circle--large {
+  top: -40px;
+  right: -50px;
+}
+
+.mockup-row__deco-wrapper--search-1 .deco-circle--small {
+  bottom: -30px;
+  left: -30px;
+}
+
+/* Second mockup row - circle positioning */
+.mockup-row__deco-wrapper--search-2 .deco-circle--small {
+  top: -30px;
+  left: -25px;
+}
+
+.mockup-row__deco-wrapper--search-2 .deco-circle--large {
+  bottom: -40px;
+  right: -50px;
+}
+
+/* Activity section - Green circles */
+.deco-circle--green-large {
+  width: 250px;
+  height: 250px;
+  background-color: var(--color-green-100);
+}
+
+.deco-circle--green-small {
+  width: 180px;
+  height: 180px;
+  background-color: var(--color-green-50);
+}
+
+.mockup-row__deco-wrapper--activity .deco-circle--green-large {
+  top: -40px;
+  left: -50px;
+}
+
+.mockup-row__deco-wrapper--activity .deco-circle--green-small {
+  bottom: -30px;
+  right: -40px;
+}
+
+/* Registration section - Purple circles */
+.deco-circle--purple-large {
+  width: 250px;
+  height: 250px;
+  background-color: var(--color-secondary-100);
+}
+
+.deco-circle--purple-small {
+  width: 180px;
+  height: 180px;
+  background-color: var(--color-secondary-50);
+}
+
+.deco-circle--purple-medium {
+  width: 220px;
+  height: 220px;
+  background-color: var(--color-secondary-100);
+}
+
+.deco-circle--purple-xs {
+  width: 150px;
+  height: 150px;
+  background-color: var(--color-secondary-50);
+}
+
+.mockup-row__deco-wrapper--registration-1 .deco-circle--purple-large {
+  top: -40px;
+  right: -50px;
+}
+
+.mockup-row__deco-wrapper--registration-1 .deco-circle--purple-small {
+  bottom: -30px;
+  left: -25px;
+}
+
+.mockup-row__deco-wrapper--registration-2 .deco-circle--purple-small {
+  top: -30px;
+  left: -25px;
+}
+
+.mockup-row__deco-wrapper--registration-2 .deco-circle--purple-large {
+  bottom: -40px;
+  right: -50px;
+}
+
+/* Registration grid wrapper for paired images */
+.mockup-grid__deco-wrapper {
+  position: relative;
+}
+
+.mockup-grid__deco-wrapper .deco-circle--purple-medium {
+  top: 20%;
+  right: -60px;
+}
+
+.mockup-grid__deco-wrapper .deco-circle--purple-xs {
+  bottom: -30px;
+  left: -40px;
+}
+
+.mockup-grid__deco-wrapper .mockup-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.mockup-row__deco-wrapper--registration-4 .deco-circle--purple-large {
+  bottom: -50px;
+  left: -50px;
+}
+
+/* Homescreen section - Gray circles */
+.deco-circle--gray-large {
+  width: 220px;
+  height: 220px;
+  background-color: var(--color-neutral-200);
+}
+
+.deco-circle--gray-small {
+  width: 150px;
+  height: 150px;
+  background-color: var(--color-neutral-100);
+}
+
+.mockup-grid__deco-wrapper--homescreen .deco-circle--gray-large {
+  top: -30px;
+  right: -50px;
+}
+
+.mockup-grid__deco-wrapper--homescreen .deco-circle--gray-small {
+  bottom: -40px;
+  left: -40px;
+}
+
+.mockup-row__deco-wrapper .mockup-image-placeholder,
+.mockup-row__deco-wrapper .mockup-image {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure text stays above circles */
 .mockup-row__text {
+  position: relative;
+  z-index: 1;
   flex: 1;
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -1365,18 +1584,24 @@ img {
   width: 216px;
 }
 
-/* Placeholder box for sitemaps */
-.placeholder-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Figma Embed Container */
+.figma-embed {
+  position: relative;
   width: 100%;
-  min-height: 200px;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (450/800 = 0.5625) */
+  border-radius: var(--radius-md);
+  overflow: hidden;
   background-color: var(--color-neutral-100);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-neutral-500);
+}
+
+.figma-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
 }
 
 /* Case Study Footer */
