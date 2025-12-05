@@ -16,7 +16,6 @@ This is a **mobile-first responsive portfolio website** for Rebecca Guerrini, a 
 ```
 portfolio/
 ├── index.html              # Homepage
-├── projects.html           # Projects listing page
 ├── runnable.html           # Runnable case study page
 ├── journeal.html           # Journeal case study page
 ├── package.json            # Vite dependencies
@@ -39,7 +38,6 @@ portfolio/
         ├── layout.css      # Page wrapper, header, footer + breakpoints
         ├── components.css  # Reusable UI: buttons, project cards
         ├── homepage.css    # Hero, side-frame, mobile illustration
-        ├── projects.css    # Projects page grid and overrides
         └── case-study.css  # All case study components + breakpoints
 ```
 
@@ -126,12 +124,6 @@ This project prioritizes accessibility:
 - Hover state: light purple tint (`--color-secondary-50`)
 - Must include focus-visible outline
 
-### Project Cards (projects.html)
-
-- Container: `.project-card` with primary-50 background
-- Structure: tag, type info, image, title, description, CTA button
-- Responsive: full-width on mobile, 422px on tablet, flex-grow in 3-column on desktop
-
 ### CTA Buttons
 
 - Background: `--color-primary-700`
@@ -201,8 +193,7 @@ The CSS is split into focused modules in `src/styles/`. Import order is managed 
 2. **`layout.css`** — `.page-wrapper`, `.header`, `.nav-button`, `.footer` + tablet/desktop breakpoints
 3. **`components.css`** — `.btn-cta`, `.project-card` and all card elements + breakpoints
 4. **`homepage.css`** — `.main-content`, `.hero`, `.side-frame`, `.mobile-illustration` + breakpoints
-5. **`projects.css`** — `.projects-page` overrides, `.projects-grid` + breakpoints
-6. **`case-study.css`** — All case study components (hero, sections, boxes, personas, tables, mockups, decorative circles/rectangles) + all breakpoints
+5. **`case-study.css`** — All case study components (hero, sections, boxes, personas, tables, mockups, decorative circles/rectangles) + all breakpoints
 
 ### Organization Principles
 
@@ -246,13 +237,6 @@ Uses BEM-like naming:
 - Side frame: sticky, appears on left side with soft shadow
 - Content area: centered with max-width constraints
 - Footer includes email with mail icon
-
-### Projects Page (projects.html)
-
-- No side-frame illustration
-- White background (add `.projects-page` class to body)
-- 3 project cards in responsive grid
-- Cards include: tag, type title/subtitle, image, title, description, CTA button with reading time
 
 ### Case Study Page (runnable.html)
 

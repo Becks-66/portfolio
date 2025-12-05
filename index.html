@@ -18,7 +18,7 @@
       @media (prefers-reduced-motion: reduce) { body { opacity: 1 !important; } }
     </style>
   </head>
-  <body>
+  <body class="homepage">
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
@@ -38,33 +38,35 @@
       <main id="main-content" class="main-content" role="main">
         <!-- Hero Section -->
         <section class="hero-section">
-          <!-- Side Frame (Illustration Panel) -->
-          <aside class="side-frame" aria-hidden="true">
-            <div class="side-frame__inner">
-              <img 
-                src="/images/illustration.png" 
-                alt="Illustrated portrait of Rebecca Guerrini" 
-                class="side-frame__image"
-              />
-            </div>
-          </aside>
-
-          <div class="hero-content">
-            <div class="hero" aria-labelledby="greeting">
-              <h1 id="greeting" class="hero__title">Hi, I'm Rebecca!</h1>
-              <div class="hero__description">
-                <p>I'm a UX Designer with a deep foundation in Psychology. After years of studying why people do what they do, I decided to start building the tools that help them do it better!</p>
-                <p>Originally from Italy and now moving to Zurich, I am seeking my first full-time role.</p>
+          <div class="hero-section__inner">
+            <!-- Side Frame (Illustration Panel) -->
+            <aside class="side-frame" aria-hidden="true">
+              <div class="side-frame__inner">
+                <img 
+                  src="/images/illustration.png" 
+                  alt="Illustrated portrait of Rebecca Guerrini" 
+                  class="side-frame__image"
+                />
               </div>
-            </div>
+            </aside>
 
-            <!-- Mobile illustration (visible only on mobile) -->
-            <div class="mobile-illustration">
-              <img 
-                src="/images/illustration.png" 
-                alt="Illustrated portrait of Rebecca Guerrini" 
-                class="mobile-illustration__image"
-              />
+            <div class="hero-content">
+              <div class="hero" aria-labelledby="greeting">
+                <h1 id="greeting" class="hero__title">Hi, I'm Rebecca!</h1>
+                <div class="hero__description">
+                  <p>I'm a UX Designer with a deep foundation in Psychology. After years of studying why people do what they do, I decided to start building the tools that help them do it better!</p>
+                  <p>Originally from Italy and now moving to Zurich, I am seeking my first full-time role.</p>
+                </div>
+              </div>
+
+              <!-- Mobile illustration (visible only on mobile) -->
+              <div class="mobile-illustration">
+                <img 
+                  src="/images/illustration.png" 
+                  alt="Illustrated portrait of Rebecca Guerrini" 
+                  class="mobile-illustration__image"
+                />
+              </div>
             </div>
           </div>
         </section>

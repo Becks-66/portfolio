@@ -1,4 +1,11 @@
 /* =============================================
+   Homepage Body Background
+   ============================================= */
+.homepage {
+  background-color: var(--color-white);
+}
+
+/* =============================================
    Side Frame (Desktop/Tablet Only)
    ============================================= */
 .side-frame {
@@ -9,6 +16,11 @@
    Hero Section
    ============================================= */
 .hero-section {
+  min-height: 100vh;
+  background-color: var(--color-primary-50);
+}
+
+.hero-section__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,7 +93,7 @@
    ============================================= */
 @media (min-width: 768px) {
   /* Hero Section */
-  .hero-section {
+  .hero-section__inner {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
@@ -154,7 +166,7 @@
    ============================================= */
 @media (min-width: 1024px) {
   /* Hero Section */
-  .hero-section {
+  .hero-section__inner {
     padding: var(--space-lg);
     padding-top: calc(var(--space-xl) + var(--space-lg));
   }
@@ -178,7 +190,7 @@
    Homepage - Large Desktop Breakpoint (1360px+)
    ============================================= */
 @media (min-width: 1360px) {
-  .hero-section {
+  .hero-section__inner {
     max-width: 1360px;
     margin: 0 auto;
   }
