@@ -1621,6 +1621,8 @@ img {
 
 /* Case Study Footer - Mobile */
 .case-study-page .footer {
+  position: static;
+  width: 100%;
   border-top: 1px solid var(--color-neutral-200);
   padding: var(--space-sm);
 }
@@ -1771,29 +1773,16 @@ img {
     display: block;
   }
   
-  /* Case Study Footer - Tablet */
+  /* Case Study Footer - Tablet (stays at bottom, not fixed) */
   .case-study-page .footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: auto;
-    width: auto;
-    background-color: var(--color-white);
+    position: static;
+    width: 100%;
     border-top: 1px solid var(--color-neutral-200);
     padding: var(--space-sm) 28px;
-    z-index: 100;
   }
   
   .case-study-page .footer__container {
     justify-content: flex-end;
-  }
-
-  /* When user scrolls to bottom, footer becomes part of the document flow */
-  .case-study-page .footer.footer--at-bottom {
-    position: relative;
-    width: 100%;
-    border-top: 1px solid var(--color-neutral-200);
-    padding: var(--space-sm) 28px;
   }
 }
 
@@ -1813,13 +1802,37 @@ img {
     padding-bottom: var(--space-lg);
   }
   
-  /* Case Study Footer - Desktop */
+  /* Case Study Footer - Desktop (not fixed, stays at bottom) */
   .case-study-page .footer {
+    position: static;
+    width: 100%;
     padding: var(--space-sm) var(--space-lg);
   }
+}
 
+/* =============================================
+   Case Study Page - Large Desktop Breakpoint (1440px)
+   ============================================= */
+@media (min-width: 1440px) {
+  /* Case Study Footer - Fixed on side for large screens */
+  .case-study-page .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: auto;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-neutral-200);
+    padding: var(--space-sm) var(--space-lg);
+    z-index: 100;
+  }
+
+  /* When user scrolls to bottom, footer becomes part of the document flow */
   .case-study-page .footer.footer--at-bottom {
-    padding: var(--space-sm) var(--space-md);
+    position: relative;
+    width: 100%;
+    border-top: 1px solid var(--color-neutral-200);
+    padding: var(--space-sm) var(--space-lg);
   }
 }
 
