@@ -1,4 +1,4 @@
-import './style.css'
+import './styles/main.css'
 
 // Portfolio homepage - pure HTML/CSS implementation
 // JavaScript will be added progressively as needed

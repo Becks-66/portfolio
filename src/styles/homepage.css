@@ -1,0 +1,162 @@
+/* =============================================
+   Side Frame (Desktop/Tablet Only)
+   ============================================= */
+.side-frame {
+  display: none;
+}
+
+/* =============================================
+   Main Content
+   ============================================= */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-sm);
+  padding-top: calc(var(--space-xl) + var(--space-md));
+  gap: var(--space-md);
+}
+
+/* Hero Section */
+.hero {
+  max-width: 262px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero__title {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.196px;
+  color: var(--color-neutral-900);
+}
+
+.hero__description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  font-size: var(--text-base);
+  line-height: 1.5;
+}
+
+/* Mobile Illustration */
+.mobile-illustration {
+  display: block;
+  width: 200px;
+  height: 250px;
+}
+
+.mobile-illustration__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  background-color: var(--color-white)
+}
+
+/* =============================================
+   Homepage - Tablet Breakpoint (768px)
+   ============================================= */
+@media (min-width: 768px) {
+  /* Side Frame */
+  .side-frame {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 410px;
+    height: 100vh;
+    background-color: var(--color-white);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+  }
+  
+  .side-frame__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+  }
+  
+  .side-frame__image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 410px;
+    padding: var(--space-md);
+    padding-top: calc(var(--space-xl) + var(--space-md));
+    justify-content: center;
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+  
+  .hero {
+    text-align: left;
+    gap: var(--space-md);
+    max-width: 500px;
+  }
+  
+  .hero__title {
+    font-size: var(--text-2xl);
+    line-height: 36px;
+  }
+  
+  .hero__description {
+    font-size: var(--text-lg);
+    line-height: 1.75;
+  }
+  
+  /* Hide mobile illustration */
+  .mobile-illustration {
+    display: none;
+  }
+}
+
+/* =============================================
+   Homepage - Desktop Breakpoint (1024px)
+   ============================================= */
+@media (min-width: 1024px) {
+  /* Side Frame */
+  .side-frame {
+    width: 480px;
+  }
+  
+  .side-frame__inner {
+    padding: var(--space-md);
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin-left: 480px;
+    padding: var(--space-lg);
+    padding-top: calc(var(--space-xl) + var(--space-lg));
+    align-items: flex-start;
+  }
+  
+  .hero {
+    max-width: 500px;
+    gap: var(--space-md);
+  }
+}
+
+/* =============================================
+   Homepage - Large Desktop Breakpoint (1360px+)
+   ============================================= */
+@media (min-width: 1360px) {
+  .main-content {
+    max-width: calc(880px + 480px);
+  }
+}

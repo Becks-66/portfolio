@@ -1,0 +1,101 @@
+/* =============================================
+   Projects Page
+   ============================================= */
+.projects-page {
+  background-color: var(--color-white);
+}
+
+.projects-page .header {
+  position: relative;
+}
+
+.projects-page .main-content {
+  padding-top: var(--space-sm);
+  gap: var(--space-sm);
+}
+
+.projects-page .footer {
+  border-top: 1px solid var(--color-neutral-200);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+/* =============================================
+   Projects Page - Tablet Breakpoint (768px)
+   ============================================= */
+@media (min-width: 768px) {
+  .projects-page .header {
+    position: relative;
+  }
+  
+  .projects-page .main-content {
+    margin-left: 0;
+    padding: var(--space-sm);
+    padding-top: 0;
+    min-height: auto;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .projects-page .footer {
+    position: relative;
+    padding: var(--space-sm) 1.75rem;
+  }
+  
+  .projects-page .footer__container {
+    justify-content: center;
+  }
+  
+  .projects-grid {
+    gap: var(--space-sm);
+    align-items: center;
+  }
+}
+
+/* =============================================
+   Projects Page - Desktop Breakpoint (1024px)
+   ============================================= */
+@media (min-width: 1024px) {
+  .projects-page .main-content {
+    padding: var(--space-md);
+    padding-top: 0;
+  }
+  
+  .projects-page .footer {
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .projects-page .footer__container {
+    justify-content: flex-end;
+  }
+}
+
+/* =============================================
+   Projects Page - Large Desktop Breakpoint (1360px+)
+   ============================================= */
+@media (min-width: 1360px) {
+  .projects-page .main-content {
+    max-width: 1360px;
+    padding: var(--space-md);
+    padding-top: 0;
+    margin: 0 auto;
+  }
+  
+  .projects-grid {
+    flex-direction: row;
+    gap: 33px;
+    width: 100%;
+    align-items: stretch;
+  }
+  
+  .projects-page .footer {
+    padding: var(--space-sm) 1.75rem;
+  }
+}

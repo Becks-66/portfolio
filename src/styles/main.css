@@ -1,0 +1,18 @@
+/* =============================================
+   Main CSS Entry Point
+   Imports all modular stylesheets in correct order
+   ============================================= */
+
+/* Base styles: variables, reset, accessibility */
+@import './base.css';
+
+/* Shared layout: page wrapper, header, footer */
+@import './layout.css';
+
+/* Reusable components: buttons, cards */
+@import './components.css';
+
+/* Page-specific styles */
+@import './homepage.css';
+@import './projects.css';
+@import './case-study.css';

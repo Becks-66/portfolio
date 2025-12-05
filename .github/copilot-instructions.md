@@ -17,15 +17,27 @@ This is a **mobile-first responsive portfolio website** for Rebecca Guerrini, a 
 portfolio/
 ├── index.html              # Homepage
 ├── projects.html           # Projects listing page
+├── runnable.html           # Runnable case study page
 ├── package.json            # Vite dependencies
 ├── docs/                   # Planning documents
 │   ├── homepage.plan.md
-│   └── projects.plan.md
+│   ├── projects.plan.md
+│   └── runnable.plan.md
 ├── public/
-│   └── images/             # Static assets (illustration.png, mail-icon.svg)
+│   └── images/             # Static assets
+│       ├── illustration.png
+│       ├── mail-icon.svg
+│       └── runnable/       # Runnable case study assets
 └── src/
-    ├── main.js             # Entry point (imports style.css)
-    └── style.css           # All styles (mobile-first approach)
+    ├── main.js             # Entry point (imports styles/main.css)
+    └── styles/             # Modular CSS architecture
+        ├── main.css        # Aggregator - imports all other CSS files
+        ├── base.css        # Design tokens, CSS reset, accessibility (skip link)
+        ├── layout.css      # Page wrapper, header, footer + breakpoints
+        ├── components.css  # Reusable UI: buttons, project cards
+        ├── homepage.css    # Hero, side-frame, mobile illustration
+        ├── projects.css    # Projects page grid and overrides
+        └── case-study.css  # All case study components + breakpoints
 ```
 
 ## Design System
@@ -42,14 +54,27 @@ portfolio/
 ### Color Tokens
 
 ```css
+/* Primary */
 --color-primary-50: #E7F3F5    /* Light teal - card/page backgrounds */
 --color-primary-600: #56929A   /* Medium teal - CTA button border */
 --color-primary-700: #3D7981   /* Dark teal - CTA button background */
---color-secondary-50: #F3EFF7  /* Light purple - tag background */
---color-secondary-400: #734F88 /* Purple - active nav, focus states */
---color-neutral-900: #111827   /* Near black - primary text */
---color-neutral-700: #374151   /* Dark gray - secondary text */
+
+/* Secondary */
+--color-secondary-50: #F3EFF7  /* Light purple - tag background, step boxes */
+--color-secondary-400: #734F88 /* Purple - active nav, focus states, back link hover */
+
+/* Neutral */
+--color-neutral-100: #F3F4F6   /* Light gray - suggestion boxes */
 --color-neutral-200: #E5E7EB   /* Light gray - borders */
+--color-neutral-400: #9CA3AF   /* Gray - insight box borders */
+--color-neutral-500: #6B7280   /* Darker gray - insight box border variant */
+--color-neutral-700: #374151   /* Dark gray - secondary text */
+--color-neutral-900: #111827   /* Near black - primary text */
+
+/* Accent */
+--color-green-100: #E7F8E9     /* Light green - step boxes, table headers */
+--color-destructive-100: #FEE2E2  /* Light red - "We are not" header */
+
 --color-white: #FFFFFF
 ```
 
@@ -111,22 +136,65 @@ This project prioritizes accessibility:
 - Text: white, Poppins Medium 16px
 - Padding: 16px horizontal, 12px vertical
 
+### Case Study Components (runnable.html)
+
+#### Hero Card
+- `.case-study-hero`: flex row, `--color-primary-50` bg, 16px radius, 28px/32px padding, 40px gap
+- Image: 366×273px, 16px radius, object-fit cover
+- Info: title, subtitle, meta rows (Type/Process/Client), reading time
+
+#### Content Container
+- `.case-study-content`: 640px max-width, centered, 80px section gap
+- Section titles: Poppins SemiBold 28px/36px, centered
+- Subtitles: Poppins SemiBold 20px/28px, centered
+
+#### Step Boxes
+- `.step-box--violet`: `--color-secondary-50` background
+- `.step-box--green`: `--color-green-100` background
+- 16px padding, 8px radius
+
+#### Insight/Suggestion Boxes
+- `.insight-box`: 1px border `--color-neutral-400`, 16px padding, 8px radius
+- `.insight-box--dark`: 1px border `--color-neutral-500`
+- `.suggestion-box`: `--color-neutral-100` background, 16px padding, 8px radius
+
+#### Personas
+- `.persona-row`: flex, 16px gap, align-items center
+- `.persona-row--reverse`: flex-direction row-reverse
+- Image height: 200px, width auto
+
+#### Tables
+- Competitor table: horizontal scroll wrapper, flex columns, 16px gap
+- Values table: 2 columns, green/red headers for "We are"/"We are not"
+
+#### Mockups
+- `.mockup-row`: flex, 24px gap, align-items center
+- `.mockup-row--reverse`: flex-direction row-reverse
+- Images: 16px radius, box-shadow `0px 1px 4px rgba(0,0,0,0.25)`
+- Sizes: phone 278px, medium 252px, small 216px width
+
+#### Back Link
+- 28px SVG icon with text
+- `--color-secondary-400` on hover
+
 ## CSS Architecture
 
-### Organization
+### Modular File Structure
 
-The CSS follows this order in `style.css`:
+The CSS is split into focused modules in `src/styles/`. Import order is managed by `main.css`:
 
-1. Custom Properties (`:root`)
-2. CSS Reset & Base Styles
-3. Skip Link
-4. Layout Components (page-wrapper, header, side-frame, main-content, footer)
-5. Typography
-6. Buttons & Interactive Elements
-7. Page-Specific Styles (homepage hero, projects grid/cards)
-8. Tablet Breakpoint (`@media (min-width: 768px)`)
-9. Desktop Breakpoint (`@media (min-width: 1024px)`)
-10. Large Desktop Breakpoint (`@media (min-width: 1360px)`)
+1. **`base.css`** — Design tokens (`:root` custom properties), CSS reset, reduced motion, skip link
+2. **`layout.css`** — `.page-wrapper`, `.header`, `.nav-button`, `.footer` + tablet/desktop breakpoints
+3. **`components.css`** — `.btn-cta`, `.project-card` and all card elements + breakpoints
+4. **`homepage.css`** — `.main-content`, `.hero`, `.side-frame`, `.mobile-illustration` + breakpoints
+5. **`projects.css`** — `.projects-page` overrides, `.projects-grid` + breakpoints
+6. **`case-study.css`** — All case study components (hero, sections, boxes, personas, tables, mockups, decorative circles) + all breakpoints
+
+### Organization Principles
+
+- **Mobile-first**: Base styles for mobile, media queries for larger screens
+- **Co-located breakpoints**: Each file contains its own responsive overrides
+- **Dependency order**: Variables must load first; page-specific styles load last
 
 ### Naming Convention
 
@@ -172,12 +240,37 @@ Uses BEM-like naming:
 - 3 project cards in responsive grid
 - Cards include: tag, type title/subtitle, image, title, description, CTA button with reading time
 
+### Case Study Page (runnable.html)
+
+- White background with 80px horizontal padding (desktop)
+- `.case-study-page` class on body
+- Structure: header → hero card → back link → content sections → footer
+- Hero card: horizontal flex with image left, info right
+- Content: 640px centered container with 80px vertical section gaps
+- Sections include: User Story, Problem, Target Users, Customer Journey, Primary Research, Personas, Competitor Analysis, Sitemaps, Lean Branding, Designs, Testing
+- Uses `<strong>` tags for inline bold text emphasis
+- Tables use horizontal scroll wrapper for wide content
+- Mockup images have fixed widths with auto height
+
 ## Assets
 
 Images are stored in `public/images/`:
 - `illustration.png` - Portrait illustration for homepage side frame
 - `mail-icon.svg` - Email icon for footer
-- Project card images (to be added)
+- Project card images
+
+### Runnable Case Study Images (`public/images/runnable/`)
+- `Register-New route.png` - Hero card image + Registration section
+- `Register-New route-Type of road copia.png` - Registration section
+- `Home.png` - Homescreen mockup
+- `Community-Groups.png` - Community groups mockup
+- `Community-Your Feed.png` - Community feed mockup
+- `Activity - Past Runs - Detaills.png` - Activity details mockup
+- `Palette.png` - Color palette image (529px width)
+- `Humaaans - Standing copia.png` - Newbies persona
+- `Humaaans - Standing 1.png` - Experienced runners persona
+- `Humaaans - Standing.png` - Solitary runners persona
+- `Humaaans - Standing copia 2.png` - Explorers persona
 
 ## Development Commands
 
