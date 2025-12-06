@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Journeal - A UX case study for a journaling app that accompanies you during your therapy journey" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <title>Journeal Case Study | Rebecca Guerrini</title>
+    
+    <!-- Prevent FOUC: hide body until CSS loads -->
+    <style>
+      body:not(.page-ready) { opacity: 0; }
+      @media (prefers-reduced-motion: reduce) { body { opacity: 1 !important; } }
+    </style>
+    
+    <script type="module" crossorigin src="/portfolio/assets/main-0_FFpqMu.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/main-BBr9LLA_.css">
+  </head>
+  <body class="case-study-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-wrapper">
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <p class="header__logo">REBECCA GUERRINI</p>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="projects.html" class="nav-button nav-button--active" aria-current="page">My projects</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="case-study-main" role="main">
+        <!-- Hero Card -->
+        <section class="case-study-hero" aria-labelledby="hero-title">
+          <div class="case-study-hero__image-container">
+            <img 
+              src="/portfolio/images/journeal/BlankPage - Visualization1.png" 
+              alt="Journeal app showing a journal entry visualization screen" 
+              class="case-study-hero__image"
+            />
+          </div>
+          <div class="case-study-hero__info">
+            <div class="case-study-hero__details">
+              <div class="case-study-hero__title-group">
+                <h1 id="hero-title" class="case-study-hero__title">Journeal</h1>
+                <p class="case-study-hero__subtitle">Building a journaling app that accompanies you during your therapy journey.</p>
+              </div>
+              <div class="case-study-hero__meta">
+                <span class="case-study-hero__label">Type of project:</span>
+                <span class="case-study-hero__value">UX Project</span>
+              </div>
+              <div class="case-study-hero__meta">
+                <span class="case-study-hero__label">Process:</span>
+                <span class="case-study-hero__value">From scratch</span>
+              </div>
+              <div class="case-study-hero__meta">
+                <span class="case-study-hero__label">Client:</span>
+                <span class="case-study-hero__tag">Personal project</span>
+              </div>
+            </div>
+            <p class="case-study-hero__reading-time">Reading time: 10 minutes</p>
+          </div>
+        </section>
+
+        <!-- Back Link -->
+        <a href="index.html#projects" class="back-link" aria-label="Back to projects">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.5 21L10.5 14L17.5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Case Study Content -->
+        <div class="case-study-content">
+          
+          <!-- User Story Section -->
+          <section class="section" aria-labelledby="user-story-title">
+            <h2 id="user-story-title" class="section__title">User story</h2>
+            <p class="section__text">
+              Leo, 30 years old, started therapy after experiencing episodes of anxiety. Throughout his journey, he realizes he lacks a dedicated space to record insights gained in therapy sessions, or simply the thoughts that arises between sessions. He never kept a diary, so he ends up storing his reflections in disorganized notes on his phone. He also struggles to stay consistent with the exercises prescribed by his therapist because he often forgets or cannot find time in his schedule.<br>
+              How can we help him?
+            </p>
+          </section>
+
+          <!-- Problem Section -->
+          <section class="section" aria-labelledby="problem-title">
+            <h2 id="problem-title" class="section__title">Problem</h2>
+            <p class="section__text">Many people undergoing therapy struggle to stay consistent with prescribed exercises due to busy schedules or forgetfulness. Those unfamiliar with journaling often find it hard to capture insights gained during and between sessions. Additionally, tracking progress throughout the therapy journey can be difficult, and maintaining journaling, insight gathering, and exercise routines after therapy ends is often a challenge.</p>
+            <p class="section__text section__text--bold">How can a journaling app help patients stay consistent with therapy exercises and keep track of the insights gained from therapy sessions?</p>
+          </section>
+
+          <!-- Target Users Section -->
+          <section class="section" aria-labelledby="target-users-title">
+            <h2 id="target-users-title" class="section__title">Target users</h2>
+            <p class="section__text">
+              The app's target users are teenagers and adults <strong>aged 15 to 35</strong> who have <strong>started therapy</strong> and struggle to organize their thoughts and stay consistent with prescribed exercises.
+            </p>
+          </section>
+
+          <!-- Primary Research Section -->
+          <section class="section section--large-gap" aria-labelledby="research-title">
+            <h2 id="research-title" class="section__title">Primary research</h2>
+            
+            <!-- Objectives -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Objectives</h3>
+              <div class="step-list">
+                <div class="step-box step-box--violet">
+                  <p>What does an <strong>ideal journaling experience</strong> look like for users, and which features are essential?</p>
+                </div>
+                <div class="step-box step-box--violet">
+                  <p>What <strong>difficulties</strong> do users face when <strong>keeping a journal</strong>?</p>
+                </div>
+                <div class="step-box step-box--violet">
+                  <p>What <strong>challenges</strong> do they encounter in <strong>staying consistent with therapy exercises</strong>?</p>
+                </div>
+                <div class="step-box step-box--violet">
+                  <p>How do users hold themselves accountable after their therapy ends, and if they don't, what barriers prevent them from doing so?</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Set up -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Set up</h3>
+              <ul class="section__list">
+                <li><strong>Participants</strong>: 20 individuals who are currently undergoing therapy or have completed a therapy journey. 9 of them also keep (or kept) a journal.</li>
+                <li><strong>Type of research</strong>: questionnaire.</li>
+              </ul>
+            </div>
+
+            <!-- Insights -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Insights</h3>
+              <p class="section__text">Since the app is a journaling tool, the questionnaire was designed to gather insights into both the participants' journaling experiences (if any) and their therapy journeys.</p>
+              <div class="step-list">
+                <div class="insight-box">
+                  <p>The theme of "lack of time" emerged repeatedly in participants' responses, cited both as a reason for inconsistency in journaling and as a barrier to keeping a journal altogether.</p>
+                </div>
+                <div class="insight-box">
+                  <p>Eight out of nine respondents reported using paper and pen or pencil for their journaling experiences, rather than digital tools.</p>
+                </div>
+                <div class="insight-box">
+                  <p>Regardless of whether they currently keep a journal, the majority of respondents expressed interest in trying a journaling app in the future. Among those who said they would not use a digital journaling app, three main reasons emerged:</p>
+                  <ul class="insight-box__list">
+                    <li>The screen feels distracting.</li>
+                    <li>They prefer to continue using paper and pen.</li>
+                    <li>Paper and pen create a sense that the session is "just for themselves," turning journaling into a personal ritual that offers a meaningful, private moment.</li>
+                  </ul>
+                </div>
+                <div class="insight-box">
+                  <p>Journaling practices vary among users. While free writing - writing a stream of thoughts, experiences, and insights before or during the session- is the most common method, other practices are also used by participants or have caught their interest.</p>
+                </div>
+                <div class="insight-box">
+                  <p>Only a few respondents write down insights gained from therapy. Interestingly, some participants who do not record these insights still consider the practice important.</p>
+                </div>
+                <div class="insight-box">
+                  <p>The main reasons for not completing therapy exercises are lack of time, motivation, and forgetfulness.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Suggestions -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Suggestions</h3>
+              <div class="step-list">
+                <div class="suggestion-box">
+                  <p><strong>Scheduled reminders</strong>: notify users to complete exercise, record insights or journal at chosen times (e.g., morning or night).</p>
+                </div>
+                <div class="suggestion-box">
+                  <p><strong>Timed sessions</strong>: allow setting short timers (e.g., 5–10 minutes) for time-based exercises and journaling sessions.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p><strong>Distraction-free writing</strong>: block notifications temporarily.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p><strong>Guided journaling sessions</strong>: help overcome blank-page syndrome with prompts and structure.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p><strong>Multimodal expression</strong>: support text, voice, photos and videos.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p><strong>Gamification</strong>: use badges and streaks to motivate habit formation.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p><strong>Easy experience</strong>: minimize friction for seamless use.</p>
+                </div>
+                <div class="suggestion-box">
+                  <p><strong>Offer multiple journaling methods</strong>.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Personas Section -->
+          <section class="section" aria-labelledby="personas-title">
+            <h2 id="personas-title" class="section__title">Personas</h2>
+            
+            <div class="persona-row">
+              <div class="persona-image-wrapper">
+                <img src="/portfolio/images/journeal/Humaaans - Space.png" alt="Illustration of a person who struggles with consistency" class="persona-image" />
+              </div>
+              <p class="persona-text"><strong>Strugglers</strong>: individuals who struggle to stay consistent (with exercises or journaling) due to lack of time and motivation.</p>
+            </div>
+            
+            <div class="persona-row persona-row--reverse">
+              <div class="persona-image-wrapper">
+                <img src="/portfolio/images/journeal/Humaaans - Space copia.png" alt="Illustration of a person new to journaling" class="persona-image" />
+              </div>
+              <p class="persona-text"><strong>Newbies</strong>: individuals who have never journaled, often due to lack of time, motivation, or uncertainty about what to write or where to start.</p>
+            </div>
+            
+            <div class="persona-row">
+              <div class="persona-image-wrapper">
+                <img src="/portfolio/images/journeal/Humaaans - Space copia 2.png" alt="Illustration of a person who doesn't record therapy insights" class="persona-image" />
+              </div>
+              <p class="persona-text"><strong>Non-recorders</strong>: individuals who have never written down their therapy insights but still consider them important.</p>
+            </div>
+          </section>
+
+          <!-- Sitemap Section -->
+          <section class="section" aria-labelledby="sitemap-title">
+            <h2 id="sitemap-title" class="section__title">Sitemap</h2>
+            <div class="figma-embed">
+              <iframe 
+                src="https://embed.figma.com/board/LNIIuyWheC2oZrIGq6YQQw/Journaling-app?node-id=0-1&embed-host=share" 
+                title="Journeal Sitemap - FigJam board"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </section>
+
+          <!-- Lean Branding Section -->
+          <section class="section section--large-gap" aria-labelledby="branding-title">
+            <h2 id="branding-title" class="section__title">Lean branding</h2>
+            
+            <!-- Values -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Values</h3>
+              <div class="values-table">
+                <div class="values-table__column">
+                  <div class="values-table__header values-table__header--green">We are</div>
+                  <div class="values-table__cell">
+                    <ul>
+                      <li>Empathetic</li>
+                      <li>Simple</li>
+                      <li>Inspiring</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="values-table__column">
+                  <div class="values-table__header values-table__header--red">We are not</div>
+                  <div class="values-table__cell">
+                    <ul>
+                      <li>Disorganized</li>
+                      <li>Inefficient</li>
+                      <li>Shortsighted</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Primary Color Palette -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Primary colors palettes</h3>
+              <img src="/portfolio/images/journeal/Journeal-Color palette 1.png" alt="Journeal app primary color palette" class="palette-image" />
+              <img src="/portfolio/images/journeal/Journeal-Color palette 2.png" alt="Journeal app secondary color palette" class="palette-image" />
+            </div>
+          </section>
+
+          <!-- Designs Section -->
+          <section class="section section--large-gap" aria-labelledby="designs-title">
+            <h2 id="designs-title" class="section__title">Designs</h2>
+            <p class="section__text">The finished app will have five sections:</p>
+            <ul class="section__list">
+              <li><strong>Journaling</strong>: dedicated to journaling practices.</li>
+              <li><strong>Therapy</strong>: dedicated to the registration of therapy insights and assigned exercises.</li>
+              <li><strong>Mood</strong>: for mood tracking.</li>
+              <li><strong>Habit</strong>: for habit tracking (keeping track of the good habits one wants to incorporate into their everyday life).</li>
+              <li><strong>Podcast</strong>: for the listening of weekly podcasts about psychology. It is also possible to visualize the content of the podcast i written form.</li>
+            </ul>
+            <p class="section__text">This overview highlights and describes only the first two sections, which are the main focus.</p>
+            
+            <!-- Journaling Section -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Journaling section</h3>
+              
+              <div class="mockup-row">
+                <p class="mockup-row__text">In this section users can <strong>view their past entries</strong> and <strong>create new ones</strong>. They can create different type of entries, and here we cover four of them.</p>
+                <div class="mockup-row__deco-wrapper mockup-row__deco-wrapper--journeal-intro">
+                  <video class="mockup-video mockup-video--phone" autoplay loop muted playsinline>
+                    <source src="/portfolio/images/journeal/Journeal - Add an entry.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text"><strong>Blank page</strong>: exactly like a blank page in a diary, this function allow the user to write freely. The user can also upload audios, images and videos to accompany their text.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-teal">
+                  <div class="deco-rect deco-rect--teal deco-rect--wide" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--three">
+                    <img src="/portfolio/images/journeal/BlankPage - Input.png" alt="Blank page input screen" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/BlankPage - Visualization1.png" alt="Blank page visualization" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/BlankPage - Visualization2.png" alt="Blank page with media" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text"><strong>Words of affirmation</strong>: writing positive, uplifting statement about themselves to promote self-love, confidence and a positive mindset.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-teal">
+                  <div class="deco-rect deco-rect--teal deco-rect--wide" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--three">
+                    <img src="/portfolio/images/journeal/Affirmation - Input1.png" alt="Words of affirmation input screen" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Affirmation - Input2.png" alt="Words of affirmation input continued" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Affirmation - Visualization.png" alt="Words of affirmation visualization" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text"><strong>Gratitude</strong>: writing down the things one is grateful for.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-teal">
+                  <div class="deco-rect deco-rect--teal deco-rect--wide" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--three">
+                    <img src="/portfolio/images/journeal/Gratitude - Input1.png" alt="Gratitude input screen" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Gratitude - Input2.png" alt="Gratitude input continued" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Gratitude - Visualization.png" alt="Gratitude visualization" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text"><strong>Unsent letters</strong>: write letters that are not meant to be sent, in order to process my emotions or achieve emotional closure.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-teal">
+                  <div class="deco-rect deco-rect--teal deco-rect--wide" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--three">
+                    <img src="/portfolio/images/journeal/Letters - Input1.png" alt="Unsent letters input screen" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Letters - Input2.png" alt="Unsent letters input continued" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Letter - Visualization1.png" alt="Unsent letters visualization" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Therapy Section -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Therapy section</h3>
+              
+              <div class="mockup-column">
+                <p class="section__text">In this section, users can view their therapy sessions and assigned exercises for the week. Therapy sessions may be upcoming (scheduled later in the week), planned for the current day, or already completed. After each session, the app will send a notification prompting the user to complete a questionnaire. A button under the appointment details will indicate the questionnaire's status: blocked, available, completed, or not completed.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-violet-large">
+                  <div class="deco-rect deco-rect--violet deco-rect--medium" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--two-by-two">
+                    <img src="/portfolio/images/journeal/Therapy-ThisWeek-Soon.png" alt="Therapy section showing upcoming session" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Therapy-ThisWeek-Today.png" alt="Therapy section showing today's session" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Therapy-LastWeek-Done.png" alt="Therapy section showing completed session" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Therapy-LastWeek-Unregistered.png" alt="Therapy section showing unregistered session" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text">The questionnaire is composed structured in 5 parts. The first section collect information about the users' mood before and after the session.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-violet">
+                  <div class="deco-rect deco-rect--violet deco-rect--wide" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--three">
+                    <img src="/portfolio/images/journeal/Therapy questionnaire - Mood.png" alt="Questionnaire mood before session" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Therapy questionnaire - Mood copia.png" alt="Questionnaire mood selection" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Therapy questionnaire - Mood copia 2.png" alt="Questionnaire mood after session" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mockup-row">
+                <p class="mockup-row__text">The second part aims to collect users' insights about the therapy session.</p>
+                <div class="mockup-row__deco-wrapper">
+                  <img src="/portfolio/images/journeal/Therapy questionnaire - Insights.png" alt="Questionnaire insights screen" class="mockup-image mockup-image--medium" />
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text">Then, the users can add information about the assigned exercises.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-squares">
+                  <div class="deco-rect deco-rect--violet deco-rect--square-sm" aria-hidden="true"></div>
+                  <div class="deco-rect deco-rect--violet-dark deco-rect--square-lg" aria-hidden="true"></div>
+                  <div class="deco-rect deco-rect--violet deco-rect--square-lg deco-rect--right" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--two">
+                    <img src="/portfolio/images/journeal/Therapy questionnaire - Exercises 1.png" alt="Questionnaire exercises input" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Therapy questionnaire - Exercises 2.png" alt="Questionnaire exercises continued" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text">The last two sections are dedicated to users' personal commitments and to the information about the next appointment.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-squares-alt">
+                  <div class="deco-rect deco-rect--violet deco-rect--square-lg" aria-hidden="true"></div>
+                  <div class="deco-rect deco-rect--violet-dark deco-rect--square-lg deco-rect--right" aria-hidden="true"></div>
+                  <div class="deco-rect deco-rect--violet deco-rect--square-sm deco-rect--right-sm" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--two">
+                    <img src="/portfolio/images/journeal/Therapy questionnaire - Personal.png" alt="Questionnaire personal commitments" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/Therapy questionnaire - Next.png" alt="Questionnaire next appointment" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mockup-column">
+                <p class="section__text">If the section are empty, the user can add appointments and exercises by clicking the plus button.</p>
+                <div class="mockup-grid__deco-wrapper mockup-grid__deco-wrapper--journeal-squares">
+                  <div class="deco-rect deco-rect--violet deco-rect--square-sm" aria-hidden="true"></div>
+                  <div class="deco-rect deco-rect--violet-dark deco-rect--square-lg" aria-hidden="true"></div>
+                  <div class="deco-rect deco-rect--violet deco-rect--square-lg deco-rect--right" aria-hidden="true"></div>
+                  <div class="mockup-grid mockup-grid--two">
+                    <img src="/portfolio/images/journeal/Therapy-LastWeek-Empty.png" alt="Empty therapy section" class="mockup-image mockup-image--medium" />
+                    <img src="/portfolio/images/journeal/New exercise.png" alt="Add new exercise screen" class="mockup-image mockup-image--medium" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Testing Section -->
+          <section class="section section--large-gap" aria-labelledby="testing-title">
+            <h2 id="testing-title" class="section__title">Testing</h2>
+            
+            <!-- Methods -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Methods</h3>
+              <p class="section__text">After developing the first prototype is ready, a first round of testing is necessary before the next design iteration. The goal is to identify any major usability issues or pain points encountered in the two main sections.</p>
+            </div>
+
+            <!-- Experimental Design -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Experimental design</h3>
+              <ul class="section__list">
+                <li><strong>Participants</strong>: at this stage, 5 participants are sufficient to gather major insights and highlight major usability issues. Given the nature of the app and the task, they should be individuals who attend therapy.</li>
+                <li><strong>Testing duration</strong>: 1 hour.</li>
+                <li><strong>Instructions</strong>: after answering a few demographic questions, participants will be asked to take a first look at the app and describe what they see and what captures their attention. Next, they will complete three tasks: first, write a journal entry (chosen by the tester) and view it in the designated section; then, answer the app questionnaire typically presented after a therapy session, reflecting on their last appointment; finally, add a therapy exercise. Participants should think aloud throughout the tasks. At the end, participants will be asked to rate their experience for the ease of use and app clarity on a 5 point Likert scale.</li>
+              </ul>
+            </div>
+
+            <!-- Measures -->
+            <div class="subsection">
+              <h3 class="section__subtitle">Measures</h3>
+              <ul class="section__list">
+                <li><strong>Task success rate</strong>: whether participants complete each task successfully without help.</li>
+                <li><strong>Time on task</strong>: how long it takes for participants to complete each task.</li>
+                <li><strong>Error rate and types</strong>: keeping track of user errors or misunderstandings during tasks, such as navigation mistakes, or confusion about UI elements.</li>
+                <li><strong>Think-aloud data</strong>: analysis of participants' verbal comments for pain points, confusion, and feedback.</li>
+                <li><strong>Ease of use and satisfaction</strong>: the ratings given at the end of testing.</li>
+              </ul>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__email">
+            <div class="footer__icon-wrapper">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="footer__icon" aria-hidden="true">
+                <path d="M4.66667 7.00001L14 14.5833L23.3333 7.00001M4.66667 21H23.3333C24.622 21 25.6667 19.9553 25.6667 18.6667V9.33334C25.6667 8.04468 24.622 7.00001 23.3333 7.00001H4.66667C3.378 7.00001 2.33333 8.04468 2.33333 9.33334V18.6667C2.33333 19.9553 3.378 21 4.66667 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="footer__email-text">reb.guerrini@gmail.com</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
