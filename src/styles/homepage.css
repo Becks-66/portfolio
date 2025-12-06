@@ -197,6 +197,20 @@
 }
 
 /* =============================================
+   Homepage - XL Desktop Breakpoint (1920px+)
+   ============================================= */
+@media (min-width: 1920px) {
+  .hero-section__inner {
+    max-width: 1600px;
+    gap: var(--space-lg);
+  }
+
+  .side-frame {
+    width: clamp(480px, 28vw, 640px);
+  }
+}
+
+/* =============================================
    Projects Section
    ============================================= */
 .projects-section {
