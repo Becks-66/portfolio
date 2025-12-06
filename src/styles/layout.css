@@ -162,17 +162,7 @@
   
   /* Footer */
   .footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
     padding: var(--space-sm) var(--space-md);
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-  
-  .footer__container {
-    justify-content: flex-end;
   }
   
   .footer__email-text {

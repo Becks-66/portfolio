@@ -207,7 +207,6 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-md) var(--space-sm);
-  padding-bottom: calc(var(--space-xl) + var(--space-md)); /* Space for fixed footer */
   background-color: var(--color-white);
 }
 
@@ -225,7 +224,6 @@
 @media (min-width: 768px) {
   .projects-section {
     padding: var(--space-md);
-    padding-bottom: calc(var(--space-xl) + var(--space-md));
   }
 }
 
@@ -235,7 +233,6 @@
 @media (min-width: 1024px) {
   .projects-section {
     padding: var(--space-lg);
-    padding-bottom: calc(var(--space-xl) + var(--space-lg));
   }
 }
 
