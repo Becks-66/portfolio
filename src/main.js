@@ -49,6 +49,16 @@ function initPageTransitions() {
   });
 }
 
+// Handle back/forward navigation (bfcache)
+// When navigating back, the page may be restored from cache with transition classes still applied
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    // Page was restored from bfcache (back/forward navigation)
+    document.body.classList.remove('page-transition-out');
+    document.body.classList.add('page-ready');
+  }
+});
+
 // Initialize page transitions as early as possible
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initPageTransitions);
