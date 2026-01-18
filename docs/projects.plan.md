@@ -1,98 +1,139 @@
-# Plan: Create "My Projects" Page for Portfolio
+# Projects Page Redesign Plan
 
-Create a new projects page with white background, no side-frame, and 3 project cards based on the Figma designs for desktop (3-column), tablet (single column 422px cards), and mobile (full-width stacked cards).
+Redesign the Projects page to match the new Figma designs: apply mint gradient card backgrounds, update CTA buttons to green with pill shape, change tag styling to white background, adjust typography per breakpoint, restructure card HTML, and update the Runnable card image.
 
 ## Figma References
 
-- **Desktop (1360px)**: https://www.figma.com/design/qQObtDkLeH7y7bS717KOY7/Portfolio?node-id=13363-164
-- **Tablet (768px)**: https://www.figma.com/design/qQObtDkLeH7y7bS717KOY7/Portfolio?node-id=13424-580
-- **Mobile (390px)**: https://www.figma.com/design/qQObtDkLeH7y7bS717KOY7/Portfolio?node-id=13434-1250
+- **Desktop**: https://www.figma.com/design/TPZHoU2luYjOJ9nW7MEgCU/Portfolio-redesign?node-id=9-2835
+- **Tablet**: https://www.figma.com/design/TPZHoU2luYjOJ9nW7MEgCU/Portfolio-redesign?node-id=9-357
+- **Mobile**: https://www.figma.com/design/TPZHoU2luYjOJ9nW7MEgCU/Portfolio-redesign?node-id=5-75
 
 ## Steps
 
-### 1. Create `projects.html`
-New file with base structure from `index.html`: skip-link, header (with "My projects" as active), main content with `.projects-grid` container holding 3 `.project-card` components, and footer. No `.side-frame`. Add `projects-page` class to body for white background.
+### 1. Add new color tokens in `src/styles/base.css`
 
-### 2. Update `index.html`
-Change the "My projects" link `href` from `#` to `projects.html`.
+Add green button color variables:
+- `--color-secondary-700: #21583A` (View button background)
+- `--color-secondary-800: #083E20` (View button border)
 
-### 3. Add new design tokens to `style.css`
-Add to `:root`:
-- `--color-primary-700: #3D7981`
-- `--color-primary-600: #56929A`
-- `--color-secondary-50: #F3EFF7`
-- `--color-neutral-700: #374151`
-- `--color-neutral-200: #E5E7EB`
-- `--text-xs: 0.75rem` (12px)
+### 2. Update `.btn-cta` styles in `src/styles/components.css`
 
-### 4. Add projects page base styles to `style.css`
-- `.projects-page` (white background)
-- `.projects-page .main-content` (no left margin, centered, max-width 1360px, 40px horizontal padding on desktop)
+- Background: `--color-secondary-700` (#21583A)
+- Border: `1px solid --color-secondary-800` (#083E20)
+- Border-radius: `50px` (pill shape)
+- Padding: `12px 16px` mobile / `12px 20px` tablet/desktop
+- Font size: `14px` mobile / `18px` tablet/desktop
 
-### 5. Add project card component styles to `style.css`
-Mobile-first approach:
-- `.projects-grid`: flex column, 20px gap, full-width, centered
-- `.project-card`: primary-50 background, 16px border-radius, soft shadow, 28px/32px padding, 24px internal gap, flex column
-- `.project-card__tag`: secondary-50 background, 8px border-radius/padding, 12px font, self-aligned right
-- `.project-card__type-title`: 18px semibold
-- `.project-card__type-subtitle`: 16px regular neutral-700
-- `.project-card__image`: 273px height, 16px border-radius, object-fit cover, shadow
-- `.project-card__title`: 18px semibold
-- `.project-card__description`: 16px regular
-- `.project-card__cta`: flex column, right-aligned, 4px gap
+### 3. Update `.project-card` styles in `src/styles/components.css`
 
-### 6. Add CTA button styles to `style.css`
-- `.btn-cta`: primary-700 (#3D7981) background, primary-600 (#56929A) 1px border, white text, 16px/24px font, 16px/12px padding, 4px border-radius
-- `.project-card__reading-time`: 14px neutral-700 text
+- Replace solid `--color-primary-50` background with mint gradient:
+  ```css
+  background: linear-gradient(90deg, rgba(223, 223, 223, 0.3) 0%, rgba(223, 223, 223, 0.3) 100%),
+              linear-gradient(90deg, #F7FFFB 0%, #F7FFFB 100%);
+  ```
+- Box shadow: `0px 0px 3px 0px rgba(112, 172, 180, 0.3)`
 
-### 7. Add tablet breakpoint (768px) for projects page
-In existing `@media (min-width: 768px)`:
-- `.projects-grid`: single column, 20px gap, cards fixed 422px width
-- Header: row layout with logo left, nav right (same as homepage)
-- Footer: centered alignment
+### 4. Update `.project-card__tag` styles in `src/styles/components.css`
 
-### 8. Add desktop breakpoint (1024px+) for projects page
-In existing `@media (min-width: 1024px)` and new `@media (min-width: 1360px)`:
-- `.projects-grid`: flex row, 33px gap, 3 equal-width cards (~431px each)
-- Container: max-width 1360px, 40px horizontal padding
-- Footer: right-aligned with border-top
+- Change background from `--color-secondary-50` to `--color-white`
 
-## Design Tokens from Figma
+### 5. Update `.project-card__image-wrapper img` in `src/styles/components.css`
+
+- Add border: `1px solid #F9FAFB`
+
+### 6. Update card typography in `src/styles/components.css`
+
+Responsive font sizes per breakpoint (see Design Specifications below).
+
+### 7. Update `.projects-grid` in `src/styles/pages.css`
+
+- Large desktop: `justify-content: space-between` with fixed 422px card widths
+- Tablet: Fixed 422px card width, centered
+
+### 8. Restructure HTML in `projects.html`
+
+- Change CTA button text from "View case study" to "View"
+- Move `.project-card__reading-time` from `.project-card__cta` into `.project-card__info` (below description)
+- Update Runnable card image `src` to `/images/Record-Started-1.png`
+
+## Design Specifications
+
+### Layout
+
+| Breakpoint | Layout | Card Width | Alignment |
+|------------|--------|------------|-----------|
+| Mobile | Single column, stacked | 100% (full width) | Stretch |
+| Tablet | Single column, stacked | Fixed 422px | Centered |
+| Desktop | 3-column horizontal row | Fixed 422px | Space-between |
 
 ### Colors
+
 | Token | Value | Usage |
 |-------|-------|-------|
-| Primary/700 | #3D7981 | CTA button background |
-| Primary/600 | #56929A | CTA button border |
-| Primary/50 | #E7F3F5 | Card background |
-| Secondary/400 | #734F88 | Active nav button |
-| Secondary/50 | #F3EFF7 | Tag background |
-| Neutral/900 | #111827 | Primary text |
-| Neutral/700 | #374151 | Secondary text (subtitles, reading time) |
-| Neutral/200 | #E5E7EB | Footer border |
-| White | #FFFFFF | Page background, button text |
+| `--color-secondary-700` | `#21583A` | View button background |
+| `--color-secondary-800` | `#083E20` | View button border |
+| Card gradient base | `#F7FFFB` | Card background |
+| Card gradient overlay | `rgba(223, 223, 223, 0.3)` | Card background overlay |
+| Card shadow | `rgba(112, 172, 180, 0.3)` | Box shadow |
+| Tag background | `#FFFFFF` | Tag pill background |
+| Image border | `#F9FAFB` | Card image border |
 
 ### Typography
-| Style | Font | Size | Weight | Line Height |
-|-------|------|------|--------|-------------|
-| Card Type Title | Poppins | 18px | 600 (SemiBold) | 28px |
-| Card Type Subtitle | Poppins | 16px | 400 (Regular) | 24px |
-| Card Title | Poppins | 18px | 600 (SemiBold) | 28px |
-| Card Description | Poppins | 16px | 400 (Regular) | 24px |
-| Tag | Poppins | 12px | 400 (Regular) | 20px |
-| CTA Button | Poppins | 16px | 500 (Medium) | 24px |
-| Reading Time | Poppins | 14px | 400 (Regular) | 1.45 |
 
-### Layout Specs
-| Breakpoint | Cards Layout | Card Width | Gap | Container Padding |
-|------------|--------------|------------|-----|-------------------|
-| Mobile (<768px) | Single column | 100% | 20px | 20px |
-| Tablet (768px) | Single column | 422px | 20px | 20px |
-| Desktop (1360px+) | 3-column row | ~431px | 33px | 40px |
+| Element | Mobile | Tablet/Desktop |
+|---------|--------|----------------|
+| Type title | 16px / 24px line, semibold | 18px / 28px line, semibold |
+| Type subtitle | 14px / 20px line, regular | 16px / 24px line, regular |
+| Project title | 16px / 24px line, semibold | 18px / 28px line, semibold |
+| Description | 14px / 20px line, regular | 16px / 24px line, regular |
+| Reading time | 12px / 20px line, regular, gray | 14px / 20px line, regular, gray |
+| View button | 14px / 20px line | 18px / 28px line |
 
-### Card Specs
-- Padding: 28px horizontal, 32px vertical
-- Border radius: 16px
-- Shadow: 0px 0px 3px rgba(112, 172, 180, 0.3)
-- Internal gap: 24px
-- Image height: 273px
+### Card Structure (New)
+
+```
+┌─────────────────────────────────────┐
+│                    [Personal project]│  ← Tag (top-right aligned)
+│                                     │
+│  UX Project                         │  ← Type title (semibold)
+│  From scratch                       │  ← Type subtitle (regular)
+│                                     │
+│  ┌─────────────────────────────────┐│
+│  │                                 ││  ← Image (with 1px border)
+│  │         PROJECT IMAGE           ││
+│  │                                 ││
+│  └─────────────────────────────────┘│
+│                                     │
+│  Runnable                           │  ← Project title (semibold)
+│  Building a running app...          │  ← Description (regular)
+│  Reading time: 10 minutes           │  ← Reading time (gray, moved here)
+│                                     │
+│                            [View]   │  ← CTA button (green pill, bottom-right)
+└─────────────────────────────────────┘
+```
+
+### Button Specifications
+
+| Property | Value |
+|----------|-------|
+| Background | `--color-secondary-700` (#21583A) |
+| Border | `1px solid --color-secondary-800` (#083E20) |
+| Border-radius | `50px` (pill shape) |
+| Text color | White |
+| Padding (mobile) | `12px 16px` |
+| Padding (tablet/desktop) | `12px 20px` |
+| Font (mobile) | 14px / 20px line |
+| Font (tablet/desktop) | 18px / 28px line |
+
+### Image Update
+
+- **Runnable card**: Change from current image to `/images/Record-Started-1.png` (map with route tracking UI)
+
+## Files to Modify
+
+| File | Changes |
+|------|---------|
+| `src/styles/base.css` | Add `--color-secondary-700` and `--color-secondary-800` tokens |
+| `src/styles/components.css` | Update `.btn-cta`, `.project-card`, `.project-card__tag`, image border, responsive typography |
+| `src/styles/pages.css` | Update `.projects-grid` layout for tablet/desktop |
+| `projects.html` | Change button text to "View", move reading time, update Runnable image src |

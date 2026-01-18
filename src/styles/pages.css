@@ -59,7 +59,8 @@
   .projects-grid {
     max-width: 1360px;
     flex-direction: row;
-    gap: 33px;
+    justify-content: center;
+    gap: 24px;
     align-items: stretch;
   }
 }
