@@ -64,6 +64,7 @@
 
 .nav-button--active {
   background-color: var(--color-primary-500);
+  border: 1px solid var(--color-primary-600);
   color: var(--color-white);
 }
 
@@ -174,7 +175,12 @@
   }
   
   .footer__container {
+    flex-direction: row-reverse;
     justify-content: space-between;
+  }
+  
+  .footer__icons {
+    justify-content: flex-end;
   }
   
   .footer__icon-link {
