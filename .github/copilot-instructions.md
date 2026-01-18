@@ -16,20 +16,30 @@ This is a **mobile-first responsive portfolio website** for Rebecca Guerrini, a 
 ```
 portfolio/
 ├── index.html              # Homepage
+├── projects.html           # Projects listing page
+├── about.html              # About page
 ├── runnable.html           # Runnable case study page
 ├── journeal.html           # Journeal case study page
+├── busuu.html              # Busuu case study page
 ├── package.json            # Vite dependencies
 ├── docs/                   # Planning documents
 │   ├── homepage.plan.md
 │   ├── projects.plan.md
+│   ├── about.plan.md
 │   ├── runnable.plan.md
-│   └── journeal.plan.md
+│   ├── journeal.plan.md
+│   └── busuu.plan.md
 ├── public/
 │   └── images/             # Static assets
-│       ├── illustration.png
-│       ├── mail-icon.svg
+│       ├── illustration.jpg
+│       ├── arrow-icon.svg
+│       ├── email-icon.svg
+│       ├── insta-icon.svg
+│       ├── linkedin-icon.svg
+│       ├── about_me/       # About page images
 │       ├── runnable/       # Runnable case study assets
-│       └── journeal/       # Journeal case study assets
+│       ├── journeal/       # Journeal case study assets
+│       └── busuu/          # Busuu case study assets
 └── src/
     ├── main.js             # Entry point (imports styles/main.css)
     └── styles/             # Modular CSS architecture
@@ -37,7 +47,8 @@ portfolio/
         ├── base.css        # Design tokens, CSS reset, accessibility (skip link)
         ├── layout.css      # Page wrapper, header, footer + breakpoints
         ├── components.css  # Reusable UI: buttons, project cards
-        ├── homepage.css    # Hero, side-frame, mobile illustration
+        ├── homepage.css    # Hero section styles
+        ├── pages.css       # Projects and About page styles
         └── case-study.css  # All case study components + breakpoints
 ```
 
@@ -55,14 +66,21 @@ portfolio/
 ### Color Tokens
 
 ```css
+/* Background */
+--color-bg-mint: #F7FFFB       /* Mint - homepage background, card backgrounds */
+--color-bg-overlay: rgba(223, 223, 223, 0.3) /* Gradient overlay */
+
 /* Primary */
---color-primary-50: #E7F3F5    /* Light teal - card/page backgrounds */
---color-primary-600: #56929A   /* Medium teal - CTA button border */
---color-primary-700: #3D7981   /* Dark teal - CTA button background */
+--color-primary-50: #E7F3F5    /* Light teal - legacy card backgrounds */
+--color-primary-500: #4B3259   /* Purple - active nav button background */
+--color-primary-600: #321940   /* Dark purple - active nav button border */
+--color-primary-700: #3D7981   /* Dark teal - legacy CTA button */
 
 /* Secondary */
 --color-secondary-50: #F3EFF7  /* Light purple - tag background, step boxes */
---color-secondary-400: #734F88 /* Purple - active nav, focus states, back link hover */
+--color-secondary-400: #734F88 /* Purple - focus states, back link hover */
+--color-secondary-700: #21583A /* Green - View button background */
+--color-secondary-800: #083E20 /* Dark green - View button border */
 
 /* Neutral */
 --color-neutral-100: #F3F4F6   /* Light gray - suggestion boxes */
@@ -70,6 +88,7 @@ portfolio/
 --color-neutral-400: #9CA3AF   /* Gray - insight box borders */
 --color-neutral-500: #6B7280   /* Darker gray - insight box border variant */
 --color-neutral-700: #374151   /* Dark gray - secondary text */
+--color-neutral-800: #1F2937   /* Darker gray - nav text */
 --color-neutral-900: #111827   /* Near black - primary text */
 
 /* Accent */
@@ -117,19 +136,47 @@ This project prioritizes accessibility:
 
 ## Component Patterns
 
-### Navigation Buttons
+### Navigation
 
+- 3 nav items: Home, Projects, About
 - Default state: white background
-- Active state: `--color-secondary-400` (#734F88) background, white text
+- Active state: `--color-primary-500` (#4B3259) background with `--color-primary-600` border, white text
 - Hover state: light purple tint (`--color-secondary-50`)
 - Must include focus-visible outline
+- Typography scales per breakpoint (14px mobile, 16px tablet, 18px desktop)
 
-### CTA Buttons
+### Footer
 
-- Background: `--color-primary-700`
-- Border: 1px solid `--color-primary-600`
-- Text: white, Poppins Medium 16px
-- Padding: 16px horizontal, 12px vertical
+- Contains 3 social icon links: Instagram, Mail, LinkedIn
+- Icon sizes: 24px mobile, 28px tablet/desktop
+- Icon gap: 40px mobile, 60px tablet/desktop
+- Footer text "Other works and contacts" visible on tablet+ only
+- Links:
+  - Instagram: `https://www.instagram.com/reb_fa_cose/`
+  - Mail: `mailto:reb.guerrini@gmail.com`
+  - LinkedIn: `https://www.linkedin.com/in/rebecca-guerrini-53b9401b7`
+
+### CTA Buttons (View Button)
+
+- Background: `--color-secondary-700` (#21583A)
+- Border: 1px solid `--color-secondary-800` (#083E20)
+- Border-radius: 50px (pill shape)
+- Text: white
+- Padding: 12px 16px mobile, 12px 20px tablet/desktop
+- Font size: 14px mobile, 18px tablet/desktop
+
+### Project Cards
+
+- Background: mint gradient with overlay
+  ```css
+  background: linear-gradient(90deg, rgba(223, 223, 223, 0.3), rgba(223, 223, 223, 0.3)),
+              linear-gradient(90deg, #F7FFFB, #F7FFFB);
+  ```
+- Box shadow: `0px 0px 3px rgba(112, 172, 180, 0.3)`
+- Tag: white background (changed from purple)
+- Image: 1px border `#F9FAFB`
+- Reading time moved below description (not in CTA area)
+- Layout: Fixed 422px width on tablet/desktop, full-width on mobile
 
 ### Case Study Components (runnable.html)
 
@@ -192,8 +239,9 @@ The CSS is split into focused modules in `src/styles/`. Import order is managed 
 1. **`base.css`** — Design tokens (`:root` custom properties), CSS reset, reduced motion, skip link
 2. **`layout.css`** — `.page-wrapper`, `.header`, `.nav-button`, `.footer` + tablet/desktop breakpoints
 3. **`components.css`** — `.btn-cta`, `.project-card` and all card elements + breakpoints
-4. **`homepage.css`** — `.main-content`, `.hero`, `.side-frame`, `.mobile-illustration` + breakpoints
-5. **`case-study.css`** — All case study components (hero, sections, boxes, personas, tables, mockups, decorative circles/rectangles) + all breakpoints
+4. **`homepage.css`** — `.main-content`, `.hero`, `.hero__image`, `.hero__text` + breakpoints
+5. **`pages.css`** — `.projects-page`, `.projects-grid`, `.about-page`, `.about-content` + breakpoints
+6. **`case-study.css`** — All case study components (hero, sections, boxes, personas, tables, mockups, decorative circles/rectangles) + all breakpoints
 
 ### Organization Principles
 
@@ -233,62 +281,64 @@ Uses BEM-like naming:
 
 ### Homepage (index.html)
 
-- Features side-frame illustration panel (tablet/desktop only)
-- Side frame: sticky, appears on left side with soft shadow
-- Content area: centered with max-width constraints
-- Footer includes email with mail icon
+- Mint gradient background: `linear-gradient(90deg, var(--color-bg-overlay), var(--color-bg-overlay)), var(--color-bg-mint)`
+- `.homepage` class on body
+- Hero layout:
+  - Desktop: horizontal flex (image left 491×553px, text right, 60px gap)
+  - Tablet/Mobile: centered vertical stack
+- Hero image: `border-radius: 0 0 50px 50px`, 95% opacity
+- No side-frame panel (removed in redesign)
+- Header outside hero section as direct child of `.page-wrapper`
 
-### Case Study Page (runnable.html)
+### Projects Page (projects.html)
+
+- White/neutral background
+- `.projects-page` class on body
+- 3 project cards: Runnable, Journeal, Busuu
+- Grid layout:
+  - Mobile: single column stacked, full-width cards
+  - Tablet: single column, fixed 422px card width, centered
+  - Desktop: 3-column row, fixed 422px card width, space-between
+- Cards use mint gradient background with box shadow
+
+### About Page (about.html)
+
+- Mint gradient background (same as homepage)
+- `.about-page` class on body
+- Biographical content with 5 images in rounded shapes
+- Layout: alternating rows of text and image pairs
+- Images have unique border-radius variations (50px corners)
+- Contains Instagram link to `@reb_fa_cose`
+
+### Case Study Pages (runnable.html, journeal.html, busuu.html)
 
 - White background with 80px horizontal padding (desktop)
 - `.case-study-page` class on body
 - Structure: header → hero card → back link → content sections → footer
-- Hero card: horizontal flex with image left, info right
+
+#### Hero Card
+- Background: mint gradient with overlay (same as project cards)
+- Box shadow: `0px 0px 3px rgba(112, 172, 180, 0.3)`
+- Layout:
+  - Mobile: column (image on top, 100% width)
+  - Tablet+: row (image left 366×273px fixed, info right, 40px gap)
+- Padding: 28px × 32px, border-radius: 16px
 - Content: 640px centered container with 80px vertical section gaps
 - Sections include: User Story, Problem, Target Users, Customer Journey, Primary Research, Personas, Competitor Analysis, Sitemaps, Lean Branding, Designs, Testing
 - Uses `<strong>` tags for inline bold text emphasis
 - Tables use horizontal scroll wrapper for wide content
 - Mockup images have fixed widths with auto height
+- Back link: arrow-icon.svg with text, no hover state
+
+#### Runnable Specifics
 - Uses `.deco-circle` decorative elements behind mockups
 
-### Case Study Page (journeal.html)
-
-- Same structure as runnable.html
+#### Journeal Specifics
 - Sections include: User Story, Problem, Target Users, Primary Research, Personas, Sitemap, Lean Branding, Designs, Testing
 - Designs section has two subsections: Journaling and Therapy
 - Uses `.deco-rect` decorative rectangles (teal for Journaling, violet squares for Therapy)
 - Includes one video mockup in Journaling section intro
 - Two palette images in Lean Branding section
-
-## Assets
-
-Images are stored in `public/images/`:
-- `illustration.png` - Portrait illustration for homepage side frame
-- `mail-icon.svg` - Email icon for footer
-- Project card images
-
-### Runnable Case Study Images (`public/images/runnable/`)
-- `Register-New route.png` - Hero card image + Registration section
-- `Register-New route-Type of road copia.png` - Registration section
-- `Home.png` - Homescreen mockup
-- `Community-Groups.png` - Community groups mockup
-- `Community-Your Feed.png` - Community feed mockup
-- `Activity - Past Runs - Detaills.png` - Activity details mockup
-- `Palette.png` - Color palette image (529px width)
-- `Humaaans - Standing copia.png` - Newbies persona
-- `Humaaans - Standing 1.png` - Experienced runners persona
-- `Humaaans - Standing.png` - Solitary runners persona
-- `Humaaans - Standing copia 2.png` - Explorers persona
-
-### Journeal Case Study Images (`public/images/journeal/`)
-- `BlankPage - Visualization1.png` - Hero card image
-- `Journeal - Add an entry.mp4` - Video for Journaling section intro
-- `Humaaans - Space.png` - Strugglers persona
-- `Humaaans - Space copia.png` - Newbies persona
-- `Humaaans - Space copia 2.png` - Non-recorders persona
-- `Journeal-Color palette 1.png` - Primary color palette
-- `Journeal-Color palette 2.png` - Secondary color palette
-- Various mockup images for Journaling and Therapy sections
 
 ## Development Commands
 

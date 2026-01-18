@@ -165,20 +165,20 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: var(--space-sm);
+    gap: var(--space-lg);
     padding: 0 var(--space-xl);
   }
 
   .hero-content {
     flex: 1;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
     gap: var(--space-lg);
   }
 
-  /* Desktop Illustration */
+  /* Desktop Illustration - slightly narrower for better balance */
   .mobile-illustration {
-    width: 491px;
+    width: 440px;
     height: 553px;
     flex-shrink: 0;
   }
