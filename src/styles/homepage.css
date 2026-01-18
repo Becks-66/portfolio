@@ -2,39 +2,47 @@
    Homepage Body Background
    ============================================= */
 .homepage {
-  background-color: var(--color-white);
+  background: 
+    linear-gradient(90deg, var(--color-bg-overlay) 0%, var(--color-bg-overlay) 100%),
+    linear-gradient(90deg, var(--color-bg-mint) 0%, var(--color-bg-mint) 100%);
 }
 
-/* =============================================
-   Side Frame (Desktop/Tablet Only)
-   ============================================= */
-.side-frame {
-  display: none;
+/* Homepage page wrapper - full height flex layout */
+.homepage .page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-sm);
+  padding-bottom: 0;
 }
 
 /* =============================================
    Hero Section
    ============================================= */
 .hero-section {
-  min-height: 100vh;
-  background-color: var(--color-primary-50);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .hero-section__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding: var(--space-sm);
-  padding-top: calc(var(--space-lg) + var(--space-sm));
   gap: var(--space-md);
+  width: 100%;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 28px;
+  text-align: center;
+  width: 100%;
 }
 
 /* =============================================
@@ -46,20 +54,20 @@
   flex-direction: column;
 }
 
-/* Hero Section */
+/* Hero Text Section */
 .hero {
   max-width: 262px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 28px;
 }
 
 .hero__title {
   font-family: var(--font-body);
-  font-size: var(--text-xl);
+  font-size: 24px;
   font-weight: 600;
-  line-height: var(--leading-tight);
+  line-height: 32px;
   letter-spacing: -0.196px;
   color: var(--color-neutral-900);
 }
@@ -68,96 +76,74 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  font-size: var(--text-base);
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.hero__description a {
+  color: var(--color-neutral-900);
 }
 
 /* Mobile Illustration */
 .mobile-illustration {
   display: block;
-  width: 240px;
-  height: 300px;
+  width: 200px;
+  height: 318px;
+  opacity: 0.95;
 }
 
 .mobile-illustration__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-soft);
-  background-color: var(--color-white)
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 /* =============================================
    Homepage - Tablet Breakpoint (768px)
    ============================================= */
 @media (min-width: 768px) {
+  /* Page wrapper adjustments */
+  .homepage .page-wrapper {
+    padding-top: var(--space-sm);
+    gap: var(--space-xl);
+  }
+  
   /* Hero Section */
+  .hero-section {
+    gap: var(--space-xl);
+  }
+  
   .hero-section__inner {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: var(--space-md);
-    padding-top: calc(var(--space-xl) + var(--space-md));
     gap: var(--space-md);
   }
 
   .hero-content {
-    align-items: flex-start;
+    gap: var(--space-md);
   }
 
-  /* Side Frame */
-  .side-frame {
-    display: block;
-    flex-shrink: 0;
-    width: 410px;
-    height: auto;
-    min-height: 500px;
-    background-color: var(--color-white);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;
+  /* Mobile Illustration - larger on tablet */
+  .mobile-illustration {
+    width: 308px;
+    height: 349px;
   }
   
-  .side-frame__inner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-sm);
-  }
-  
-  .side-frame__image {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-  }
-  
-  /* Main Content */
-  .main-content {
-    /* No margin-left needed since side-frame is in hero-section */
-  }
-  
+  /* Hero text */
   .hero {
-    text-align: left;
+    text-align: center;
     gap: var(--space-md);
-    max-width: 500px;
+    max-width: 308px;
   }
   
   .hero__title {
-    font-size: var(--text-2xl);
-    line-height: 36px;
+    font-size: 32px;
+    line-height: 40px;
   }
   
   .hero__description {
-    font-size: var(--text-lg);
-    line-height: 1.75;
-  }
-  
-  /* Hide mobile illustration */
-  .mobile-illustration {
-    display: none;
+    font-size: 16px;
+    line-height: 24px;
+    gap: 32px;
   }
 }
 
@@ -165,24 +151,52 @@
    Homepage - Desktop Breakpoint (1024px)
    ============================================= */
 @media (min-width: 1024px) {
-  /* Hero Section */
-  .hero-section__inner {
-    padding: var(--space-lg);
-    padding-top: calc(var(--space-xl) + var(--space-lg));
-  }
-
-  /* Side Frame */
-  .side-frame {
-    width: 480px;
+  /* Page wrapper adjustments */
+  .homepage .page-wrapper {
+    justify-content: space-between;
   }
   
-  .side-frame__inner {
-    padding: var(--space-md);
+  /* Hero Section */
+  .hero-section {
+    gap: 120px;
+  }
+  
+  .hero-section__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0 var(--space-xl);
+  }
+
+  .hero-content {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--space-lg);
+  }
+
+  /* Desktop Illustration */
+  .mobile-illustration {
+    width: 491px;
+    height: 553px;
+    flex-shrink: 0;
   }
   
   .hero {
-    max-width: 500px;
-    gap: var(--space-md);
+    text-align: left;
+    max-width: 471px;
+    gap: var(--space-lg);
+  }
+  
+  .hero__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  
+  .hero__description {
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
@@ -193,72 +207,6 @@
   .hero-section__inner {
     max-width: 1360px;
     margin: 0 auto;
-  }
-}
-
-/* =============================================
-   Homepage - XL Desktop Breakpoint (1920px+)
-   ============================================= */
-@media (min-width: 1920px) {
-  .hero-section__inner {
-    max-width: 1600px;
-    gap: var(--space-lg);
-  }
-
-  .side-frame {
-    width: clamp(480px, 28vw, 640px);
-  }
-}
-
-/* =============================================
-   Projects Section
-   ============================================= */
-.projects-section {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-md) var(--space-sm);
-  background-color: var(--color-white);
-}
-
-.projects-section .projects-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  width: 100%;
-}
-
-/* =============================================
-   Projects Section - Tablet Breakpoint (768px)
-   ============================================= */
-@media (min-width: 768px) {
-  .projects-section {
-    padding: var(--space-md);
-  }
-}
-
-/* =============================================
-   Projects Section - Desktop Breakpoint (1024px)
-   ============================================= */
-@media (min-width: 1024px) {
-  .projects-section {
-    padding: var(--space-lg);
-  }
-}
-
-/* =============================================
-   Projects Section - Large Desktop Breakpoint (1360px+)
-   ============================================= */
-@media (min-width: 1360px) {
-  .projects-section .projects-grid {
-    max-width: 1360px;
-    flex-direction: row;
-    gap: 33px;
-    align-items: stretch;
   }
 }
 

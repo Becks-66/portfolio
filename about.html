@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About Rebecca Guerrini - UX Designer with a foundation in Psychology, based in Zurich" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <title>About | Rebecca Guerrini</title>
+    
+    <!-- Prevent FOUC: hide body until CSS loads -->
+    <style>
+      body:not(.page-ready) { opacity: 0; }
+      @media (prefers-reduced-motion: reduce) { body { opacity: 1 !important; } }
+    </style>
+  </head>
+  <body class="about-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="page-wrapper">
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <p class="header__logo">REBECCA GUERRINI</p>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="projects.html" class="nav-button">Projects</a>
+            <a href="about.html" class="nav-button nav-button--active" aria-current="page">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="main-content" role="main">
+        <section class="about-section" aria-labelledby="about-heading">
+          <h1 id="about-heading">About Me</h1>
+          <p>Content coming soon...</p>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <span class="footer__text">Other works and contacts</span>
+          <div class="footer__icons">
+            <a href="https://www.instagram.com/reb_fa_cose/" class="footer__icon-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="/images/insta-icon.svg" 
+                alt="" 
+                aria-hidden="true" 
+                class="footer__icon"
+              />
+            </a>
+            <a href="mailto:reb.guerrini@gmail.com" class="footer__icon-link" aria-label="Email">
+              <img 
+                src="/images/email-icon.svg" 
+                alt="" 
+                aria-hidden="true" 
+                class="footer__icon"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/rebecca-guerrini-53b9401b7" class="footer__icon-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="/images/linkedin-icon.svg" 
+                alt="" 
+                aria-hidden="true" 
+                class="footer__icon"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

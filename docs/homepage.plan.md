@@ -1,32 +1,114 @@
-## Plan: Mobile-First Responsive Portfolio Homepage
+# Homepage Redesign Plan
 
-Implement Rebecca Guerrini's accessible portfolio homepage with mobile-first CSS across three breakpoints (mobile, tablet 768px, desktop 1024px). Pure HTML/CSS with hover states, descriptive alt texts, skip link, and focus-visible styles.
+Redesign the homepage to match the new Figma designs: update background to mint gradient (homepage only), restructure header with 3-nav items (moved outside hero), replace footer with social icons, update hero content/layout, and create separate Projects and About pages.
 
-### Steps
+## Figma References
 
-1. **Download assets to `public/images/`** — Create `images/` folder, save portrait illustration as `drawing.png` from [Figma asset](https://www.figma.com/api/mcp/asset/9911f748-8cb9-427b-85c6-528d98ac6d7a) and mail icon as `mail-icon.svg` from [Figma asset](https://www.figma.com/api/mcp/asset/2ce3d728-f846-4afb-aa54-8c18d054456d).
+- **Desktop**: https://www.figma.com/design/TPZHoU2luYjOJ9nW7MEgCU/Portfolio-redesign?node-id=9-2793
+- **Tablet**: https://www.figma.com/design/TPZHoU2luYjOJ9nW7MEgCU/Portfolio-redesign?node-id=9-346
+- **Mobile**: https://www.figma.com/design/TPZHoU2luYjOJ9nW7MEgCU/Portfolio-redesign?node-id=5-57
 
-2. **Set up [index.html](portfolio/index.html)** — Replace Vite boilerplate with accessible semantic structure:
-   - `<html lang="en">`, viewport meta, Google Fonts link (Poppins 400/500/600, Montserrat 400)
-   - Skip-to-content link (`<a href="#main-content" class="skip-link">`)
-   - `<header>`: Logo + `<nav aria-label="Main navigation">` with Home (active) and My projects (`href="#"`) buttons
-   - `<main id="main-content">`: h1 greeting + bio paragraphs + illustration `<img alt="Illustrated portrait of Rebecca Guerrini">`
-   - `<footer>`: Mail icon + email as plain text with `aria-label`
+## Steps
 
-3. **Create CSS custom properties in [style.css](portfolio/src/style.css)** — Define `:root` tokens for colors (`--primary-50: #E7F3F5`, `--neutral-900: #111827`, `--secondary-400: #734F88`, `--white: #FFFFFF`), spacing, shadow, border-radius, and focus ring.
+### 1. Update CSS tokens in `src/styles/base.css`
 
-4. **Style mobile base (default) in [style.css](portfolio/src/style.css)** — Vertical flex layout:
-   - Skip link: visually hidden until focused
-   - Header: centered logo (24px Montserrat), nav buttons below (16px Poppins Medium)
-   - Content: 262px max-width, centered text, 40px gaps, h1 24px, paragraphs 16px
-   - Illustration: 200×250px, 16px border-radius, soft shadow
-   - Footer: centered, 14px email text
-   - `:focus-visible` styles and `prefers-reduced-motion` support
+Add new color variables:
+- `--color-bg-mint: #F7FFFB`
+- `--color-bg-overlay: rgba(223, 223, 223, 0.3)`
+- `--color-primary-500: #4B3259`
+- `--color-primary-600: #321940`
 
-5. **Add tablet breakpoint (min-width: 768px)** — Side panel layout with illustration on left (410px), header horizontal (logo left, nav right), content positioned right with left-aligned text, 80px gaps, larger typography (h1 28px, paragraphs 18px).
+### 2. Restructure header in `src/styles/layout.css`
 
-6. **Add desktop breakpoint (min-width: 1024px)** — Full layout with 1360px container, 480px side panel with right-only 50px border-radius, 628px content width, 60px gaps.
+- Update for new structure (header as direct child of `.page-wrapper`)
+- Add styles for 3 nav items (Home, Projects, About)
+- Update `.nav-button--active` to solid purple background (`#4B3259`) with white text
+- Adjust typography per breakpoint:
+  - Mobile: 14px nav text, 20px logo
+  - Tablet: 16px nav text, 28px logo
+  - Desktop: 18px nav text, 32px logo
 
-7. **Add button hover/focus states** — Default buttons get light purple tint on hover; active button darkens slightly; `transition: background-color 0.2s ease` respecting reduced-motion.
+### 3. Redesign footer in `src/styles/layout.css`
 
-8. **Clean up boilerplate** — In [main.js](portfolio/src/main.js) keep only `import './style.css'`, delete [counter.js](portfolio/src/counter.js), remove `javascript.svg` and `vite.svg`.
+- Replace `.footer__email` with `.footer__icons` containing 3 linked icons
+- Add `.footer__text` "Other works and contacts" (visible on tablet/desktop only)
+- Icon sizes: 24px mobile / 28px desktop
+- Icon gap: 40px mobile / 60px desktop
+- Links:
+  - Instagram: `https://www.instagram.com/reb_fa_cose/`
+  - Mail: `mailto:reb.guerrini@gmail.com`
+  - LinkedIn: `https://www.linkedin.com/in/rebecca-guerrini-53b9401b7`
+
+### 4. Update hero styles in `src/styles/homepage.css`
+
+- Remove `.side-frame` styles entirely
+- Apply mint gradient background to `.homepage` body class
+- Update hero layout:
+  - Desktop: horizontal flex (image left 491×553px, text right, 60px gap)
+  - Tablet/Mobile: centered vertical stack
+- Image styling: `border-radius: 0 0 50px 50px` with 95% opacity
+
+### 5. Update `index.html`
+
+- Move `<header>` outside `.hero-section` as direct child of `.page-wrapper`
+- Remove entire `#projects` section
+- Update hero text:
+  - Underline "Applied Cognitive Psychology"
+  - Bold "UX Designer" and "Zurich"
+- Change image src to `/images/illustration.jpg`
+- Replace footer with 3 icon links
+- Update nav hrefs to `index.html`, `projects.html`, `about.html`
+
+### 6. Create `projects.html`
+
+- New page with header (Projects nav active)
+- Contains the 3 project cards (Runnable, Journeal, Busuu) in `.projects-grid`
+- Same footer structure
+- White/neutral background
+
+### 7. Create `about.html`
+
+- New empty page with header (About nav active)
+- Empty `<main>` with placeholder text
+- Same footer structure
+- White/neutral background
+
+## Design Specifications
+
+### Colors (from Figma)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-bg-mint` | `#F7FFFB` | Homepage background |
+| `--color-bg-overlay` | `rgba(223, 223, 223, 0.3)` | Background gradient overlay |
+| `--color-primary-500` | `#4B3259` | Active nav button background |
+| `--color-primary-600` | `#321940` | Active nav button (darker variant) |
+| `--color-neutral-800` | `#1F2937` | Nav text color |
+| `--color-neutral-900` | `#111827` | Headings, body text |
+
+### Typography (from Figma)
+
+| Element | Mobile | Tablet | Desktop |
+|---------|--------|--------|---------|
+| Logo | 20px / 28px line | 28px / 36px line | 32px / 40px line |
+| Nav buttons | 14px / 20px line | 16px / 24px line | 18px / 28px line |
+| Heading (H1) | 24px / 32px line | 32px / 40px line | 40px / 48px line |
+| Body text | 14px / ~20px line | 16px / 24px line | 18px / 28px line |
+
+### Spacing
+
+| Breakpoint | Page padding | Content gap | Section gap |
+|------------|--------------|-------------|-------------|
+| Mobile | 20px | 40px | 40px |
+| Tablet | 20px | 80px | 80px |
+| Desktop | 20px (content), 80px (hero sides) | 120px | 20px |
+
+### Image Specifications
+
+| Breakpoint | Width | Height | Border radius |
+|------------|-------|--------|---------------|
+| Mobile | 200px | 318px | 0 0 50px 50px |
+| Tablet | 308px | 349px | 0 0 50px 50px |
+| Desktop | 491px | 553px | 0 0 50px 50px |
+
+All images have `opacity: 0.95`.

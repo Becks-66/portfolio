@@ -14,4 +14,5 @@
 
 /* Page-specific styles */
 @import './homepage.css';
+@import './pages.css';
 @import './case-study.css';

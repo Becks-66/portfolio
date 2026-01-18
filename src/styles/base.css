@@ -5,7 +5,8 @@
   /* Colors */
   --color-primary-50: #e7f3f5;
   --color-primary-100: #d0e8eb;
-  --color-primary-600: #56929a;
+  --color-primary-500: #4B3259;
+  --color-primary-600: #321940;
   --color-primary-700: #3d7981;
   --color-green-50: #d6e8d8;
   --color-green-100: #e7f8e9;
@@ -16,11 +17,14 @@
   --color-neutral-400: #9ca3af;
   --color-neutral-500: #6b7280;
   --color-neutral-700: #374151;
+  --color-neutral-800: #1F2937;
   --color-neutral-900: #111827;
   --color-secondary-400: #734f88;
   --color-secondary-hover: #5f4170;
   --color-destructive-100: #fee2e2;
   --color-white: #ffffff;
+  --color-bg-mint: #F7FFFB;
+  --color-bg-overlay: rgba(223, 223, 223, 0.3);
   
   /* Typography - Font Families */
   --font-heading: 'Montserrat', sans-serif;
@@ -97,7 +101,7 @@ body {
   font-weight: 400;
   line-height: var(--leading-normal);
   color: var(--color-neutral-900);
-  background-color: var(--color-primary-50);
+  background-color: var(--color-white);
   min-height: 100vh;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
