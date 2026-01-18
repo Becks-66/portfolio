@@ -87,6 +87,7 @@
   line-height: 1.43; /* ~20px */
   color: var(--color-neutral-700);
   margin: 0;
+  text-align: right;
 }
 
 .project-card__image-wrapper {

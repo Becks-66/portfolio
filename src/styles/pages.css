@@ -179,6 +179,17 @@
   font-weight: 600;
 }
 
+/* Closing statement - centered at bottom */
+.about-closing {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--color-neutral-900);
+  text-align: center;
+  width: 100%;
+}
+
 /* =============================================
    About Page - Tablet Breakpoint (768px)
    ============================================= */
@@ -192,47 +203,36 @@
     flex-direction: row;
     justify-content: center;
     gap: var(--space-md);
-    align-items: stretch;
+    align-items: center;
   }
 
   .about-row--reverse {
     flex-direction: row-reverse;
   }
 
-  .about-row--center {
-    align-items: center;
-  }
-
   .about-text {
-    flex: 1;
-    max-width: none;
+    flex: 0 0 auto;
+    width: 440px;
   }
 
   .about-text p {
     font-size: var(--text-base);
     line-height: 24px;
-    max-width: none;
+    max-width: 440px;
   }
 
-  .about-text--narrow p {
-    max-width: 307px;
-  }
-
-  /* Image pair stretches to match text height */
+  /* Image pair keeps vertical center alignment */
   .about-image-pair {
-    align-items: stretch;
+    align-items: center;
+    flex-shrink: 0;
   }
 
   .about-image-pair--end {
     align-items: flex-end;
   }
 
-  .about-image--left-pair,
-  .about-image--right-pair,
-  .about-image--left-pair-alt,
-  .about-image--right-pair-alt {
-    height: auto;
-    min-height: 200px;
+  .about-closing {
+    font-size: var(--text-base);
   }
 }
 
@@ -241,21 +241,9 @@
    ============================================= */
 @media (min-width: 1024px) {
   .about-content {
-    max-width: 1032px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: var(--space-sm) var(--space-sm) var(--space-md);
-  }
-
-  .about-row {
-    width: 100%;
-  }
-
-  .about-text p {
-    max-width: 440px;
-  }
-
-  .about-text--narrow p {
-    max-width: 440px;
+    padding: var(--space-md) var(--space-sm);
   }
 
   .about-image--left-pair {
