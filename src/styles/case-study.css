@@ -1071,7 +1071,6 @@
 .case-study-page .footer {
   position: static;
   width: 100%;
-  border-top: 1px solid var(--color-neutral-200);
   padding: var(--space-sm);
 }
 
@@ -1252,12 +1251,11 @@
   .case-study-page .footer {
     position: static;
     width: 100%;
-    border-top: 1px solid var(--color-neutral-200);
     padding: var(--space-sm) 28px;
   }
   
   .case-study-page .footer__container {
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 }
 
@@ -1297,7 +1295,6 @@
     left: auto;
     width: auto;
     background-color: var(--color-white);
-    border-top: 1px solid var(--color-neutral-200);
     padding: var(--space-sm) var(--space-lg);
     z-index: 100;
   }
@@ -1306,7 +1303,6 @@
   .case-study-page .footer.footer--at-bottom {
     position: relative;
     width: 100%;
-    border-top: 1px solid var(--color-neutral-200);
     padding: var(--space-sm) var(--space-lg);
   }
 }
