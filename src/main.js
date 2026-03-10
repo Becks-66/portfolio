@@ -117,11 +117,39 @@ if (document.readyState === 'loading') {
 }
 
 // =============================================
+// Header Scroll Behavior (homepage & about page)
+// =============================================
+function initHeaderScroll() {
+  const header = document.querySelector('.header');
+  const isHomepage = document.body.classList.contains('homepage');
+  const isAboutPage = document.body.classList.contains('about-page');
+
+  if (!header || (!isHomepage && !isAboutPage)) return;
+
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      header.classList.add('header--scrolled');
+    } else {
+      header.classList.remove('header--scrolled');
+    }
+  }
+
+  handleScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHeaderScroll);
+} else {
+  initHeaderScroll();
+}
+
+// =============================================
 // Homepage Navigation Active State on Scroll
 // =============================================
 function initHomepageNavigation() {
   const projectsSection = document.getElementById('projects');
-  const homeButton = document.querySelector('.nav-button[href="#main-content"]');
+  const homeButton = document.querySelector('.nav-button[href="index.html"]');
   const projectsButton = document.querySelector('.nav-button[href="#projects"]');
   
   // Only run on homepage where these elements exist

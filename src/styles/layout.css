@@ -13,6 +13,17 @@
 .header {
   padding: 12px;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: transparent;
+  transition: background-color var(--transition-fast), backdrop-filter var(--transition-fast);
+}
+
+.homepage .header--scrolled,
+.about-page .header--scrolled {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .header__container {
@@ -135,7 +146,6 @@
   /* Page Layout */
   .page-wrapper {
     position: relative;
-    overflow: hidden;
   }
   
   /* Header */
@@ -170,30 +180,23 @@
   }
   
   /* Footer */
-  .footer {
-    justify-content: space-between;
-  }
-  
+  .footer,
   .footer__container {
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
   }
-  
+
   .footer__icons {
-    justify-content: flex-end;
+    justify-content: center;
+    gap: var(--space-lg);
   }
-  
+
   .footer__icon-link {
     width: 28px;
     height: 28px;
   }
-  
-  .footer__icons {
-    gap: var(--space-lg);
-  }
-  
+
   .footer__text {
-    display: block;
+    display: none;
   }
 }
 

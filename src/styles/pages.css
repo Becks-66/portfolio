@@ -57,11 +57,9 @@
    ============================================= */
 @media (min-width: 1360px) {
   .projects-grid {
-    max-width: 1360px;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    align-items: stretch;
   }
 }
 
