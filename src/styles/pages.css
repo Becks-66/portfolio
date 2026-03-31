@@ -1,8 +1,6 @@
 /* =============================================
    Projects Page Styles
    ============================================= */
-
-/* Projects Page Background */
 .projects-page {
   background-color: var(--color-white);
 }
@@ -13,9 +11,12 @@
   flex-direction: column;
 }
 
-/* =============================================
-   Projects Section
-   ============================================= */
+.projects-page .main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .projects-section {
   flex: 1;
   width: 100%;
@@ -34,238 +35,22 @@
   width: 100%;
 }
 
-/* =============================================
-   Projects Section - Tablet Breakpoint (768px)
-   ============================================= */
 @media (min-width: 768px) {
   .projects-section {
     padding: var(--space-md);
   }
 }
 
-/* =============================================
-   Projects Section - Desktop Breakpoint (1024px)
-   ============================================= */
 @media (min-width: 1024px) {
   .projects-section {
     padding: var(--space-lg);
   }
 }
 
-/* =============================================
-   Projects Section - Large Desktop Breakpoint (1360px+)
-   ============================================= */
 @media (min-width: 1360px) {
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-  }
-}
-
-/* =============================================
-   About Page Styles
-   ============================================= */
-.about-page {
-  background: linear-gradient(90deg, var(--color-bg-overlay), var(--color-bg-overlay)), var(--color-bg-mint);
-}
-
-.about-page .page-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* About Content Container */
-.about-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  padding: var(--space-sm);
-  width: 100%;
-}
-
-/* About Row - alternating text/images */
-.about-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
-  width: 100%;
-}
-
-/* About Text Blocks */
-.about-text {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.about-text p {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  line-height: 1.45;
-  color: var(--color-neutral-900);
-  max-width: 307px;
-}
-
-.about-text a {
-  color: var(--color-secondary-400);
-  text-decoration: underline;
-}
-
-.about-text a:hover {
-  color: var(--color-secondary-hover);
-}
-
-.about-text a:focus-visible {
-  outline: var(--focus-ring);
-  outline-offset: 2px;
-}
-
-/* Image Pair Container */
-.about-image-pair {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
-.about-image-pair--end {
-  align-items: flex-end;
-}
-
-/* About Images */
-.about-image {
-  object-fit: cover;
-}
-
-.about-image--left-pair {
-  border-radius: 50px 50px 0 50px;
-  width: 141px;
-  height: 219px;
-}
-
-.about-image--right-pair {
-  border-radius: 50px 50px 50px 0;
-  width: 125px;
-  height: 219px;
-}
-
-.about-image--left-pair-alt {
-  border-radius: 50px 50px 0 50px;
-  width: 143px;
-  height: 221px;
-}
-
-.about-image--right-pair-alt {
-  border-radius: 50px 50px 50px 0;
-  width: 139px;
-  height: 221px;
-}
-
-.about-image--single {
-  border-radius: 50px;
-  width: 243px;
-  height: 175px;
-}
-
-/* Bold text in about-text */
-.about-text strong {
-  font-weight: 600;
-}
-
-/* Closing statement - centered at bottom */
-.about-closing {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  line-height: 24px;
-  color: var(--color-neutral-900);
-  text-align: center;
-  width: 100%;
-}
-
-/* =============================================
-   About Page - Tablet Breakpoint (768px)
-   ============================================= */
-@media (min-width: 768px) {
-  .about-content {
-    padding: var(--space-sm) var(--space-sm) var(--space-md);
-    max-width: 100%;
-  }
-
-  .about-row {
-    flex-direction: row;
-    justify-content: center;
-    gap: var(--space-md);
-    align-items: center;
-  }
-
-  .about-row--reverse {
-    flex-direction: row-reverse;
-  }
-
-  .about-text {
-    flex: 0 0 auto;
-    width: 440px;
-  }
-
-  .about-text p {
-    font-size: var(--text-base);
-    line-height: 24px;
-    max-width: 440px;
-  }
-
-  /* Image pair keeps vertical center alignment */
-  .about-image-pair {
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  .about-image-pair--end {
-    align-items: flex-end;
-  }
-
-  .about-closing {
-    font-size: var(--text-base);
-  }
-}
-
-/* =============================================
-   About Page - Desktop Breakpoint (1024px)
-   ============================================= */
-@media (min-width: 1024px) {
-  .about-content {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: var(--space-md) var(--space-sm);
-  }
-
-  .about-image--left-pair {
-    width: 173px;
-    height: 271px;
-  }
-
-  .about-image--right-pair {
-    width: 153px;
-    height: 271px;
-  }
-
-  .about-image--left-pair-alt {
-    width: 165px;
-    height: 283px;
-  }
-
-  .about-image--right-pair-alt {
-    width: 160px;
-    height: 283px;
-  }
-
-  .about-image--single {
-    width: 296px;
-    height: 216px;
   }
 }

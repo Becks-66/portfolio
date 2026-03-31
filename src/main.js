@@ -117,14 +117,13 @@ if (document.readyState === 'loading') {
 }
 
 // =============================================
-// Header Scroll Behavior (homepage & about page)
+// Header Scroll Behavior (homepage)
 // =============================================
 function initHeaderScroll() {
   const header = document.querySelector('.header');
   const isHomepage = document.body.classList.contains('homepage');
-  const isAboutPage = document.body.classList.contains('about-page');
 
-  if (!header || (!isHomepage && !isAboutPage)) return;
+  if (!header || !isHomepage) return;
 
   function handleScroll() {
     if (window.scrollY > 0) {

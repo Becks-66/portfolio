@@ -15,14 +15,14 @@ npm run deploy   # Build and deploy to GitHub Pages
 
 Pure HTML/CSS/minimal JS site built with Vite. No frameworks, no CSS preprocessors.
 
-**Pages**: `index.html` (homepage), `projects.html`, `about.html`, `runnable.html`, `journeal.html`, `busuu.html`
+**Pages**: `index.html` (homepage), `projects.html`, `runnable.html`, `journeal.html`, `busuu.html`
 
 **CSS** is modular in `src/styles/`, imported in order via `main.css`:
 1. `base.css` — design tokens (CSS custom properties), reset, accessibility
 2. `layout.css` — header, nav, footer, page wrapper
 3. `components.css` — buttons, project cards
 4. `homepage.css` — hero section
-5. `pages.css` — projects grid, about page
+5. `pages.css` — projects grid
 6. `case-study.css` — all case study components
 
 `src/main.js` is only an entry point that imports `styles/main.css`.
@@ -34,7 +34,7 @@ Pure HTML/CSS/minimal JS site built with Vite. No frameworks, no CSS preprocesso
 **Fonts**: Montserrat 400 (headings/logo), Poppins 400/500/600 (body/UI) — loaded from Google Fonts
 
 **Key color tokens** (defined in `base.css`):
-- `--color-bg-mint: #F7FFFB` — homepage/about background
+- `--color-bg-mint: #F7FFFB` — homepage hero background
 - `--color-primary-500: #4B3259` — active nav background
 - `--color-secondary-700: #21583A` — CTA button background
 - `--color-secondary-400: #734F88` — focus states, hover
@@ -62,7 +62,7 @@ Pure HTML/CSS/minimal JS site built with Vite. No frameworks, no CSS preprocesso
 
 ## Page-Specific Notes
 
-- **Homepage/About**: `linear-gradient` mint background; body class `.homepage` / `.about-page`
+- **Homepage**: soft mint-to-lilac gradient hero background; body class `.homepage`
 - **Projects**: white background; body class `.projects-page`; 3 cards in `.projects-grid`
 - **Case studies**: white background; body class `.case-study-page`; structure is header → hero card → back link → `.case-study-content` (640px max-width) → footer
 - Static assets (images, SVGs, video) live in `public/images/` and are referenced as `/images/...`
