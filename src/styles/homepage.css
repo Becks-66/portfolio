@@ -47,7 +47,7 @@
   width: 100%;
   max-width: 1360px;
   padding: 0 25px;
-  margin: auto auto 0;
+  margin: auto;
 }
 
 .hero-portrait {
@@ -214,13 +214,15 @@
   .hero-section__inner {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 32px;
     padding: 0 64px;
   }
 
   .hero-content {
     order: 1;
+    flex: 0 0 370px;
+    width: auto;
     justify-content: flex-start;
   }
 
@@ -288,6 +290,10 @@
   .hero {
     width: min(100%, 553px);
     gap: 40px;
+  }
+
+  .hero-content {
+    flex-basis: 553px;
   }
 
   .hero__title {
