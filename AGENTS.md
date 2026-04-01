@@ -11,6 +11,10 @@ npm run preview  # Preview production build
 npm run deploy   # Build and deploy to GitHub Pages
 ```
 
+## Visual Verification
+
+For visual or layout changes, verify the result with `plaxwright-cli` skill and compare it against the relevant design reference when one is available. Do not use `npm run build` as a substitute for visual verification.
+
 ## Architecture
 
 Pure HTML/CSS/minimal JS site built with Vite. No frameworks, no CSS preprocessors.

@@ -31,7 +31,8 @@
   --color-bg-overlay: rgba(223, 223, 223, 0.3);
   --color-case-study-hero-start: rgba(158, 117, 181, 0.2);
   --color-case-study-hero-end: rgba(76, 198, 154, 0.2);
-  --color-case-study-problem-border: #4cc69a;
+  --color-case-study-problem-frame-start: rgba(158, 117, 181, 0.72);
+  --color-case-study-problem-frame-end: rgba(76, 198, 154, 0.82);
   --color-case-study-01-bg: #efeaf6;
   --color-case-study-01-active-bg: #af9bcc;
   --color-case-study-01-active-border: #4f228f;
