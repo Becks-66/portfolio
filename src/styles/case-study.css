@@ -415,10 +415,15 @@
 
 .case-study-page--indexed.case-study-index-ready .case-study-index__card.is-active,
 .case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="runnable-introduction"],
+.case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="journeal-introduction"],
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-primary-research:target) .case-study-index__card[data-panel-target="runnable-primary-research"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-primary-research:target) .case-study-index__card[data-panel-target="journeal-primary-research"],
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-strategy:target) .case-study-index__card[data-panel-target="runnable-strategy"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-strategy:target) .case-study-index__card[data-panel-target="journeal-strategy"],
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-designs:target) .case-study-index__card[data-panel-target="runnable-designs"],
-.case-study-page--indexed:not(.case-study-index-ready):has(#runnable-testing:target) .case-study-index__card[data-panel-target="runnable-testing"] {
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-designs:target) .case-study-index__card[data-panel-target="journeal-designs"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#runnable-testing:target) .case-study-index__card[data-panel-target="runnable-testing"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-testing:target) .case-study-index__card[data-panel-target="journeal-testing"] {
   background-color: var(--card-active-bg);
   border-color: var(--card-active-border);
 }
@@ -426,15 +431,25 @@
 .case-study-page--indexed.case-study-index-ready .case-study-index__card.is-active .case-study-index__number,
 .case-study-page--indexed.case-study-index-ready .case-study-index__card.is-active .case-study-index__arrow,
 .case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="runnable-introduction"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="journeal-introduction"] .case-study-index__number,
 .case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="runnable-introduction"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="journeal-introduction"] .case-study-index__arrow,
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-primary-research:target) .case-study-index__card[data-panel-target="runnable-primary-research"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-primary-research:target) .case-study-index__card[data-panel-target="journeal-primary-research"] .case-study-index__number,
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-primary-research:target) .case-study-index__card[data-panel-target="runnable-primary-research"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-primary-research:target) .case-study-index__card[data-panel-target="journeal-primary-research"] .case-study-index__arrow,
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-strategy:target) .case-study-index__card[data-panel-target="runnable-strategy"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-strategy:target) .case-study-index__card[data-panel-target="journeal-strategy"] .case-study-index__number,
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-strategy:target) .case-study-index__card[data-panel-target="runnable-strategy"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-strategy:target) .case-study-index__card[data-panel-target="journeal-strategy"] .case-study-index__arrow,
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-designs:target) .case-study-index__card[data-panel-target="runnable-designs"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-designs:target) .case-study-index__card[data-panel-target="journeal-designs"] .case-study-index__number,
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-designs:target) .case-study-index__card[data-panel-target="runnable-designs"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-designs:target) .case-study-index__card[data-panel-target="journeal-designs"] .case-study-index__arrow,
 .case-study-page--indexed:not(.case-study-index-ready):has(#runnable-testing:target) .case-study-index__card[data-panel-target="runnable-testing"] .case-study-index__number,
-.case-study-page--indexed:not(.case-study-index-ready):has(#runnable-testing:target) .case-study-index__card[data-panel-target="runnable-testing"] .case-study-index__arrow {
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-testing:target) .case-study-index__card[data-panel-target="journeal-testing"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#runnable-testing:target) .case-study-index__card[data-panel-target="runnable-testing"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#journeal-testing:target) .case-study-index__card[data-panel-target="journeal-testing"] .case-study-index__arrow {
   color: var(--color-white);
   opacity: 1;
 }
