@@ -62,7 +62,7 @@ Add new color variables:
 ### 6. Create `projects.html`
 
 - New page with header (Projects nav active)
-- Contains the 3 project cards (Runnable, Journeal, Busuu) in `.projects-grid`
+- Contains the 2 project cards (Runnable and Journeal) in `.projects-grid`
 - Same footer structure
 - White/neutral background
 

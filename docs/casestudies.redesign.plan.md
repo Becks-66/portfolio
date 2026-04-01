@@ -1,6 +1,6 @@
 # Case Studies Redesign Plan
 
-Update the header, footer, and case study hero card across all case study pages (runnable.html, journeal.html, busuu.html) to match Figma designs. Header/footer styling follows homepage.plan.md; hero card uses mint gradient from projects.plan.md.
+Update the header, footer, and case study hero card across the remaining case study pages (runnable.html and journeal.html) to match Figma designs. Header/footer styling follows homepage.plan.md; hero card uses mint gradient from projects.plan.md.
 
 ## Figma References
 
@@ -25,7 +25,7 @@ Change `.nav-button--active` to use:
 
 ### 3. Update footer HTML in all case study pages
 
-In `runnable.html`, `journeal.html`, and `busuu.html`, replace the current `.footer__email` structure with:
+In `runnable.html` and `journeal.html`, replace the current `.footer__email` structure with:
 - `.footer__icons` containing linked icons for Instagram, Mail, LinkedIn (icons on the left)
 - `.footer__text` with "Other works and contacts" (hidden on mobile, visible on tablet+)
 
@@ -53,7 +53,7 @@ Replace solid `--color-primary-50` background with mint gradient and shadow:
 
 ### 6. Update back link arrow in all case study pages
 
-In `runnable.html`, `journeal.html`, and `busuu.html`, replace the inline SVG in `.back-link` with:
+In `runnable.html` and `journeal.html`, replace the inline SVG in `.back-link` with:
 
 ```html
 <img src="/images/arrow-icon.svg" alt="" aria-hidden="true" class="back-link__icon" />
@@ -113,4 +113,3 @@ Remove any existing `:hover` rules on `.back-link` since no hover state is requi
 | `src/styles/case-study.css` | Update `.case-study-hero` background/shadow, layout; remove `.back-link` hover |
 | `runnable.html` | Update footer structure, replace back link SVG with img |
 | `journeal.html` | Update footer structure, replace back link SVG with img |
-| `busuu.html` | Update footer structure, replace back link SVG with img |

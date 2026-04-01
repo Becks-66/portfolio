@@ -15,7 +15,7 @@ npm run deploy   # Build and deploy to GitHub Pages
 
 Pure HTML/CSS/minimal JS site built with Vite. No frameworks, no CSS preprocessors.
 
-**Pages**: `index.html` (homepage), `projects.html`, `runnable.html`, `journeal.html`, `busuu.html`
+**Pages**: `index.html` (homepage), `projects.html`, `runnable.html`, `journeal.html`
 
 **CSS** is modular in `src/styles/`, imported in order via `main.css`:
 1. `base.css` — design tokens (CSS custom properties), reset, accessibility
@@ -63,6 +63,6 @@ Pure HTML/CSS/minimal JS site built with Vite. No frameworks, no CSS preprocesso
 ## Page-Specific Notes
 
 - **Homepage**: soft mint-to-lilac gradient hero background; body class `.homepage`
-- **Projects**: white background; body class `.projects-page`; 3 cards in `.projects-grid`
+- **Projects**: white background; body class `.projects-page`; 2 cards in `.projects-grid`
 - **Case studies**: white background; body class `.case-study-page`; structure is header → hero card → back link → `.case-study-content` (640px max-width) → footer
 - Static assets (images, SVGs, video) live in `public/images/` and are referenced as `/images/...`

@@ -64,7 +64,7 @@ Responsive font sizes per breakpoint (see Design Specifications below).
 |------------|--------|------------|-----------|
 | Mobile | Single column, stacked | 100% (full width) | Stretch |
 | Tablet | Single column, stacked | Fixed 422px | Centered |
-| Desktop | 3-column horizontal row | Fixed 422px | Space-between |
+| Desktop | 2-column horizontal row | Fixed 422px | Centered |
 
 ### Colors
 

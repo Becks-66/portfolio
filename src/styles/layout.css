@@ -11,13 +11,11 @@
    Header
    ============================================= */
 .header {
-  padding: 12px;
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 100;
   background-color: transparent;
-  transition: background-color var(--transition-fast), backdrop-filter var(--transition-fast);
 }
 
 .homepage .header--scrolled {
@@ -28,10 +26,23 @@
 
 .header__container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: var(--space-sm);
   max-width: 1360px;
   margin: 0 auto;
+  padding: 12px;
+}
+
+.header__brand {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.196px;
+  color: var(--color-neutral-900);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .header__nav {
@@ -39,9 +50,13 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+  width: 100%;
 }
 
 .nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
@@ -51,13 +66,18 @@
   padding: 12px 16px;
   border-radius: var(--radius-lg);
   background-color: transparent;
-  transition: background-color var(--transition-fast), color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.header__brand:hover {
+  opacity: 0.75;
 }
 
 .nav-button:hover {
   background-color: rgba(75, 50, 89, 0.08);
 }
 
+.header__brand:focus-visible,
 .nav-button:focus-visible {
   outline: var(--focus-ring);
   outline-offset: 2px;
@@ -71,6 +91,18 @@
 
 .nav-button--active:hover {
   background-color: var(--color-primary-600);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .header {
+    transition: background-color var(--transition-fast), backdrop-filter var(--transition-fast);
+  }
+
+  .header__brand,
+  .nav-button,
+  .footer__icon-link {
+    transition: background-color var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
+  }
 }
 
 /* =============================================
@@ -128,15 +160,20 @@
    Layout - Tablet Breakpoint (768px)
    ============================================= */
 @media (min-width: 768px) {
-  .header {
+  .header__container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
     padding: 16px;
   }
 
-  .header__container {
-    justify-content: flex-end;
+  .header__brand {
+    font-size: 1.75rem;
+    line-height: 1.285714286;
   }
 
   .header__nav {
+    width: auto;
     gap: var(--space-sm);
   }
 
@@ -160,8 +197,13 @@
    Layout - Desktop Breakpoint (1024px)
    ============================================= */
 @media (min-width: 1024px) {
-  .header {
+  .header__container {
     padding: var(--space-sm) 28px;
+  }
+
+  .header__brand {
+    font-size: 2rem;
+    line-height: 1.25;
   }
 
   .header__nav {
