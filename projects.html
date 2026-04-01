@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="UX Design projects by Rebecca Guerrini - Case studies for Runnable, Journeal, and Busuu" />
+    <meta name="description" content="UX design projects by Rebecca Guerrini featuring Runnable and Journeal case studies" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,16 +17,17 @@
       body:not(.page-ready) { opacity: 0; }
       @media (prefers-reduced-motion: reduce) { body { opacity: 1 !important; } }
     </style>
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "vts3jc53uh");
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PL3VQE3K30"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PL3VQE3K30');
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/main-B8fg8I9C.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/main-jo1Av__k.css">
+    <script type="module" crossorigin src="/portfolio/assets/main-Cy2tsv-t.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/main-C_Yy7GxK.css">
   </head>
   <body class="projects-page">
     <!-- Skip to main content for accessibility -->
@@ -36,11 +37,10 @@
       <!-- Header -->
       <header class="header" role="banner">
         <div class="header__container">
-          <p class="header__logo">REBECCA GUERRINI</p>
+          <a href="index.html" class="header__brand" aria-label="Rebecca Guerrini home">REBECCA GUERRINI</a>
           <nav class="header__nav" aria-label="Main navigation">
             <a href="index.html" class="nav-button">Home</a>
-            <a href="projects.html" class="nav-button nav-button--active" aria-current="page">Projects</a>
-            <a href="about.html" class="nav-button">About</a>
+            <a href="projects.html" class="nav-button nav-button--active" aria-current="page">UX projects</a>
           </nav>
         </div>
       </header>
@@ -60,8 +60,8 @@
                 </div>
                 <div class="project-card__image-wrapper">
                   <img 
-                    src="/portfolio/images/Record-Started-1.png" 
-                    alt="Runnable app map screen showing route tracking with distance, duration and pace statistics" 
+                    src="/portfolio/images/runnable-card-preview.png" 
+                    alt="Runnable preview showing route planning on a map with a run summary card" 
                     class="project-card__image"
                   />
                 </div>
@@ -85,8 +85,8 @@
                 </div>
                 <div class="project-card__image-wrapper">
                   <img 
-                    src="/portfolio/images/BlankPage - Visualization1 1.png"
-                    alt="Journeal app interface showing journal entry with therapy reflection" 
+                    src="/portfolio/images/journeal-card-preview.png"
+                    alt="Journeal preview showing a journal entry interface with reflection text and a photo" 
                     class="project-card__image"
                   />
                 </div>
@@ -98,31 +98,6 @@
               </div>
               <div class="project-card__cta">
                 <a href="journeal.html" class="btn-cta">View</a>
-              </div>
-            </article>
-
-            <!-- Project Card 3: Busuu -->
-            <article class="project-card">
-              <span class="project-card__tag">Personal project</span>
-              <div class="project-card__content">
-                <div class="project-card__type">
-                  <p class="project-card__type-subtitle">Redesign</p>
-                </div>
-                <div class="project-card__image-wrapper">
-                  <img 
-                    src="/portfolio/images/Stories section 1.png"
-                    alt="Busuu language learning app redesign showing stories and lessons interface" 
-                    class="project-card__image"
-                  />
-                </div>
-                <div class="project-card__info">
-                  <h3 class="project-card__title">Busuu</h3>
-                  <p class="project-card__description">Redesign of an app for learning language.</p>
-                  <span class="project-card__reading-time">Reading time: 6 minutes</span>
-                </div>
-              </div>
-              <div class="project-card__cta">
-                <a href="busuu.html" class="btn-cta">View</a>
               </div>
             </article>
           </div>
