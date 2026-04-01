@@ -67,6 +67,106 @@ if (document.readyState === 'loading') {
 }
 
 // =============================================
+// Case Study Section Index
+// =============================================
+function initCaseStudyIndex() {
+  const index = document.querySelector('[data-case-study-index]');
+  const panelContainer = document.querySelector('[data-case-study-panels]');
+
+  if (!index || !panelContainer) return;
+
+  const triggers = Array.from(index.querySelectorAll('[data-case-study-trigger]'));
+  const panels = Array.from(panelContainer.querySelectorAll('[data-case-study-panel]'));
+
+  if (!triggers.length || !panels.length) return;
+
+  const panelsByKey = new Map(
+    panels.map((panel) => [panel.dataset.caseStudyPanel, panel])
+  );
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.body.classList.add('case-study-index-ready');
+
+  function resolvePanelKey(hash = window.location.hash) {
+    const key = hash.replace(/^#/, '');
+    if (panelsByKey.has(key)) {
+      return key;
+    }
+
+    return triggers[0].dataset.caseStudyTrigger;
+  }
+
+  function setActivePanel(panelKey, options = {}) {
+    const { updateHash = false, focusPanel = false } = options;
+    const nextKey = panelsByKey.has(panelKey) ? panelKey : triggers[0].dataset.caseStudyTrigger;
+    const activePanel = panelsByKey.get(nextKey);
+
+    triggers.forEach((trigger) => {
+      const isActive = trigger.dataset.caseStudyTrigger === nextKey;
+      trigger.classList.toggle('is-active', isActive);
+
+      if (isActive) {
+        trigger.setAttribute('aria-current', 'location');
+      } else {
+        trigger.removeAttribute('aria-current');
+      }
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.dataset.caseStudyPanel === nextKey;
+      panel.classList.toggle('is-active', isActive);
+      panel.hidden = !isActive;
+    });
+
+    if (updateHash && activePanel) {
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', `#${activePanel.id}`);
+      } else {
+        window.location.hash = activePanel.id;
+      }
+    }
+
+    if (focusPanel && activePanel) {
+      activePanel.focus({ preventScroll: prefersReducedMotion ? false : true });
+    }
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      const panelKey = trigger.dataset.caseStudyTrigger;
+      const activeKey = resolvePanelKey();
+
+      if (!panelKey || panelKey === activeKey) {
+        event.preventDefault();
+        return;
+      }
+
+      event.preventDefault();
+      setActivePanel(panelKey, { updateHash: true });
+    });
+
+    trigger.addEventListener('keydown', (event) => {
+      if (event.key !== ' ') return;
+
+      event.preventDefault();
+      trigger.click();
+    });
+  });
+
+  window.addEventListener('hashchange', () => {
+    setActivePanel(resolvePanelKey(), { updateHash: false });
+  });
+
+  setActivePanel(resolvePanelKey(), { updateHash: false });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCaseStudyIndex);
+} else {
+  initCaseStudyIndex();
+}
+
+// =============================================
 // Footer scroll behavior for case study pages
 // =============================================
 // The footer is fixed on the side while scrolling, but becomes a normal footer at the end of the page

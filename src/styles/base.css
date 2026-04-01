@@ -5,6 +5,8 @@
   /* Colors */
   --color-primary-50: #e7f3f5;
   --color-primary-100: #d0e8eb;
+  --color-primary-200: #b7adbd;
+  --color-primary-300: #93849b;
   --color-primary-500: #4B3259;
   --color-primary-600: #321940;
   --color-primary-700: #3d7981;
@@ -27,6 +29,39 @@
   --color-white: #ffffff;
   --color-bg-mint: #F7FFFB;
   --color-bg-overlay: rgba(223, 223, 223, 0.3);
+  --color-case-study-hero-start: rgba(158, 117, 181, 0.2);
+  --color-case-study-hero-end: rgba(76, 198, 154, 0.2);
+  --color-case-study-problem-border: #4cc69a;
+  --color-case-study-01-bg: #efeaf6;
+  --color-case-study-01-active-bg: #af9bcc;
+  --color-case-study-01-active-border: #4f228f;
+  --color-case-study-01-number: #af9bcc;
+  --color-case-study-01-number-ghost: rgba(200, 180, 230, 0.45);
+  --color-case-study-01-underline: #8c6eb9;
+  --color-case-study-02-bg: #e2f0f3;
+  --color-case-study-02-active-bg: #9bcfda;
+  --color-case-study-02-active-border: #156d80;
+  --color-case-study-02-number: #9bcfda;
+  --color-case-study-02-number-ghost: rgba(160, 210, 225, 0.45);
+  --color-case-study-02-underline: #50a0b4;
+  --color-case-study-03-bg: #e6f4e7;
+  --color-case-study-03-active-bg: #9cdea1;
+  --color-case-study-03-active-border: #26962f;
+  --color-case-study-03-number: #9cdea1;
+  --color-case-study-03-number-ghost: rgba(165, 215, 170, 0.45);
+  --color-case-study-03-underline: #5aa564;
+  --color-case-study-04-bg: #f5e7ee;
+  --color-case-study-04-active-bg: #e5adc9;
+  --color-case-study-04-active-border: #a14e77;
+  --color-case-study-04-number: #e5adc9;
+  --color-case-study-04-number-ghost: rgba(225, 175, 200, 0.45);
+  --color-case-study-04-underline: #b96e91;
+  --color-case-study-05-bg: #eeeff1;
+  --color-case-study-05-active-bg: #d1d5db;
+  --color-case-study-05-active-border: #374151;
+  --color-case-study-05-number: #9ca3af;
+  --color-case-study-05-number-ghost: rgba(190, 195, 205, 0.45);
+  --color-case-study-05-underline: #828796;
   
   /* Typography - Font Families */
   --font-heading: 'Montserrat', sans-serif;
