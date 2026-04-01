@@ -281,7 +281,8 @@
   line-height: 1.45;
   text-transform: uppercase;
   color: var(--color-primary-500);
-  margin: 0 0 12px;
+  width: 100%;
+  margin: 0;
 }
 
 .case-study-index__grid {
@@ -1607,6 +1608,12 @@
     gap: 12px;
   }
 
+  .case-study-index__label {
+    width: 692px;
+    max-width: 100%;
+    align-self: center;
+  }
+
   .case-study-index__row {
     gap: 12px;
   }
@@ -1818,6 +1825,12 @@
   .case-study-index__grid {
     align-items: stretch;
     gap: var(--space-sm);
+  }
+
+  .case-study-index__label {
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
   }
 
   .case-study-index__row {
