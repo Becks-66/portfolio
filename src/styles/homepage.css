@@ -167,38 +167,9 @@
   width: 100%;
 }
 
-.hero-socials {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding-top: 4px;
-}
-
-.hero-socials__link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  transition: opacity var(--transition-fast);
-}
-
-.hero-socials__link:hover {
-  opacity: 0.7;
-}
-
-.hero-socials__link:focus-visible {
-  outline: var(--focus-ring);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-.hero-socials__icon {
-  width: 100%;
-  height: 100%;
+.homepage .footer {
+  background-color: var(--color-white);
+  padding: 0 28px var(--space-sm);
 }
 
 /* =============================================
