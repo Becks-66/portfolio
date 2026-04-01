@@ -221,20 +221,51 @@ if (document.readyState === 'loading') {
 // =============================================
 function initHeaderScroll() {
   const header = document.querySelector('.header');
+  const headerBrand = header?.querySelector('.header__brand');
   const isHomepage = document.body.classList.contains('homepage');
 
-  if (!header || !isHomepage) return;
+  if (!header) return;
+
+  function setBrandHidden(isHidden) {
+    header.classList.toggle('header--brand-hidden', isHidden);
+
+    if (!headerBrand) return;
+
+    if (isHidden) {
+      headerBrand.setAttribute('aria-hidden', 'true');
+      headerBrand.setAttribute('tabindex', '-1');
+      return;
+    }
+
+    headerBrand.removeAttribute('aria-hidden');
+    headerBrand.removeAttribute('tabindex');
+  }
+
+  if (!isHomepage) {
+    setBrandHidden(false);
+    return;
+  }
+
+  const heroTitle = document.querySelector('.hero__title');
 
   function handleScroll() {
-    if (window.scrollY > 0) {
-      header.classList.add('header--scrolled');
-    } else {
-      header.classList.remove('header--scrolled');
+    header.classList.toggle('header--scrolled', window.scrollY > 0);
+
+    if (!heroTitle) {
+      setBrandHidden(false);
+      return;
     }
+
+    const headerBottom = header.getBoundingClientRect().bottom;
+    const titleRect = heroTitle.getBoundingClientRect();
+    const isHeroTitleVisible = titleRect.bottom > headerBottom && titleRect.top < window.innerHeight;
+
+    setBrandHidden(isHeroTitleVisible);
   }
 
   handleScroll();
   window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll);
 }
 
 if (document.readyState === 'loading') {
