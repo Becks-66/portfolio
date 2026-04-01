@@ -1814,6 +1814,33 @@
   .case-study-page--indexed .case-study-main {
     padding: 0 40px 60px;
   }
+
+  .case-study-index__grid {
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .case-study-index__row {
+    justify-content: flex-start;
+    gap: var(--space-md);
+  }
+
+  .case-study-index__row--primary,
+  .case-study-index__row--secondary {
+    flex-wrap: nowrap;
+  }
+
+  .case-study-index__row--primary .case-study-index__card {
+    flex: 0 1 calc((100% - (var(--space-md) * 2)) / 3);
+  }
+
+  .case-study-index__card--desktop-wide {
+    flex: 0 1 calc((100% - var(--space-md)) * 640 / 1153);
+  }
+
+  .case-study-index__card--desktop-narrow {
+    flex: 0 1 calc((100% - var(--space-md)) * 513 / 1153);
+  }
   
   /* Case Study Footer - Desktop (not fixed, stays at bottom) */
   .case-study-page .footer {
