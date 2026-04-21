@@ -479,6 +479,28 @@
 
   .homepage .feedback-trigger--homepage {
     max-width: 422px;
+    /* Collapsed: show only the icon bubbles */
+    width: auto;
+    transition: width 0.3s ease;
+  }
+
+  .homepage .feedback-trigger--homepage .feedback-trigger__copy {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: opacity 0.25s ease, max-width 0.35s ease;
+  }
+
+  .homepage .feedback-trigger--homepage:hover,
+  .homepage .feedback-trigger--homepage:focus-visible {
+    width: 100%;
+  }
+
+  .homepage .feedback-trigger--homepage:hover .feedback-trigger__copy,
+  .homepage .feedback-trigger--homepage:focus-visible .feedback-trigger__copy {
+    opacity: 1;
+    max-width: 320px;
   }
 }
 
