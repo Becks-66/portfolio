@@ -394,11 +394,11 @@
   }
 
   .homepage .feedback-prompt.is-visible .feedback-trigger--homepage::before {
-    animation: homepage-feedback-nudge 1.2s ease-out 1;
+    animation: homepage-feedback-nudge 3s ease-in-out infinite;
   }
 
   .homepage .feedback-prompt.is-visible .feedback-trigger__bubble--primary {
-    animation: homepage-feedback-float 1.2s ease-out 1;
+    animation: homepage-feedback-float 3s ease-in-out infinite;
   }
 }
 

@@ -35,6 +35,17 @@
   max-width: 35rem;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .case-study-feedback .feedback-trigger--case-study::before {
+    transform: scale(0.985);
+    animation: homepage-feedback-nudge 3s ease-in-out infinite;
+  }
+
+  .case-study-feedback .feedback-trigger--case-study .feedback-trigger__bubble--primary {
+    animation: homepage-feedback-float 3s ease-in-out infinite;
+  }
+}
+
 /* Case Study Hero Card - Mobile (stacked layout) */
 .case-study-hero {
   display: flex;
