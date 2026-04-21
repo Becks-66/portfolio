@@ -603,8 +603,23 @@ body.feedback-open {
   line-height: 1.43;
 }
 
+.feedback-form__status {
+  margin: 0;
+  color: var(--color-neutral-600);
+  font-size: var(--text-sm);
+  line-height: 1.43;
+}
+
+.feedback-form__status[data-state="error"] {
+  color: #b23a48;
+}
+
 .feedback-form__submit {
   align-self: auto;
+}
+
+.feedback-form[aria-busy="true"] .feedback-form__submit {
+  opacity: 0.72;
 }
 
 .feedback-modal__panel--confirmation {

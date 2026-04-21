@@ -624,8 +624,15 @@
             </p>
           </div>
 
-          <form class="feedback-form" data-feedback-form data-feedback-email="reb.guerrini@gmail.com">
+          <form class="feedback-form" data-feedback-form action="https://formspree.io/f/maqapnnl" method="POST">
             <input type="hidden" name="context" value="Journeal case study" />
+            <input type="hidden" name="page_url" value="" data-feedback-page-url />
+            <div class="visually-hidden" aria-hidden="true">
+              <label>
+                Leave this field blank
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+              </label>
+            </div>
 
             <fieldset class="feedback-form__group">
               <legend class="feedback-form__legend">Who are you?</legend>
@@ -686,6 +693,8 @@
               <span class="feedback-form__legend">What would make this more compelling for a hiring decision? <span class="feedback-form__optional">(optional)</span></span>
               <textarea name="improvement" rows="4" placeholder="Specific to recruiters, but anyone's welcome to weigh in."></textarea>
             </label>
+
+            <p class="feedback-form__status" data-feedback-status role="status" aria-live="polite" hidden></p>
 
             <div class="feedback-form__footer">
               <p class="feedback-form__note">Takes about 30 seconds</p>

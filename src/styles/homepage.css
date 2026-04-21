@@ -460,6 +460,9 @@
   }
 
   .homepage .projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     padding: var(--space-lg);
   }
 
@@ -469,19 +472,28 @@
     gap: var(--space-lg);
     max-width: 904px;
     align-items: stretch;
+    align-self: center;
   }
 
   .homepage .feedback-prompt {
-    max-width: 904px;
-    margin-top: 1.5rem;
+    order: -1;
+    width: auto;
+    max-width: none;
+    align-self: flex-end;
+    margin: 0 0 1.5rem;
     justify-content: flex-end;
   }
 
   .homepage .feedback-trigger--homepage {
-    max-width: 422px;
     /* Collapsed: show only the icon bubbles */
-    width: auto;
-    transition: width 0.3s ease;
+    width: 4.75rem;
+    height: 4.75rem;
+    padding: 0;
+    gap: 0;
+    border-radius: 999px;
+    justify-content: center;
+    overflow: hidden;
+    transition: width 0.3s ease, padding 0.3s ease, border-radius 0.3s ease;
   }
 
   .homepage .feedback-trigger--homepage .feedback-trigger__copy {
@@ -494,7 +506,11 @@
 
   .homepage .feedback-trigger--homepage:hover,
   .homepage .feedback-trigger--homepage:focus-visible {
-    width: 100%;
+    width: 422px;
+    padding: 0.75rem 1rem;
+    gap: 1rem;
+    border-radius: var(--radius-lg);
+    justify-content: flex-start;
   }
 
   .homepage .feedback-trigger--homepage:hover .feedback-trigger__copy,
@@ -515,7 +531,7 @@
   }
 
   .homepage .feedback-prompt {
-    max-width: 964px;
+    max-width: none;
   }
 }
 

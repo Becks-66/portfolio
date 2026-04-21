@@ -325,17 +325,28 @@ function initFeedbackModal() {
   const dialog = document.querySelector('[data-feedback-modal]');
   const triggers = Array.from(document.querySelectorAll('[data-feedback-open]'));
   const form = dialog?.querySelector('[data-feedback-form]');
+  const pageUrlInput = form?.querySelector('[data-feedback-page-url]');
+  const statusMessage = form?.querySelector('[data-feedback-status]');
+  const submitButton = form?.querySelector('.feedback-form__submit');
   const closeButtons = dialog ? Array.from(dialog.querySelectorAll('[data-feedback-close]')) : [];
   const panels = dialog ? Array.from(dialog.querySelectorAll('[data-feedback-panel]')) : [];
   const nudge = document.querySelector('[data-feedback-nudge]');
 
   if (!dialog || !form || !triggers.length) return;
 
-  const email = form.dataset.feedbackEmail;
   const contextInput = form.querySelector('input[name="context"]');
   const closeButton = dialog.querySelector('.feedback-modal__close');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const defaultSubmitLabel = submitButton?.textContent || 'Share feedback';
   let lastTrigger = null;
+
+  function setStatus(message, tone = 'neutral') {
+    if (!statusMessage) return;
+
+    statusMessage.textContent = message;
+    statusMessage.hidden = !message;
+    statusMessage.dataset.state = tone;
+  }
 
   function showPanel(name) {
     panels.forEach((panel) => {
@@ -346,6 +357,14 @@ function initFeedbackModal() {
 
   function resetFormState() {
     form.reset();
+    form.removeAttribute('aria-busy');
+    setStatus('');
+
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = defaultSubmitLabel;
+    }
+
     showPanel('form');
   }
 
@@ -354,6 +373,10 @@ function initFeedbackModal() {
 
     if (contextInput) {
       contextInput.value = trigger.dataset.feedbackSource || contextInput.defaultValue;
+    }
+
+    if (pageUrlInput) {
+      pageUrlInput.value = window.location.href;
     }
 
     resetFormState();
@@ -371,31 +394,6 @@ function initFeedbackModal() {
     dialog.close();
     document.body.classList.remove('feedback-open');
     lastTrigger?.focus();
-  }
-
-  function buildMailtoHref(formData) {
-    const audience = formData.get('audience');
-    const impression = formData.get('impression');
-    const friction = formData.get('friction')?.toString().trim() || 'None shared';
-    const improvement = formData.get('improvement')?.toString().trim() || 'None shared';
-    const context = formData.get('context') || document.title;
-    const location = window.location.href;
-
-    const subject = `Portfolio feedback: ${context}`;
-    const body = [
-      `Context: ${context}`,
-      `Page: ${location}`,
-      `Audience: ${audience}`,
-      `First impression: ${impression}/5`,
-      '',
-      'What almost stopped you from engaging?',
-      friction,
-      '',
-      'What would make this more compelling for a hiring decision?',
-      improvement,
-    ].join('\n');
-
-    return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   triggers.forEach((trigger) => {
@@ -417,14 +415,73 @@ function initFeedbackModal() {
     }
   });
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!form.reportValidity()) return;
 
     const formData = new FormData(form);
-    window.location.href = buildMailtoHref(formData);
-    showPanel('confirmation');
+
+    if (pageUrlInput) {
+      formData.set('page_url', window.location.href);
+    }
+
+    const context = formData.get('context') || document.title;
+    formData.set('_subject', `Portfolio feedback: ${context}`);
+
+    form.setAttribute('aria-busy', 'true');
+    setStatus('Sending your feedback...');
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        let errorMessage = 'Something went wrong. Please try again.';
+
+        try {
+          const result = await response.json();
+          const errors = Array.isArray(result?.errors) ? result.errors : [];
+
+          if (errors.length) {
+            errorMessage = errors
+              .map((entry) => entry.message)
+              .filter(Boolean)
+              .join(' ');
+          }
+        } catch {
+          // Keep the fallback message when the response is not JSON.
+        }
+
+        throw new Error(errorMessage);
+      }
+
+      setStatus('');
+      showPanel('confirmation');
+    } catch (error) {
+      const message = error instanceof Error
+        ? error.message
+        : 'Something went wrong. Please try again.';
+
+      setStatus(message, 'error');
+    } finally {
+      form.removeAttribute('aria-busy');
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultSubmitLabel;
+      }
+    }
   });
 
   if (nudge && !prefersReducedMotion && 'IntersectionObserver' in window) {
