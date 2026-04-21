@@ -317,3 +317,132 @@ if (document.readyState === 'loading') {
 } else {
   initHomepageNavigation();
 }
+
+// =============================================
+// Feedback Modal
+// =============================================
+function initFeedbackModal() {
+  const dialog = document.querySelector('[data-feedback-modal]');
+  const triggers = Array.from(document.querySelectorAll('[data-feedback-open]'));
+  const form = dialog?.querySelector('[data-feedback-form]');
+  const closeButtons = dialog ? Array.from(dialog.querySelectorAll('[data-feedback-close]')) : [];
+  const panels = dialog ? Array.from(dialog.querySelectorAll('[data-feedback-panel]')) : [];
+  const nudge = document.querySelector('[data-feedback-nudge]');
+
+  if (!dialog || !form || !triggers.length) return;
+
+  const email = form.dataset.feedbackEmail;
+  const contextInput = form.querySelector('input[name="context"]');
+  const closeButton = dialog.querySelector('.feedback-modal__close');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lastTrigger = null;
+
+  function showPanel(name) {
+    panels.forEach((panel) => {
+      const isActive = panel.dataset.feedbackPanel === name;
+      panel.hidden = !isActive;
+    });
+  }
+
+  function resetFormState() {
+    form.reset();
+    showPanel('form');
+  }
+
+  function openModal(trigger) {
+    lastTrigger = trigger;
+
+    if (contextInput) {
+      contextInput.value = trigger.dataset.feedbackSource || contextInput.defaultValue;
+    }
+
+    resetFormState();
+    dialog.showModal();
+    document.body.classList.add('feedback-open');
+
+    requestAnimationFrame(() => {
+      closeButton?.focus();
+    });
+  }
+
+  function closeModal() {
+    if (!dialog.open) return;
+
+    dialog.close();
+    document.body.classList.remove('feedback-open');
+    lastTrigger?.focus();
+  }
+
+  function buildMailtoHref(formData) {
+    const audience = formData.get('audience');
+    const impression = formData.get('impression');
+    const friction = formData.get('friction')?.toString().trim() || 'None shared';
+    const improvement = formData.get('improvement')?.toString().trim() || 'None shared';
+    const context = formData.get('context') || document.title;
+    const location = window.location.href;
+
+    const subject = `Portfolio feedback: ${context}`;
+    const body = [
+      `Context: ${context}`,
+      `Page: ${location}`,
+      `Audience: ${audience}`,
+      `First impression: ${impression}/5`,
+      '',
+      'What almost stopped you from engaging?',
+      friction,
+      '',
+      'What would make this more compelling for a hiring decision?',
+      improvement,
+    ].join('\n');
+
+    return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => openModal(trigger));
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', closeModal);
+  });
+
+  dialog.addEventListener('cancel', (event) => {
+    event.preventDefault();
+    closeModal();
+  });
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const formData = new FormData(form);
+    window.location.href = buildMailtoHref(formData);
+    showPanel('confirmation');
+  });
+
+  if (nudge && !prefersReducedMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        nudge.classList.add('is-visible');
+        observer.disconnect();
+      });
+    }, { threshold: 0.55 });
+
+    observer.observe(nudge);
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initFeedbackModal);
+} else {
+  initFeedbackModal();
+}

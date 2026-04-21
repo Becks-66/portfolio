@@ -125,6 +125,29 @@
               </div>
             </article>
           </div>
+
+          <div class="feedback-prompt feedback-prompt--homepage" data-feedback-nudge>
+            <button
+              type="button"
+              class="feedback-trigger feedback-trigger--homepage"
+              data-feedback-open
+              data-feedback-source="Homepage projects section"
+              aria-haspopup="dialog"
+            >
+              <span class="feedback-trigger__icon" aria-hidden="true">
+                <span class="feedback-trigger__bubble feedback-trigger__bubble--primary">
+                  <span class="feedback-trigger__face"></span>
+                </span>
+                <span class="feedback-trigger__bubble feedback-trigger__bubble--secondary">
+                  <span class="feedback-trigger__face feedback-trigger__face--muted"></span>
+                </span>
+              </span>
+              <span class="feedback-trigger__copy">
+                <span class="feedback-trigger__title">Leave optional feedback</span>
+                <span class="feedback-trigger__meta">Help me improve, it will take 30 seconds!</span>
+              </span>
+            </button>
+          </div>
         </section>
       </main>
 
@@ -160,6 +183,97 @@
       </footer>
 
     </div>
+
+    <dialog class="feedback-modal" data-feedback-modal aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__surface">
+        <button type="button" class="feedback-modal__close" data-feedback-close aria-label="Close feedback form">
+          <span aria-hidden="true">×</span>
+        </button>
+
+        <section class="feedback-modal__panel" data-feedback-panel="form">
+          <div class="feedback-modal__header">
+            <span class="feedback-modal__tag">Live research project</span>
+            <h2 id="feedback-modal-title" class="feedback-modal__title">Help me refine this portfolio</h2>
+            <p class="feedback-modal__description">
+              I treat my UX portfolio as a live research project. Whether you're a recruiter, a designer, or simply curious, your honest feedback can help me understand what works and what I need to change.<br />
+              This will help me create a better UI and deliver the best UX I can!
+            </p>
+          </div>
+
+          <form class="feedback-form" data-feedback-form data-feedback-email="reb.guerrini@gmail.com">
+            <input type="hidden" name="context" value="Homepage projects section" />
+
+            <fieldset class="feedback-form__group">
+              <legend class="feedback-form__legend">Who are you?</legend>
+              <div class="feedback-form__chips">
+                <label class="feedback-chip">
+                  <input type="radio" name="audience" value="Recruiter" required />
+                  <span>Recruiter</span>
+                </label>
+                <label class="feedback-chip">
+                  <input type="radio" name="audience" value="Designer" />
+                  <span>Designer</span>
+                </label>
+                <label class="feedback-chip">
+                  <input type="radio" name="audience" value="Other" />
+                  <span>Other</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="feedback-form__group">
+              <legend class="feedback-form__legend">What's your first impression?</legend>
+              <div class="feedback-scale" aria-describedby="feedback-scale-labels">
+                <label class="feedback-scale__option">
+                  <input type="radio" name="impression" value="1" required />
+                  <span>1</span>
+                </label>
+                <label class="feedback-scale__option">
+                  <input type="radio" name="impression" value="2" />
+                  <span>2</span>
+                </label>
+                <label class="feedback-scale__option">
+                  <input type="radio" name="impression" value="3" />
+                  <span>3</span>
+                </label>
+                <label class="feedback-scale__option">
+                  <input type="radio" name="impression" value="4" />
+                  <span>4</span>
+                </label>
+                <label class="feedback-scale__option">
+                  <input type="radio" name="impression" value="5" />
+                  <span>5</span>
+                </label>
+              </div>
+              <div id="feedback-scale-labels" class="feedback-scale__labels" aria-hidden="true">
+                <span>Forgettable</span>
+                <span>Compelling</span>
+              </div>
+            </fieldset>
+
+            <label class="feedback-form__group feedback-form__group--field">
+              <span class="feedback-form__legend">What's one thing that almost stopped you from engaging? <span class="feedback-form__optional">(optional)</span></span>
+              <textarea name="friction" rows="4" placeholder="Be honest, every feedback is useful!"></textarea>
+            </label>
+
+            <label class="feedback-form__group feedback-form__group--field">
+              <span class="feedback-form__legend">What would make this more compelling for a hiring decision? <span class="feedback-form__optional">(optional)</span></span>
+              <textarea name="improvement" rows="4" placeholder="Specific to recruiters, but anyone's welcome to weigh in."></textarea>
+            </label>
+
+            <div class="feedback-form__footer">
+              <p class="feedback-form__note">Takes about 30 seconds</p>
+              <button type="submit" class="btn-cta feedback-form__submit">Share feedback</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="feedback-modal__panel feedback-modal__panel--confirmation" data-feedback-panel="confirmation" hidden>
+          <h2 class="feedback-modal__title feedback-modal__title--confirmation">Thank you!</h2>
+          <button type="button" class="btn-cta" data-feedback-close>Get back to the portfolio</button>
+        </section>
+      </div>
+    </dialog>
 
     <script type="module" src="/src/main.js"></script>
   </body>

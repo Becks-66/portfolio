@@ -29,6 +29,10 @@
   --color-white: #ffffff;
   --color-bg-mint: #F7FFFB;
   --color-bg-overlay: rgba(223, 223, 223, 0.3);
+  --color-feedback-overlay: rgba(75, 50, 89, 0.18);
+  --color-feedback-shadow: 0px 16px 48px rgba(18, 10, 26, 0.2);
+  --color-feedback-border: #d1d5db;
+  --color-feedback-surface: #f3f4f6;
   --color-case-study-hero-start: rgba(158, 117, 181, 0.2);
   --color-case-study-hero-end: rgba(76, 198, 154, 0.2);
   --color-case-study-problem-frame-start: rgba(158, 117, 181, 0.72);

@@ -25,6 +25,16 @@
   gap: var(--space-md);
 }
 
+.case-study-feedback {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.case-study-feedback .feedback-trigger {
+  max-width: 35rem;
+}
+
 /* Case Study Hero Card - Mobile (stacked layout) */
 .case-study-hero {
   display: flex;
@@ -1561,6 +1571,10 @@
     padding: 0 var(--space-sm);
     padding-bottom: var(--space-md);
   }
+
+  .case-study-feedback {
+    padding-top: 0.5rem;
+  }
   
   /* Case Study Hero - Tablet (horizontal layout) */
   .case-study-hero {
@@ -1835,6 +1849,10 @@
 
   .case-study-page--indexed .case-study-main {
     padding: 0 40px 60px;
+  }
+
+  .case-study-feedback {
+    padding-top: 0;
   }
 
   .case-study-index__grid {
