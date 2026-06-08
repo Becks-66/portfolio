@@ -10,6 +10,7 @@ export default defineConfig({
         projects: resolve(__dirname, 'projects.html'),
         runnable: resolve(__dirname, 'runnable.html'),
         journeal: resolve(__dirname, 'journeal.html'),
+        meridian: resolve(__dirname, 'meridian.html'),
       },
     },
   },

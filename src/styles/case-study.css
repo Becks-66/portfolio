@@ -1986,3 +1986,231 @@
     transition: none;
   }
 }
+
+/* =============================================
+   Meridian case study — specific additions
+   ============================================= */
+
+/* Hero "Stage" tag (amber, matches homepage "Shipping soon") */
+.case-study-page--indexed .case-study-hero__tag--shipping {
+  background-color: rgba(207, 161, 49, 0.3);
+  border: 1px solid #b8860b;
+}
+
+/* Problem statement — ordered list of questions */
+.case-study-problem__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  padding-left: 24px;
+  list-style: decimal;
+}
+
+.case-study-problem__questions .case-study-problem__question {
+  padding-left: 4px;
+}
+
+/* Index — Meridian 4 + 3 layout (desktop). Tablet/mobile inherit Runnable behavior. */
+@media (min-width: 1024px) {
+  .case-study-index--meridian {
+    max-width: 1000px;
+    align-self: center;
+  }
+
+  .case-study-index--meridian .case-study-index__row--primary .case-study-index__card {
+    flex: 0 1 calc((100% - var(--space-md) * 3) / 4);
+  }
+
+  .case-study-index--meridian .case-study-index__row--secondary .case-study-index__card {
+    flex: 0 1 calc((100% - var(--space-md) * 2) / 3);
+  }
+}
+
+/* Persona card grid (Introduction → Target users) */
+.persona-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.persona-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 8px;
+}
+
+.persona-card__avatar {
+  flex-shrink: 0;
+  width: 120px;
+  height: 129px;
+}
+
+.persona-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.persona-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.persona-card__name {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--color-neutral-900);
+  margin: 0;
+}
+
+.persona-card__text {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-neutral-900);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .persona-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Agent cards (An Agent-Based System → Planned agents) */
+.persona-card--agent {
+  border-color: #cdb16f;
+}
+
+.persona-card__avatar--agent {
+  width: 100px;
+  height: 100px;
+}
+
+.persona-card--solo {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .persona-card--solo {
+    width: calc((100% - 32px) / 2);
+  }
+}
+
+/* Left-aligned subsection subtitle (e.g. logo Direction A/B) */
+.section__subtitle--start {
+  text-align: left;
+  width: 100%;
+}
+
+/* Centered figure (diagrams / illustrations) */
+.meridian-figure {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+}
+
+.meridian-figure img,
+.meridian-figure__video {
+  max-width: 100%;
+  height: auto;
+}
+
+.meridian-figure--diagram img {
+  max-width: 400px;
+}
+
+.meridian-figure--chips img {
+  max-width: 404px;
+}
+
+/* Row of phone-screen mockups (2 or 3 abreast) */
+.meridian-screens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.meridian-screens__img {
+  flex: 1 1 140px;
+  min-width: 0;
+  max-width: 252px;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Text + single phone mockup, side by side on desktop (DOM order = left→right) */
+.meridian-media {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+}
+
+.meridian-media__text {
+  width: 100%;
+}
+
+.meridian-media__img {
+  width: 100%;
+  max-width: 252px;
+  height: auto;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .meridian-media {
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .meridian-media__text {
+    flex: 1;
+  }
+
+  .meridian-media__img {
+    flex: 0 0 auto;
+  }
+}
+
+/* Index pre-JS active-state fallback (parity with Runnable/Journeal) */
+.case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="meridian-introduction"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-agent-system:target) .case-study-index__card[data-panel-target="meridian-agent-system"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-tag-system:target) .case-study-index__card[data-panel-target="meridian-tag-system"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-calendar-events:target) .case-study-index__card[data-panel-target="meridian-calendar-events"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-strategy:target) .case-study-index__card[data-panel-target="meridian-strategy"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-ai-workflow:target) .case-study-index__card[data-panel-target="meridian-ai-workflow"],
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-whats-next:target) .case-study-index__card[data-panel-target="meridian-whats-next"] {
+  background-color: var(--card-active-bg);
+  border-color: var(--card-active-border);
+}
+
+.case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="meridian-introduction"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-agent-system:target) .case-study-index__card[data-panel-target="meridian-agent-system"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-tag-system:target) .case-study-index__card[data-panel-target="meridian-tag-system"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-calendar-events:target) .case-study-index__card[data-panel-target="meridian-calendar-events"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-strategy:target) .case-study-index__card[data-panel-target="meridian-strategy"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-ai-workflow:target) .case-study-index__card[data-panel-target="meridian-ai-workflow"] .case-study-index__number,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-whats-next:target) .case-study-index__card[data-panel-target="meridian-whats-next"] .case-study-index__number {
+  color: var(--color-white);
+}
