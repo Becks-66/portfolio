@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 *.yml
 *.yaml
+# Local MCP config (contains tokens — never commit)
+.mcp.json
