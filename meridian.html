@@ -317,10 +317,15 @@
                 <h3 id="meridian-agent-interaction-title" class="section__title">User-agents interaction</h3>
                 <p class="section__text">The user interacts with agents in two main spaces: <strong>a dedicated Agents section and the calendar itself.</strong></p>
                 <p class="section__text">In the Agents section, the user can see all default agents at a glance, along with a short description of what each one does and which tags trigger its activation. From here, agents can be switched on or off individually. By tapping into an agent's detail page, the user can manage its settings, view and edit the memories associated with it, and provide custom instructions through a dedicated input field, shaping how the agent behaves over time.</p>
-                <div class="meridian-screens">
-                  <img src="/images/meridian/agents-screen-1.png" alt="Agents section screen listing the default agents" class="meridian-screens__img" />
-                  <img src="/images/meridian/agents-screen-2.png" alt="Agent detail screen with settings and memories" class="meridian-screens__img" />
-                  <img src="/images/meridian/agents-screen-3.png" alt="Agent custom instructions screen" class="meridian-screens__img" />
+                <div class="meridian-screens mode-group mode-group--outset" data-mode-group>
+                  <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                    <span class="visually-hidden">Preview these images in dark mode</span>
+                    <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                    <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                  </button>
+                  <img data-mode-media src="/images/meridian/agents-screen-1.png" alt="Agents section screen listing the default agents" class="meridian-screens__img" />
+                  <img data-mode-media src="/images/meridian/agents-screen-2.png" alt="Agent detail screen with settings and memories" class="meridian-screens__img" />
+                  <img data-mode-media src="/images/meridian/agents-screen-3.png" alt="Agent custom instructions screen" class="meridian-screens__img" />
                 </div>
                 <p class="section__text">Inside the calendar, users interacts with the agent by visualizing the brief they have generated for the created events. <strong>The brief needs to be approved by the user. An unapproved brief appears inside the event as a card with a dashed stroke,</strong> signaling that user confirmation is needed (see the Calendar Event section for details about their appearance and function). The <strong>user can review the agent's suggestions one by one and either modify or reject them. Then, the user can confirm the brief.</strong> Eventually, the user can decide to entirely regenerate the brief. See Calendar Events - Confirming the brief to see the interaction. All users' modifications on the brief are registered to make the suggestions more precise with time, requiring less effort for the user to review and approve them.</p>
               </section>
@@ -341,7 +346,14 @@
                 <h3 id="meridian-whats-a-tag-title" class="section__title">What's a Tag</h3>
                 <p class="section__text">In Meridian, a tag is <strong>a label attached to an event that describes what kind of event it is.</strong> Events can carry one or more tags, and tags are the element that connects events to the rest of the system.</p>
                 <figure class="meridian-figure">
-                  <img src="/images/meridian/tag-example.png" alt="Grid of example Meridian tags: Work, Meeting, Health, Commute, Travel, Social, Family, Finance, Study, Deadline, Errands, Focus, Birthday" />
+                  <span class="mode-group" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                    </button>
+                    <img data-mode-media src="/images/meridian/tag-example.png" alt="Grid of example Meridian tags: Work, Meeting, Health, Commute, Travel, Social, Family, Finance, Study, Deadline, Errands, Focus, Birthday" />
+                  </span>
                 </figure>
                 <p class="section__text">Unlike traditional calendar categories or color labels, tags in Meridian:</p>
                 <ul class="section__list">
@@ -414,11 +426,25 @@
                 <h3 id="meridian-design-solution-title" class="section__title">The design solution</h3>
                 <p class="section__text">In the design, both event card types share the same warm, low-contrast palette as the rest of the app.</p>
                 <figure class="meridian-figure">
-                  <img src="/images/meridian/event-card-user.png" alt="User-created event cards across day, week and month views" />
+                  <span class="mode-group mode-group--outset" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                    </button>
+                    <img data-mode-media src="/images/meridian/event-card-user.png" alt="User-created event cards across day, week and month views" />
+                  </span>
                 </figure>
                 <p class="section__text"><strong>User-created events have no stroke and a soft, light fill.</strong> The type of event is communicated through the icons of the tags assigned to it, which appear directly on the card. The cards adapt across the three calendar views (day, week, and month) scaling down their content as space gets tighter. In the week view, space is too tight to fit the tag icons, so the cards rely on title and time alone.</p>
                 <figure class="meridian-figure">
-                  <img src="/images/meridian/event-card-ai.png" alt="AI-generated event cards with a visible stroke and the proposing agent's icon" />
+                  <span class="mode-group mode-group--outset" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                    </button>
+                    <img data-mode-media src="/images/meridian/event-card-ai.png" alt="AI-generated event cards with a visible stroke and the proposing agent's icon" />
+                  </span>
                 </figure>
                 <p class="section__text"><strong>AI-generated events have a visible stroke and a fill that sits closer to the background.</strong> Instead of tag icons, these cards display the icon of the agent that proposed the event, so the user can immediately see who's behind the suggestion.</p>
                 <p class="section__text">The palette stays intact and the multi-tag problem disappears: tags don't determine the card's color, so an event with multiple tags simply shows multiple icons, with no arbitrary "which tag wins" decision to make.</p>
@@ -443,9 +469,14 @@
                   <p class="section__text meridian-media__text">When the event is confirmed, it appears on the calendar as a card with a dashed stroke, signaling that user needs to confirm the brief generated by the agents. By tapping the card, the user can review the suggested details, then either confirm the brief or regenerate it.</p>
                 </div>
                 <p class="section__text">When a confirmed agent suggestion creates a new event (like a commute added by the Travel Agent) that event appears on the calendar. Tapping it shows the event details and a reference to the event it originated from, which the user can tap to navigate directly to.</p>
-                <div class="meridian-screens">
-                  <img src="/images/meridian/event-origin-1.png" alt="AI-created commute event on the calendar" class="meridian-screens__img" />
-                  <img src="/images/meridian/event-origin-2.png" alt="Event details showing a reference to the originating event" class="meridian-screens__img" />
+                <div class="meridian-screens meridian-screens--pair mode-group" data-mode-group>
+                  <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                    <span class="visually-hidden">Preview these images in dark mode</span>
+                    <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                    <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                  </button>
+                  <img data-mode-media src="/images/meridian/event-origin-1.png" alt="AI-created commute event on the calendar" class="meridian-screens__img" />
+                  <img data-mode-media src="/images/meridian/event-origin-2.png" alt="Event details showing a reference to the originating event" class="meridian-screens__img" />
                 </div>
               </section>
             </div>
@@ -473,15 +504,29 @@
                 <h3 id="meridian-palette-title" class="section__title">Primary color palette</h3>
                 <p class="section__text">The primary color palette include <strong>warm gold tones paired with soft creams and deep browns</strong>, building the premium but warm direction.</p>
                 <figure class="meridian-figure">
-                  <img src="/images/meridian/palette-primary.png" alt="Meridian primary color palette of warm golds, soft creams and deep browns" />
+                  <span class="mode-group" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                    </button>
+                    <img data-mode-media src="/images/meridian/palette-primary.png" alt="Meridian primary color palette of warm golds, soft creams and deep browns" />
+                  </span>
                 </figure>
                 <p class="section__text"><strong>Translating "gold" into a digital palette turned out to be harder than expected.</strong> Gold isn't really a color but a metal, a reflective surface that shifts across yellows, oranges, and browns depending on shape and light. A quick search for "gold hex" returns dozens of valid options, and each one pulls the palette in a different direction: too yellow, too brown (shifting into coffee or sand) too desaturated. The risk was ending up with a palette that suggested gold without ever truly evoking it.</p>
                 <p class="section__text"><strong>Instead of relying on a single "gold" hex, the palette is built around a range of warm tones</strong> (light cream highlights, mid-tone ambers, and deep browns) that work together to recreate the feeling of a metallic surface.</p>
                 <p class="section__text">Also, <strong>key elements like primary buttons use a gold gradient stroke that blends multiple tones to mimic the play of light and shadow on a real metal surface</strong>. This reinforces the brand direction at the level of the smallest details.</p>
                 <figure class="meridian-figure">
-                  <video class="meridian-figure__video" autoplay loop muted playsinline aria-label="Primary button using a gold gradient stroke blending multiple warm tones">
-                    <source src="/images/meridian/palette-gradient.webm" type="video/webm" />
-                  </video>
+                  <span class="mode-group" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this video in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                    </button>
+                    <video class="meridian-figure__video" data-mode-media autoplay loop muted playsinline aria-label="Primary button using a gold gradient stroke blending multiple warm tones">
+                      <source src="/images/meridian/palette-gradient.webm" type="video/webm" />
+                    </video>
+                  </span>
                 </figure>
               </section>
 
@@ -514,7 +559,14 @@
                   <p class="section__text">This direction won, because <strong>it gave the brand character, was recognizable and made the agents visible at the brand level.</strong></p>
                   <p class="section__text">The final logo is the resolution of the tension that ran through the entire branding process: a premium feel built around a warm, human character.</p>
                   <figure class="meridian-figure">
-                    <img src="/images/meridian/logo-final.png" alt="The final Meridian logo: the agent mascot with the Meridian wordmark" />
+                    <span class="mode-group" data-mode-group>
+                      <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                        <span class="visually-hidden">Preview this image in dark mode</span>
+                        <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                        <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>
+                      </button>
+                      <img data-mode-media src="/images/meridian/logo-final.png" alt="The final Meridian logo: the agent mascot with the Meridian wordmark" />
+                    </span>
                   </figure>
                 </div>
               </section>

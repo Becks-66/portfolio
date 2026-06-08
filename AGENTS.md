@@ -19,7 +19,7 @@ For visual or layout changes, verify the result with `plaxwright-cli` skill and 
 
 Pure HTML/CSS/minimal JS site built with Vite. No frameworks, no CSS preprocessors.
 
-**Pages**: `index.html` (homepage), `projects.html`, `runnable.html`, `journeal.html`
+**Pages**: `index.html` (homepage), `runnable.html`, `journeal.html`, `meridian.html`
 
 **CSS** is modular in `src/styles/`, imported in order via `main.css`:
 1. `base.css` — design tokens (CSS custom properties), reset, accessibility

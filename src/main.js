@@ -167,6 +167,62 @@ if (document.readyState === 'loading') {
 }
 
 // =============================================
+// Dark-mode image preview toggles (per group)
+// =============================================
+// Each [data-mode-group] has one [data-mode-toggle] button and one or more
+// [data-mode-media] elements (img or video). Clicking swaps their source to the
+// "-dark" variant (filename + "-dark" before the extension) and flips the icon.
+function initModeToggles() {
+  const groups = document.querySelectorAll('[data-mode-group]');
+  if (!groups.length) return;
+
+  const toDark = (src) => src.replace(/(\.[a-z0-9]+)(\?.*)?$/i, '-dark$1$2');
+
+  groups.forEach((group) => {
+    const toggle = group.querySelector('[data-mode-toggle]');
+    const media = Array.from(group.querySelectorAll('[data-mode-media]'));
+
+    if (!toggle || !media.length) return;
+
+    const items = media.map((el) => {
+      if (el.tagName === 'VIDEO') {
+        const source = el.querySelector('source');
+        return { type: 'video', el, source, light: source ? source.getAttribute('src') : null };
+      }
+      return { type: 'img', el, light: el.getAttribute('src') };
+    });
+
+    let dark = false;
+
+    toggle.addEventListener('click', () => {
+      dark = !dark;
+      group.classList.toggle('is-dark', dark);
+      toggle.setAttribute('aria-pressed', String(dark));
+
+      items.forEach((item) => {
+        if (!item.light) return;
+        const next = dark ? toDark(item.light) : item.light;
+
+        if (item.type === 'video' && item.source) {
+          item.source.setAttribute('src', next);
+          item.el.load();
+          const playback = item.el.play();
+          if (playback && typeof playback.catch === 'function') playback.catch(() => {});
+        } else {
+          item.el.setAttribute('src', next);
+        }
+      });
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initModeToggles);
+} else {
+  initModeToggles();
+}
+
+// =============================================
 // Footer scroll behavior for case study pages
 // =============================================
 // The footer is fixed on the side while scrolling, but becomes a normal footer at the end of the page

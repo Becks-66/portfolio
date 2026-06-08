@@ -2139,6 +2139,107 @@
   max-width: 404px;
 }
 
+/* Dark-mode image-preview toggle (per group) */
+.mode-group {
+  position: relative;
+}
+
+/* Figure variant: hug the centered image so the button sits on its corner */
+span.mode-group {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.meridian-figure span.mode-group img,
+.meridian-figure span.mode-group video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border: 1px solid #4b5563;
+  border-radius: 50px;
+  background-color: #4b5563;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.mode-toggle:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Outset variant: button straddles the outer top-right corner (clears the image) */
+.mode-group--outset .mode-toggle {
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+/* Pair variant: shrink the row to hug its two images so the toggle anchors to
+   the second image's corner (not the wide row's far corner). */
+.meridian-screens--pair {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  flex-wrap: nowrap;
+}
+
+.meridian-screens--pair .meridian-screens__img {
+  flex: 0 1 252px;
+}
+
+.mode-group.is-dark .mode-toggle {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #09121f;
+}
+
+.mode-toggle__icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.mode-toggle__icon--sun {
+  display: none;
+}
+
+.mode-group.is-dark .mode-toggle__icon--moon {
+  display: none;
+}
+
+.mode-group.is-dark .mode-toggle__icon--sun {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .mode-toggle {
+    padding: 6px;
+  }
+
+  .mode-toggle__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mode-toggle {
+    transition: none;
+  }
+}
+
 /* Row of phone-screen mockups (2 or 3 abreast) */
 .meridian-screens {
   display: flex;
