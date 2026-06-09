@@ -2185,7 +2185,8 @@ span.mode-group {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  gap: 6px;
+  padding: 5px 11px 5px 9px;
   border: 1px solid #4b5563;
   border-radius: 50px;
   background-color: #4b5563;
@@ -2194,16 +2195,37 @@ span.mode-group {
   transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 
+.mode-toggle__label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mode-toggle__label--light {
+  display: none;
+}
+
+.mode-group.is-dark .mode-toggle__label--dark {
+  display: none;
+}
+
+.mode-group.is-dark .mode-toggle__label--light {
+  display: inline;
+}
+
 .mode-toggle:focus-visible {
   outline: var(--focus-ring);
   outline-offset: 2px;
 }
 
-/* Outset variant: button straddles the outer top-right corner (clears the image) */
+/* Outset variant: the pill sits on the image's top edge, right-aligned to the
+   corner, growing leftward (clears the image content, no rightward overflow). */
 .mode-group--outset .mode-toggle {
   top: 0;
   right: 0;
-  transform: translate(50%, -50%);
+  transform: translateY(-50%);
 }
 
 /* Pair variant: shrink the row to hug its two images so the toggle anchors to
@@ -2245,12 +2267,12 @@ span.mode-group {
 
 @media (min-width: 1024px) {
   .mode-toggle {
-    padding: 6px;
+    padding: 6px 13px 6px 10px;
   }
 
   .mode-toggle__icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -2285,8 +2307,9 @@ span.mode-group {
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  width: fit-content;
-  max-width: 100%;
+  /* hug the stacked image so the outset toggle pill anchors to the image's
+     corner, not the full text column */
+  width: min(320px, 100%);
   margin-inline: auto;
 }
 
