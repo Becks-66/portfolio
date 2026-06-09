@@ -2394,3 +2394,25 @@ span.mode-group {
   color: var(--color-white);
   opacity: 1;
 }
+
+/* In-text cross-reference links to other case-study sections */
+.case-study-xref {
+  color: var(--color-secondary-400);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.case-study-xref:hover {
+  color: var(--color-secondary-hover);
+}
+
+.case-study-xref:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Breathing room when an in-text link scrolls to a subsection heading */
+.section__title {
+  scroll-margin-top: 24px;
+}

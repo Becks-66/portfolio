@@ -153,6 +153,27 @@ function initCaseStudyIndex() {
     });
   });
 
+  // In-text cross-reference links: switch to the referenced panel and, when a
+  // subsection heading is targeted, smooth-scroll to it. Reuses setActivePanel.
+  panelContainer.addEventListener('click', (event) => {
+    const link = event.target.closest('a[data-case-study-link]');
+    if (!link) return;
+
+    const targetId = link.dataset.caseStudyLink;
+    const targetEl = document.getElementById(targetId);
+    const panel = targetEl && targetEl.closest('[data-case-study-panel]');
+    if (!panel) return; // unknown target: let the link behave normally
+
+    event.preventDefault();
+    setActivePanel(panel.dataset.caseStudyPanel, { updateHash: true });
+
+    const behavior = prefersReducedMotion ? 'auto' : 'smooth';
+    requestAnimationFrame(() => {
+      const scrollTarget = targetEl === panel ? panel : targetEl;
+      scrollTarget.scrollIntoView({ behavior, block: 'start' });
+    });
+  });
+
   window.addEventListener('hashchange', () => {
     setActivePanel(resolvePanelKey(), { updateHash: false });
   });
