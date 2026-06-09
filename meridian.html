@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meridian - A UX case study for an AI-powered calendar designed around a team of agents that plans your day with you" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <title>Meridian Case Study | Rebecca Guerrini</title>
+
+    <!-- Prevent FOUC: hide body until CSS loads -->
+    <style>
+      body:not(.page-ready) { opacity: 0; }
+      @media (prefers-reduced-motion: reduce) { body { opacity: 1 !important; } }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PL3VQE3K30"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PL3VQE3K30');
+    </script>
+    <script type="module" crossorigin src="/portfolio/assets/main-B9cUkeUe.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/main-C5IHpnMM.css">
+  </head>
+  <body class="case-study-page case-study-page--indexed">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="page-wrapper">
+      <!-- Header -->
+      <header class="header" role="banner">
+        <div class="header__container">
+          <a href="index.html" class="header__brand" aria-label="Rebecca Guerrini home">REBECCA GUERRINI</a>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="index.html#projects" class="nav-button nav-button--active" aria-current="page">UX projects</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main-content" class="case-study-main" role="main">
+        <!-- Hero Card -->
+        <section class="case-study-hero" aria-labelledby="hero-title">
+          <div class="case-study-hero__image-container">
+            <img
+              src="/portfolio/images/meridian-card-preview.png"
+              alt="Meridian preview showing the Meridian logo and wordmark"
+              class="case-study-hero__image"
+            />
+          </div>
+          <div class="case-study-hero__info">
+            <div class="case-study-hero__details">
+              <div class="case-study-hero__title-group">
+                <h1 id="hero-title" class="case-study-hero__title">Meridian</h1>
+                <p class="case-study-hero__subtitle">An AI-powered calendar designed around a team of agents, that plans your day with you.</p>
+              </div>
+              <div class="case-study-hero__meta-group">
+                <div class="case-study-hero__meta">
+                  <span class="case-study-hero__label">Type of project:</span>
+                  <span class="case-study-hero__value">UX Project</span>
+                </div>
+                <div class="case-study-hero__meta">
+                  <span class="case-study-hero__label">Stage:</span>
+                  <span class="case-study-hero__tag case-study-hero__tag--shipping">Shipping soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="case-study-overview">
+          <a href="index.html#projects" class="back-link" aria-label="Back to projects">
+            <img src="/portfolio/images/arrow-icon.svg" alt="" aria-hidden="true" class="back-link__icon" />
+          </a>
+
+          <div class="case-study-overview__content">
+            <section class="case-study-problem" aria-labelledby="problem-statement-title">
+              <h2 id="problem-statement-title" class="case-study-problem__title">Problem statement</h2>
+              <div class="case-study-problem__underline" aria-hidden="true"></div>
+              <div class="case-study-problem__body">
+                <p class="case-study-problem__text">Busy people rely on calendars to keep track of appointments, errands, and events. However, calendars only captures the what, when, and where of an event: everything else around it lives outside of it.</p>
+                <p class="case-study-problem__text">Take a simple doctor's appointment: the user has to switch between apps to check public transport options, calculate when to leave and when to start getting ready, and remember to bring relevant documents. A single appointment ends up requiring multiple tools and a lot of mental effort to plan.</p>
+              </div>
+              <ol class="case-study-problem__questions">
+                <li class="case-study-problem__question">How can we help users save time and energy when planning their day?</li>
+                <li class="case-study-problem__question">How can we assist them in organizing everything tied to an event without leaving their calendar?</li>
+              </ol>
+            </section>
+
+            <nav class="case-study-index case-study-index--meridian" aria-label="Meridian case study sections" data-case-study-index>
+              <div class="case-study-index__grid">
+                <p class="case-study-index__label">Index</p>
+                <div class="case-study-index__row case-study-index__row--primary">
+                  <a href="#meridian-introduction" class="case-study-index__card case-study-index__card--intro" data-case-study-trigger="meridian-introduction" data-panel-target="meridian-introduction" aria-controls="meridian-introduction">
+                    <span class="case-study-index__card-header">
+                      <span class="case-study-index__number">1</span>
+                      <span class="case-study-index__arrow" aria-hidden="true">↓</span>
+                    </span>
+                    <span class="case-study-index__title">Introduction</span>
+                  </a>
+
+                  <a href="#meridian-agent-system" class="case-study-index__card case-study-index__card--research" data-case-study-trigger="meridian-agent-system" data-panel-target="meridian-agent-system" aria-controls="meridian-agent-system">
+                    <span class="case-study-index__card-header">
+                      <span class="case-study-index__number">2</span>
+                      <span class="case-study-index__arrow" aria-hidden="true">↓</span>
+                    </span>
+                    <span class="case-study-index__title">An Agent-Based System</span>
+                  </a>
+
+                  <a href="#meridian-tag-system" class="case-study-index__card case-study-index__card--strategy" data-case-study-trigger="meridian-tag-system" data-panel-target="meridian-tag-system" aria-controls="meridian-tag-system">
+                    <span class="case-study-index__card-header">
+                      <span class="case-study-index__number">3</span>
+                      <span class="case-study-index__arrow" aria-hidden="true">↓</span>
+                    </span>
+                    <span class="case-study-index__title">Tag System</span>
+                  </a>
+
+                  <a href="#meridian-calendar-events" class="case-study-index__card case-study-index__card--designs" data-case-study-trigger="meridian-calendar-events" data-panel-target="meridian-calendar-events" aria-controls="meridian-calendar-events">
+                    <span class="case-study-index__card-header">
+                      <span class="case-study-index__number">4</span>
+                      <span class="case-study-index__arrow" aria-hidden="true">↓</span>
+                    </span>
+                    <span class="case-study-index__title">Calendar Events</span>
+                  </a>
+                </div>
+
+                <div class="case-study-index__row case-study-index__row--secondary">
+                  <a href="#meridian-strategy" class="case-study-index__card case-study-index__card--testing" data-case-study-trigger="meridian-strategy" data-panel-target="meridian-strategy" aria-controls="meridian-strategy">
+                    <span class="case-study-index__card-header">
+                      <span class="case-study-index__number">5</span>
+                      <span class="case-study-index__arrow" aria-hidden="true">↓</span>
+                    </span>
+                    <span class="case-study-index__title">Strategy and branding</span>
+                  </a>
+
+                  <a href="#meridian-ai-workflow" class="case-study-index__card case-study-index__card--intro" data-case-study-trigger="meridian-ai-workflow" data-panel-target="meridian-ai-workflow" aria-controls="meridian-ai-workflow">
+                    <span class="case-study-index__card-header">
+                      <span class="case-study-index__number">6</span>
+                      <span class="case-study-index__arrow" aria-hidden="true">↓</span>
+                    </span>
+                    <span class="case-study-index__title">AI in the workflow</span>
+                  </a>
+
+                  <a href="#meridian-whats-next" class="case-study-index__card case-study-index__card--research" data-case-study-trigger="meridian-whats-next" data-panel-target="meridian-whats-next" aria-controls="meridian-whats-next">
+                    <span class="case-study-index__card-header">
+                      <span class="case-study-index__number">7</span>
+                      <span class="case-study-index__arrow" aria-hidden="true">↓</span>
+                    </span>
+                    <span class="case-study-index__title">What's next</span>
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <div class="case-study-panels" data-case-study-panels>
+          <article id="meridian-introduction" class="case-study-panel case-study-panel--intro" data-case-study-panel="meridian-introduction" tabindex="-1" aria-labelledby="meridian-introduction-title">
+            <header class="case-study-panel__header">
+              <span class="case-study-panel__number" aria-hidden="true">01</span>
+              <div class="case-study-panel__heading-group">
+                <h2 id="meridian-introduction-title" class="case-study-panel__heading">Introduction</h2>
+                <span class="case-study-panel__underline" aria-hidden="true"></span>
+              </div>
+            </header>
+
+            <div class="case-study-panel__sections">
+              <section class="case-study-panel__section" aria-labelledby="meridian-user-story-title">
+                <h3 id="meridian-user-story-title" class="section__title">User story</h3>
+                <p class="section__text">Anna, 28, recently moved to a new city. Between her job, settling into her new apartment, and keeping up with friends and family back home, her schedule is full. Planning each event has become overwhelming: she has to check a different app for bus times, figure out when to leave and when to start getting ready, and remind herself to check the brief of the latest meeting with this client. She finds herself jumping between apps and mentally tracking details that her calendar doesn't capture.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-target-users-title">
+                <h3 id="meridian-target-users-title" class="section__title">Target users</h3>
+                <p class="section__text"><strong>Adults of all ages</strong> managing multiple commitments, who want <strong>planning to feel simple, smart, and effortless</strong>.</p>
+                <div class="persona-grid persona-grid--users">
+                  <div class="persona-card">
+                    <div class="persona-card__avatar">
+                      <img src="/portfolio/images/meridian/persona-students.png" alt="Illustration of a student" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Students</p>
+                      <p class="persona-card__text">Juggling schoolwork, social life, and family events, they need a reliable app to schedule, plan their trips and remember all the important stuff.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card">
+                    <div class="persona-card__avatar">
+                      <img src="/portfolio/images/meridian/persona-freelancers.png" alt="Illustration of a freelancer or corporate worker" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Freelancers / Corporates</p>
+                      <p class="persona-card__text">Workers managing multiple clients, projects, and locations, whose fragmented schedules require constant context-switching and travel planning.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card">
+                    <div class="persona-card__avatar">
+                      <img src="/portfolio/images/meridian/persona-distracted.png" alt="Illustration of a distracted person" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Distracted</p>
+                      <p class="persona-card__text">They struggle to focus and remember details, often missing appointments or forgetting important things.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card">
+                    <div class="persona-card__avatar">
+                      <img src="/portfolio/images/meridian/persona-travelers.png" alt="Illustration of a traveler" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Travelers</p>
+                      <p class="persona-card__text">Individuals who frequently move between cities or countries, dealing with new transit systems, time zones, packing, and trip logistics.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article id="meridian-agent-system" class="case-study-panel case-study-panel--research" data-case-study-panel="meridian-agent-system" tabindex="-1" aria-labelledby="meridian-agent-system-title">
+            <header class="case-study-panel__header">
+              <span class="case-study-panel__number" aria-hidden="true">02</span>
+              <div class="case-study-panel__heading-group">
+                <h2 id="meridian-agent-system-title" class="case-study-panel__heading">An Agent-Based System</h2>
+                <span class="case-study-panel__underline" aria-hidden="true"></span>
+              </div>
+            </header>
+
+            <div class="case-study-panel__sections">
+              <section class="case-study-panel__section" aria-labelledby="meridian-ai-agent-title">
+                <h3 id="meridian-ai-agent-title" class="section__title">What's an AI agent</h3>
+                <p class="section__text">An AI agent is a <strong>small, autonomous helper</strong> that works in the background to support the user with a specific task. Unlike a chatbot that simply answers questions, <strong>an agent actively monitors context, detects patterns, and takes action on its own.</strong> Agents have become increasingly common in many of the tools we use every day, from ChatGPT, Claude and OpenClaw. In Meridian, <strong>agents scan the user's schedule, and surface helpful suggestions</strong> (things like reminders, draft events, or useful information tied to upcoming commitments).</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-agent-why-title">
+                <h3 id="meridian-agent-why-title" class="section__title">Why an agent-based approach</h3>
+                <p class="section__text">We chose an agent-based approach for two main reasons. First, <strong>agents can be customized using the user's own data and input</strong> (such as personal notes and preferences) offering a tailored, programmable experience. Second, <strong>the user always stays in control of agents outputs</strong>: agents propose, and the user approves or dismisses.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-planned-agents-title">
+                <h3 id="meridian-planned-agents-title" class="section__title">Planned agents</h3>
+                <p class="section__text">The app comes with a set of built-in agents, each specialized in a specific area of the user's life.</p>
+                <div class="persona-grid persona-grid--agents">
+                  <div class="persona-card persona-card--agent">
+                    <div class="persona-card__avatar persona-card__avatar--agent">
+                      <img src="/portfolio/images/meridian/agent-travel.svg" alt="Travel agent mascot" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Travel agent</p>
+                      <p class="persona-card__text">Helps the user plan commutes and trips, by flagging transport options, suggesting departure times, handling accommodation details, and informing about weather forecast.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card persona-card--agent">
+                    <div class="persona-card__avatar persona-card__avatar--agent">
+                      <img src="/portfolio/images/meridian/agent-secretary.svg" alt="Secretary agent mascot" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Secretary</p>
+                      <p class="persona-card__text">Prepare the user for work events: it sends reminders about what to bring, provides context briefings based on past memories.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card persona-card--agent">
+                    <div class="persona-card__avatar persona-card__avatar--agent">
+                      <img src="/portfolio/images/meridian/agent-social.svg" alt="Social manager agent mascot" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Social manager</p>
+                      <p class="persona-card__text">Handles the user's social life: birthday reminders, anniversary alerts, gift ideas, and thoughtful social context before meetings with friends or family.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card persona-card--agent">
+                    <div class="persona-card__avatar persona-card__avatar--agent">
+                      <img src="/portfolio/images/meridian/agent-housekeeper.svg" alt="Housekeeper agent mascot" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Housekeeper</p>
+                      <p class="persona-card__text">Keeps household chores under control. Manages household logistics, keeping track of recurring errands, chores, and home-related tasks.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card persona-card--agent">
+                    <div class="persona-card__avatar persona-card__avatar--agent">
+                      <img src="/portfolio/images/meridian/agent-accountant.svg" alt="Accountant agent mascot" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Accountant</p>
+                      <p class="persona-card__text">Keeps finances in check. It reminds the user of upcoming billing deadlines and can suggest new events when financial tasks need attention.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card persona-card--agent">
+                    <div class="persona-card__avatar persona-card__avatar--agent">
+                      <img src="/portfolio/images/meridian/agent-health.svg" alt="Health assistant agent mascot" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Health assistant</p>
+                      <p class="persona-card__text">Manages doctor's appointments (reminders, documents to bring, questions to ask), tracks recurring events like medications, and follows fitness routines.</p>
+                    </div>
+                  </div>
+                  <div class="persona-card persona-card--agent persona-card--solo">
+                    <div class="persona-card__avatar persona-card__avatar--agent">
+                      <img src="/portfolio/images/meridian/agent-tutor.svg" alt="Tutor agent mascot" />
+                    </div>
+                    <div class="persona-card__body">
+                      <p class="persona-card__name">Tutor</p>
+                      <p class="persona-card__text">Supports focus during study, work, or deep-focus sessions. Based on the user's preferences, it can block notifications</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-designing-agents-title">
+                <h3 id="meridian-designing-agents-title" class="section__title">Designing the agents</h3>
+                <figure class="meridian-figure meridian-figure--diagram">
+                  <img src="/portfolio/images/meridian/designing-agents.png" alt="Diagram of the Meridian agent mascots arranged around a central robot" />
+                </figure>
+                <p class="section__text">Most users aren't familiar with the concept of AI agents, and even when explained the idea can feel abstract or technical. <strong>To make agents feel more tangible and approachable, I gave each one a visual identity.</strong> The results are fun and recognizable mascots: variations of the same base robot, dressed and styled based on what they do. The Housekeeper carries a broom, the Health Assistant wears a red cross cap, and so on. This personification makes the agents feel less like invisible entities running in the background, and more like helpers the user can relate to. Beyond clarity, <strong>this design choice also adds a layer of warmth and playfulness to the app:</strong> turning what could be a purely functional system into something a little more human, and a little more fun to interact with.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-agent-interaction-title">
+                <h3 id="meridian-agent-interaction-title" class="section__title">User-agents interaction</h3>
+                <p class="section__text">The user interacts with agents in two main spaces: <strong>a dedicated Agents section and the calendar itself.</strong></p>
+                <p class="section__text">In the Agents section, the user can see all default agents at a glance, along with a short description of what each one does and which tags trigger its activation. From here, agents can be switched on or off individually. By tapping into an agent's detail page, the user can manage its settings, view and edit the memories associated with it, and provide custom instructions through a dedicated input field, shaping how the agent behaves over time.</p>
+                <div class="meridian-screens meridian-screens--trio mode-group mode-group--outset" data-mode-group>
+                  <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                    <span class="visually-hidden">Preview these images in dark mode</span>
+                    <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                    <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                  </button>
+                  <img data-mode-media src="/portfolio/images/meridian/agents-screen-1.png" alt="Agents section screen listing the default agents" class="meridian-screens__img" />
+                  <img data-mode-media src="/portfolio/images/meridian/agents-screen-2.png" alt="Agent detail screen with settings and memories" class="meridian-screens__img" />
+                  <img data-mode-media src="/portfolio/images/meridian/agents-screen-3.png" alt="Agent custom instructions screen" class="meridian-screens__img" />
+                </div>
+                <p class="section__text">Inside the calendar, users interacts with the agent by visualizing the brief they have generated for the created events. <strong>The brief needs to be approved by the user. An unapproved brief appears inside the event as a card with a dashed stroke,</strong> signaling that user confirmation is needed (see the <a class="case-study-xref" href="#meridian-calendar-events" data-case-study-link="meridian-calendar-events">Calendar Event</a> section for details about their appearance and function). The <strong>user can review the agent's suggestions one by one and either modify or reject them. Then, the user can confirm the brief.</strong> Eventually, the user can decide to entirely regenerate the brief (see <a class="case-study-xref" href="#meridian-calendar-events" data-case-study-link="meridian-confirming-brief-title">Confirming the brief</a> for the interaction). All users' modifications on the brief are registered to make the suggestions more precise with time, requiring less effort for the user to review and approve them.</p>
+              </section>
+            </div>
+          </article>
+
+          <article id="meridian-tag-system" class="case-study-panel case-study-panel--strategy" data-case-study-panel="meridian-tag-system" tabindex="-1" aria-labelledby="meridian-tag-system-title">
+            <header class="case-study-panel__header">
+              <span class="case-study-panel__number" aria-hidden="true">03</span>
+              <div class="case-study-panel__heading-group">
+                <h2 id="meridian-tag-system-title" class="case-study-panel__heading">Tag system</h2>
+                <span class="case-study-panel__underline" aria-hidden="true"></span>
+              </div>
+            </header>
+
+            <div class="case-study-panel__sections">
+              <section class="case-study-panel__section" aria-labelledby="meridian-whats-a-tag-title">
+                <h3 id="meridian-whats-a-tag-title" class="section__title">What's a Tag</h3>
+                <p class="section__text">In Meridian, a tag is <strong>a label attached to an event that describes what kind of event it is.</strong> Events can carry one or more tags, and tags are the element that connects events to the rest of the system.</p>
+                <figure class="meridian-figure">
+                  <span class="mode-group" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                    </button>
+                    <img data-mode-media src="/portfolio/images/meridian/tag-example.png" alt="Grid of example Meridian tags: Work, Meeting, Health, Commute, Travel, Social, Family, Finance, Study, Deadline, Errands, Focus, Birthday" />
+                  </span>
+                </figure>
+                <p class="section__text">Unlike traditional calendar categories or color labels, tags in Meridian:</p>
+                <ul class="section__list">
+                  <li><strong>Activate agents:</strong> each tag is mapped to one or more agents, and assigning a tag to an event is what triggers the relevant agent to step in and offer support.</li>
+                  <li><strong>Differentiate events visually:</strong> in Meridian, event cards share the same color regardless of the type of event. That's why the tags shown inside the card help the user visually differentiate the type of event (see the <a class="case-study-xref" href="#meridian-calendar-events" data-case-study-link="meridian-calendar-events">Calendar Event</a> section for more).</li>
+                </ul>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-tags-agents-title">
+                <h3 id="meridian-tags-agents-title" class="section__title">Tags and agents</h3>
+                <p class="section__text"><strong>Each tag is mapped to one or more agents.</strong> Once a tag is confirmed on an event, the corresponding agent steps in and starts offering support tied to that event (reminders, suggestions, briefings, or follow-ups) depending on the agent's role.</p>
+                <p class="section__text">An event can carry more than one tag, and in that case multiple agents are activated together, each contributing within its own area. For example, a work trip tagged as both travel and work will engage the Travel Agent and the Secretary at the same time, one handling the logistics of getting there, the other preparing the user for the meeting itself.</p>
+                <p class="section__text"><strong>The mapping between tags and agents is not fixed,</strong> and the users is always in control:</p>
+                <ul class="section__list">
+                  <li><strong>Users can adjust which agents are tied to which tags from the agent detail page</strong> (see the <a class="case-study-xref" href="#meridian-agent-system" data-case-study-link="meridian-agent-system">Agent-Based System</a> section), shaping the system around how they actually work and live.</li>
+                  <li><strong>The event form itself gives direct control over which agents are involved in a single event:</strong> when creating or editing an event, the user sees the agents activated by the assigned tags and can add or remove them for that specific occasion, based on what they need at the moment.</li>
+                </ul>
+                <p class="section__text">This mapping is what allows the calendar to stay simple on the surface while doing more underneath: the user assigns a tag, the right agent shows up, and they can always step in to adjust who's helping, and when.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-smart-tagging-title">
+                <h3 id="meridian-smart-tagging-title" class="section__title">A smart tagging system</h3>
+                <p class="section__text">Meridian suggests tags automatically whenever a user creates or edits an event, and these suggestions get more accurate over time.</p>
+                <p class="section__text">When creating an event, the system automatically suggests tags based on confidence:</p>
+                <ul class="section__list">
+                  <li><strong>if confidence &gt;=0.85:</strong> the tag is automatically selected</li>
+                  <li><strong>if confidence is between 0.60 and 0.84:</strong> the tag has a dashed stroke</li>
+                  <li><strong>if confidence &lt; 0.60:</strong> the tag is shown with its default appearance</li>
+                </ul>
+                <figure class="meridian-figure meridian-figure--chips">
+                  <img src="/portfolio/images/meridian/tag-confidence-chips.png" alt="Three Work tags showing the selected, medium-confidence dashed, and default appearances" />
+                </figure>
+                <p class="section__text">The user can decide to <strong>accept</strong> the suggested tags by leaving them selected, to <strong>remove</strong> them if wrong or <strong>add</strong> them if Meridian didn't suggest them in the first place.</p>
+                <p class="section__text">Most calendars that offer "smart" tagging rely on simple keyword matching against the event title or description. Meridian's tagging system draws on a wider set of signals: <strong>the event content</strong> (title, description, location, time), the <strong>user's memories</strong> and past events to recognize recurring patterns, and the <strong>user's previous corrections</strong> stored by the system. So, every time the user confirms, edits, or rejects a suggested tag, that decision is recorded as a signal.</p>
+              </section>
+            </div>
+          </article>
+
+          <article id="meridian-calendar-events" class="case-study-panel case-study-panel--designs" data-case-study-panel="meridian-calendar-events" tabindex="-1" aria-labelledby="meridian-calendar-events-title">
+            <header class="case-study-panel__header">
+              <span class="case-study-panel__number" aria-hidden="true">04</span>
+              <div class="case-study-panel__heading-group">
+                <h2 id="meridian-calendar-events-title" class="case-study-panel__heading">Calendar Events</h2>
+                <span class="case-study-panel__underline" aria-hidden="true"></span>
+              </div>
+            </header>
+
+            <div class="case-study-panel__sections">
+              <section class="case-study-panel__section" aria-labelledby="meridian-two-types-title">
+                <h3 id="meridian-two-types-title" class="section__title">Two types of events</h3>
+                <p class="section__text">In Meridian, events on the calendar can come from two sources:</p>
+                <ul class="section__list">
+                  <li><strong>User-created events,</strong> entered manually by the user through the event form.</li>
+                  <li><strong>AI-generated events,</strong> proposed by the agents based on the context of other events, the user's memories, and patterns in their schedule.</li>
+                </ul>
+                <p class="section__text">The Travel Agent may propose a separate event for the airport transfer tied to an upcoming flight; the Housekeeper may suggest a grocery stop on the way back from another appointment; the Secretary may propose a focus block before a deadline.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-card-challenges-title">
+                <h3 id="meridian-card-challenges-title" class="section__title">Designing the event card: the challenges</h3>
+                <p class="section__text">Event card design turned out to be one of the most constrained parts of the project. Three problems had to be solved together.</p>
+                <ul class="section__list">
+                  <li><strong>Telling user events and AI events apart:</strong> the two types of events have different meanings for the user. One is a commitment they've made, the other is a proposal waiting for a decision, and the calendar had to make that difference visible at a glance.</li>
+                  <li><strong>Working within the palette:</strong> Meridian's visual identity is built around warm golds and cream tones, which gives the app its calm, friendly feel (see the <a class="case-study-xref" href="#meridian-strategy" data-case-study-link="meridian-strategy">Strategy and Branding</a> section for more). Introducing bright, saturated colors to signal event types would have clashed with the rest of the interface.</li>
+                  <li><strong>The multi-tag problem:</strong> the most natural instinct would have been to color event cards based on the tag assigned. However, in Meridian an event can carry more than one tag, so there's no single "correct" color to assign. If a work tag mapped to brown and a meeting tag to grey, what color should a work meeting be?</li>
+                </ul>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-design-solution-title">
+                <h3 id="meridian-design-solution-title" class="section__title">The design solution</h3>
+                <p class="section__text">In the design, both event card types share the same warm, low-contrast palette as the rest of the app.</p>
+                <figure class="meridian-figure">
+                  <span class="mode-group mode-group--outset" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                    </button>
+                    <img data-mode-media src="/portfolio/images/meridian/event-card-user.png" alt="User-created event cards across day, week and month views" />
+                  </span>
+                </figure>
+                <p class="section__text"><strong>User-created events have no stroke and a soft, light fill.</strong> The type of event is communicated through the icons of the tags assigned to it, which appear directly on the card. The cards adapt across the three calendar views (day, week, and month) scaling down their content as space gets tighter. In the week view, space is too tight to fit the tag icons, so the cards rely on title and time alone.</p>
+                <figure class="meridian-figure">
+                  <span class="mode-group mode-group--outset" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                    </button>
+                    <img data-mode-media src="/portfolio/images/meridian/event-card-ai.png" alt="AI-generated event cards with a visible stroke and the proposing agent's icon" />
+                  </span>
+                </figure>
+                <p class="section__text"><strong>AI-generated events have a visible stroke and a fill that sits closer to the background.</strong> Instead of tag icons, these cards display the icon of the agent that proposed the event, so the user can immediately see who's behind the suggestion.</p>
+                <p class="section__text">The palette stays intact and the multi-tag problem disappears: tags don't determine the card's color, so an event with multiple tags simply shows multiple icons, with no arbitrary "which tag wins" decision to make.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-creating-event-title">
+                <h3 id="meridian-creating-event-title" class="section__title">Creating an event</h3>
+                <div class="meridian-media">
+                  <p class="section__text meridian-media__text">To create an event the user enters the event's information in a form (title, description, date, time, location, participants, and recurrence). When the user fills out the form in Meridian, the system suggests tags and activates the corresponding agents, both reviewable and editable directly within the form.</p>
+                  <video class="meridian-media__img" autoplay loop muted playsinline aria-label="Event creation form with suggested tags and activated agents">
+                    <source src="/portfolio/images/meridian/event-create.webm" type="video/webm" />
+                  </video>
+                </div>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-confirming-brief-title">
+                <h3 id="meridian-confirming-brief-title" class="section__title">Confirming the brief</h3>
+                <div class="meridian-media meridian-media--reverse">
+                  <video class="meridian-media__img" autoplay loop muted playsinline aria-label="Event card with a dashed stroke prompting the user to confirm the agent-generated brief">
+                    <source src="/portfolio/images/meridian/event-confirm-brief.webm" type="video/webm" />
+                  </video>
+                  <p class="section__text meridian-media__text">When the event is confirmed, it appears on the calendar as a card with a dashed stroke, signaling that user needs to confirm the brief generated by the agents. By tapping the card, the user can review the suggested details, then either confirm the brief or regenerate it.</p>
+                </div>
+                <p class="section__text">When a confirmed agent suggestion creates a new event (like a commute added by the Travel Agent) that event appears on the calendar. Tapping it shows the event details and a reference to the event it originated from, which the user can tap to navigate directly to.</p>
+                <div class="meridian-screens meridian-screens--pair mode-group" data-mode-group>
+                  <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                    <span class="visually-hidden">Preview these images in dark mode</span>
+                    <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                    <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                  </button>
+                  <img data-mode-media src="/portfolio/images/meridian/event-origin-1.png" alt="AI-created commute event on the calendar" class="meridian-screens__img" />
+                  <img data-mode-media src="/portfolio/images/meridian/event-origin-2.png" alt="Event details showing a reference to the originating event" class="meridian-screens__img" />
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article id="meridian-strategy" class="case-study-panel case-study-panel--testing" data-case-study-panel="meridian-strategy" tabindex="-1" aria-labelledby="meridian-strategy-title">
+            <header class="case-study-panel__header">
+              <span class="case-study-panel__number" aria-hidden="true">05</span>
+              <div class="case-study-panel__heading-group">
+                <h2 id="meridian-strategy-title" class="case-study-panel__heading">Strategy and branding</h2>
+                <span class="case-study-panel__underline" aria-hidden="true"></span>
+              </div>
+            </header>
+
+            <div class="case-study-panel__sections">
+              <section class="case-study-panel__section" aria-labelledby="meridian-brand-positioning-title">
+                <h3 id="meridian-brand-positioning-title" class="section__title">Brand positioning</h3>
+                <p class="section__text">When I researched existing AI-powered calendar app, two patterns kept showing up: apps leaning into a young, kawaii feel with cute mascots and playful tones, and apps projecting calm and reliability through minimal interfaces. Both are valid, but they don't make the user feel like they're being served by something capable.</p>
+                <p class="section__text">That gap became Meridian's positioning: <strong>a premium personal assistant for everyday people.</strong> We wanted to give users the experience of having an assistant they can instruct, not just a calendar they have to manage. This also reinforced Meridian's main technological differentiator, <strong>the multi-agent system</strong>, which supports the "I have someone working for me" feeling at the core of the brand.</p>
+                <p class="section__text">Early on, the word guiding the brand was <strong>luxury</strong>, which shaped the first explorations of color and typography. The shift happened when the agents got their mascots, and a pure luxury direction would have clashed with the characters created.</p>
+                <p class="section__text">The final direction landed on <strong>premium but warm</strong>: refined enough to feel like a quality tool, human enough to feel like a companion. This tension would resurface later in the logo design.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-palette-title">
+                <h3 id="meridian-palette-title" class="section__title">Primary color palette</h3>
+                <p class="section__text">The primary color palette include <strong>warm gold tones paired with soft creams and deep browns</strong>, building the premium but warm direction.</p>
+                <figure class="meridian-figure">
+                  <span class="mode-group" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this image in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                    </button>
+                    <img data-mode-media src="/portfolio/images/meridian/palette-primary.png" alt="Meridian primary color palette of warm golds, soft creams and deep browns" />
+                  </span>
+                </figure>
+                <p class="section__text"><strong>Translating "gold" into a digital palette turned out to be harder than expected.</strong> Gold isn't really a color but a metal, a reflective surface that shifts across yellows, oranges, and browns depending on shape and light. A quick search for "gold hex" returns dozens of valid options, and each one pulls the palette in a different direction: too yellow, too brown (shifting into coffee or sand) too desaturated. The risk was ending up with a palette that suggested gold without ever truly evoking it.</p>
+                <p class="section__text"><strong>Instead of relying on a single "gold" hex, the palette is built around a range of warm tones</strong> (light cream highlights, mid-tone ambers, and deep browns) that work together to recreate the feeling of a metallic surface.</p>
+                <p class="section__text">Also, <strong>key elements like primary buttons use a gold gradient stroke that blends multiple tones to mimic the play of light and shadow on a real metal surface</strong>. This reinforces the brand direction at the level of the smallest details.</p>
+                <figure class="meridian-figure">
+                  <span class="mode-group" data-mode-group>
+                    <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                      <span class="visually-hidden">Preview this video in dark mode</span>
+                      <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                      <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                    </button>
+                    <video class="meridian-figure__video" data-mode-media autoplay loop muted playsinline aria-label="Primary button using a gold gradient stroke blending multiple warm tones">
+                      <source src="/portfolio/images/meridian/palette-gradient.webm" type="video/webm" />
+                    </video>
+                  </span>
+                </figure>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-typography-title">
+                <h3 id="meridian-typography-title" class="section__title">Typography</h3>
+                <p class="section__text">The first instinct, following the luxury direction, was to use a serif. But two problems surfaced quickly: <strong>a full serif interface risked feeling old-fashioned, and serifs at small sizes can become tiring to read.</strong></p>
+                <p class="section__text"><strong>The solution was to split the typography by role.</strong> Noto Serif is used only for numbers (the day of the month, the hours on the calendar) while Noto Sans handles all the text.</p>
+                <p class="section__text"><strong>The unexpected payoff was thematic:</strong> numbers set in a serif evoke the dials of classic luxury watches, which often pair serif numerals with gold detailing. A decision made for legibility ended up reinforcing the brand at a deeper level.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-logo-title">
+                <h3 id="meridian-logo-title" class="section__title">Logo design</h3>
+                <p class="section__text">The logo went through two main directions, each tied to a different reading of the brand.</p>
+
+                <div class="subsection">
+                  <h4 class="section__subtitle section__subtitle--start">Direction A: the abstract route</h4>
+                  <figure class="meridian-figure">
+                    <img src="/portfolio/images/meridian/logo-direction-a.png" alt="Logo Direction A: an abstract mark derived from the agent's eye" />
+                  </figure>
+                  <p class="section__text">This direction followed the original luxury instinct: an abstract mark, no mascot, just shape and color. <strong>The form came from the eye of the agent character (two circles of different sizes) abstracted into a standalone symbol.</strong> The choice also tied back to the name: Meridian evokes suns, planets, and orbits, and the circles carried that cosmic, structural feeling.</p>
+                  <p class="section__text">It was clean, and it fit a premium brand. However it wasn't memorable, and the team didn't connect with it. <strong>It felt correct, not distinctive.</strong></p>
+                </div>
+
+                <div class="subsection">
+                  <h4 class="section__subtitle section__subtitle--start">Direction B: the mascot route</h4>
+                  <figure class="meridian-figure">
+                    <img src="/portfolio/images/meridian/logo-direction-b.png" alt="Logo Direction B: explorations using the agent mascot character" />
+                  </figure>
+                  <p class="section__text">For this one I used the agent character itself as the logo. On paper, this clashed with the luxury direction, but the right typography and color treatment could pull it back toward premium but warm.</p>
+                  <p class="section__text">This direction won, because <strong>it gave the brand character, was recognizable and made the agents visible at the brand level.</strong></p>
+                  <p class="section__text">The final logo is the resolution of the tension that ran through the entire branding process: a premium feel built around a warm, human character.</p>
+                  <figure class="meridian-figure">
+                    <span class="mode-group" data-mode-group>
+                      <button type="button" class="mode-toggle" data-mode-toggle aria-pressed="false">
+                        <span class="visually-hidden">Preview this image in dark mode</span>
+                        <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
+                        <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg><span class="mode-toggle__label mode-toggle__label--dark" aria-hidden="true">Dark mode</span><span class="mode-toggle__label mode-toggle__label--light" aria-hidden="true">Light mode</span>
+                      </button>
+                      <img data-mode-media src="/portfolio/images/meridian/logo-final.png" alt="The final Meridian logo: the agent mascot with the Meridian wordmark" />
+                    </span>
+                  </figure>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article id="meridian-ai-workflow" class="case-study-panel case-study-panel--intro" data-case-study-panel="meridian-ai-workflow" tabindex="-1" aria-labelledby="meridian-ai-workflow-title">
+            <header class="case-study-panel__header">
+              <span class="case-study-panel__number" aria-hidden="true">06</span>
+              <div class="case-study-panel__heading-group">
+                <h2 id="meridian-ai-workflow-title" class="case-study-panel__heading">AI in the workflow</h2>
+                <span class="case-study-panel__underline" aria-hidden="true"></span>
+              </div>
+            </header>
+
+            <div class="case-study-panel__sections">
+              <section class="case-study-panel__section" aria-labelledby="meridian-my-approach-title">
+                <h3 id="meridian-my-approach-title" class="section__title">My approach</h3>
+                <p class="section__text">This was my first experience designing an app meant to ship in the real world, and Meridian is a complex product. <strong>I was also the only designer on the project</strong>, which meant stepping up and owning every design decision and task, including a lot of things I had never done before, like logo design or app animations.</p>
+                <p class="section__text">AI is often framed today as a tool that speeds up design and replaces roles, threatening junior designers entering the market. I felt that fear too. My response was to reframe how I used it: <strong>instead of using AI to skip steps, I used it to learn the steps I didn't yet know.</strong> Every interaction was an opportunity to grow a skill.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-ai-helped-title">
+                <h3 id="meridian-ai-helped-title" class="section__title">Where AI helped in this project</h3>
+                <ul class="section__list">
+                  <li><strong>Design refinements:</strong> I never asked AI to generate a design from scratch. I created the screens myself first, then brought them to AI after gathering feedback from the team. I worked in plan mode first, using AI to surface weaknesses in my designs and decide together what was worth changing. Only then I asked it to propose tweaks. I did that to learn how to create good interfaces myself, and because AI, in my experience, works best when it has something to react to rather than building from scratch.</li>
+                  <li><strong>Logo design process:</strong> I'm comfortable taking a creative project end-to-end, but I didn't know the specific steps a logo process requires. I used AI to brainstorm directions, review my iterations, and map out the steps I needed to take. No AI-generated logo went into the final work but AI was essential as a guide, more like a senior teammate I could ask for advice than a tool producing output for me.</li>
+                  <li><strong>Design handover documentation:</strong> I used AI to "four-hand" write it with me: it helped me revise the system I had already built in Figma, spot inconsistencies, and turn it into a clean markdown document the dev team could actually use.</li>
+                  <li><strong>Working on Storybook:</strong> once the app was usable for a first internal testing, I refined the app design and React components directly on the code using Storybook. To guide me through it and vibe code, I relied on AI tools.</li>
+                </ul>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-not-ai-title">
+                <h3 id="meridian-not-ai-title" class="section__title">Where I chose not to use AI</h3>
+                <p class="section__text">I deliberately kept AI out of the moments where the project needed a clear point of view: <strong>visual identity decisions, brand direction, the final call on what shipped.</strong> These were the choices that defined Meridian's personality, and they had to come from me. AI was useful for widening the field of options, but never for closing one.</p>
+              </section>
+            </div>
+          </article>
+
+          <article id="meridian-whats-next" class="case-study-panel case-study-panel--research" data-case-study-panel="meridian-whats-next" tabindex="-1" aria-labelledby="meridian-whats-next-title">
+            <header class="case-study-panel__header">
+              <span class="case-study-panel__number" aria-hidden="true">07</span>
+              <div class="case-study-panel__heading-group">
+                <h2 id="meridian-whats-next-title" class="case-study-panel__heading">What's next</h2>
+                <span class="case-study-panel__underline" aria-hidden="true"></span>
+              </div>
+            </header>
+
+            <div class="case-study-panel__sections">
+              <section class="case-study-panel__section" aria-labelledby="meridian-internal-testing-title">
+                <h3 id="meridian-internal-testing-title" class="section__title">Internal testing</h3>
+                <p class="section__text"><strong>Before exposing the first version of the app to real users, the team will use it for around two weeks.</strong> Meridian is an app that becomes more useful with time (the agents learn the user's patterns and get smarter with use) so a short window of real, daily use is the only way to get an honest read on how the experience holds up.</p>
+                <p class="section__text">Internal testing also gives the dev side time to surface bugs and gives the design side a chance to catch friction points that only appear once the app is actually used.</p>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-moderated-testing-title">
+                <h3 id="meridian-moderated-testing-title" class="section__title">Moderated user testing</h3>
+                <p class="section__text">Once the internal round is done and the most pressing issues are resolved, the next step is <strong>testing with users outside the team</strong>.</p>
+                <p class="section__text">The plan is 40-minute moderated sessions, structured in three parts:</p>
+                <ol class="section__list">
+                  <li>A short set of preliminary questions about how the participant currently manages their schedule and what tools they use today.</li>
+                  <li>Three to four tasks to complete while thinking aloud, focused on the core flows of the app: creating an event, reviewing and confirming an agent's suggestion, and adjusting tags or agents on an existing event.</li>
+                  <li>A closing questionnaire to evaluate the overall experience, including questions on the UI.</li>
+                </ol>
+                <p class="section__text">The goal is twofold:</p>
+                <ul class="section__list">
+                  <li>See whether users approaching Meridian for the first time can understand and complete the core tasks without guidance.</li>
+                  <li>Surface the pain points that the team is too close to the product to notice.</li>
+                </ul>
+              </section>
+
+              <section class="case-study-panel__section" aria-labelledby="meridian-onboarding-title">
+                <h3 id="meridian-onboarding-title" class="section__title">Refining the app and shaping the onboarding</h3>
+                <p class="section__text">What we learn from user testing will shape two things in parallel: <strong>the app itself, and the onboarding flow.</strong></p>
+                <p class="section__text">Onboarding is something we're intentionally leaving for after user testing: the moments where new users hesitate, get confused, or look for help are exactly the moments onboarding needs to address, and those moments only become visible by watching real users try the app for the first time.</p>
+              </section>
+            </div>
+          </article>
+        </div>
+
+        <section class="case-study-feedback" aria-labelledby="meridian-feedback-title">
+          <h2 id="meridian-feedback-title" class="visually-hidden">Share feedback about Meridian</h2>
+          <button
+            type="button"
+            class="feedback-trigger feedback-trigger--case-study"
+            data-feedback-open
+            data-feedback-source="Meridian case study"
+            aria-haspopup="dialog"
+          >
+            <span class="feedback-trigger__icon" aria-hidden="true">
+              <span class="feedback-trigger__bubble feedback-trigger__bubble--primary">
+                <svg class="feedback-trigger__face-svg feedback-trigger__face-svg--primary" viewBox="0 0 6 5" aria-hidden="true" focusable="false">
+                  <path d="M0.349976 3.10938C1.69816 5.06236 4.02004 5.06236 5.36822 3.10938" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="0.7" />
+                  <circle cx="0.638452" cy="0.6" r="0.6" fill="currentColor" />
+                  <circle cx="5.13845" cy="0.6" r="0.6" fill="currentColor" />
+                </svg>
+              </span>
+              <span class="feedback-trigger__bubble feedback-trigger__bubble--secondary">
+                <svg class="feedback-trigger__face-svg feedback-trigger__face-svg--secondary" viewBox="0 0 6 5" aria-hidden="true" focusable="false">
+                  <path d="M0.611572 4.05273C1.95976 2.09975 4.28163 2.09975 5.62982 4.05273" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="0.7" />
+                  <circle cx="0.6" cy="0.6" r="0.6" fill="currentColor" />
+                  <circle cx="5.40005" cy="0.6" r="0.6" fill="currentColor" />
+                </svg>
+              </span>
+            </span>
+            <span class="feedback-trigger__copy">
+              <span class="feedback-trigger__title">Leave optional feedback</span>
+              <span class="feedback-trigger__meta">Help me improve, it will take 30 seconds!</span>
+            </span>
+          </button>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+          <div class="footer__icons">
+            <a href="https://www.instagram.com/reb_fa_cose/" class="footer__icon-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <img src="/portfolio/images/insta-icon.svg" alt="" aria-hidden="true" class="footer__icon" />
+            </a>
+            <a href="mailto:reb.guerrini@gmail.com" class="footer__icon-link" aria-label="Email">
+              <img src="/portfolio/images/email-icon.svg" alt="" aria-hidden="true" class="footer__icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/rebecca-guerrini-53b9401b7" class="footer__icon-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <img src="/portfolio/images/linkedin-icon.svg" alt="" aria-hidden="true" class="footer__icon" />
+            </a>
+          </div>
+          <span class="footer__text">Other works and contacts</span>
+        </div>
+      </footer>
+    </div>
+
+    <dialog class="feedback-modal" data-feedback-modal aria-labelledby="feedback-modal-title">
+      <div class="feedback-modal__surface">
+        <button type="button" class="feedback-modal__close" data-feedback-close aria-label="Close feedback form">
+          <span aria-hidden="true">×</span>
+        </button>
+
+        <section class="feedback-modal__panel" data-feedback-panel="form">
+          <div class="feedback-modal__header">
+            <span class="feedback-modal__tag">Live research project</span>
+            <h2 id="feedback-modal-title" class="feedback-modal__title">Help me refine this portfolio</h2>
+            <p class="feedback-modal__description">
+              I treat my UX portfolio as a live research project. Whether you're a recruiter, a designer, or simply curious, your honest feedback can help me understand what works and what I need to change.<br />
+              This will help me create a better UI and deliver the best UX I can!
+            </p>
+          </div>
+
+          <form class="feedback-form" data-feedback-form action="https://formspree.io/f/maqapnnl" method="POST">
+            <input type="hidden" name="context" value="Meridian case study" />
+            <input type="hidden" name="page_url" value="" data-feedback-page-url />
+            <div class="visually-hidden" aria-hidden="true">
+              <label>
+                Leave this field blank
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+              </label>
+            </div>
+
+            <fieldset class="feedback-form__group">
+              <legend class="feedback-form__legend">Who are you?</legend>
+              <div class="feedback-form__chips">
+                <label class="feedback-chip">
+                  <input type="radio" name="audience" value="Recruiter" required />
+                  <span>Recruiter</span>
+                </label>
+                <label class="feedback-chip">
+                  <input type="radio" name="audience" value="Designer" />
+                  <span>Designer</span>
+                </label>
+                <label class="feedback-chip">
+                  <input type="radio" name="audience" value="Other" />
+                  <span>Other</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="feedback-form__group">
+              <legend class="feedback-form__legend">What's your first impression?</legend>
+              <div class="feedback-scale-group">
+                <div class="feedback-scale" aria-describedby="feedback-scale-labels">
+                  <label class="feedback-scale__option">
+                    <input type="radio" name="impression" value="1" required />
+                    <span>1</span>
+                  </label>
+                  <label class="feedback-scale__option">
+                    <input type="radio" name="impression" value="2" />
+                    <span>2</span>
+                  </label>
+                  <label class="feedback-scale__option">
+                    <input type="radio" name="impression" value="3" />
+                    <span>3</span>
+                  </label>
+                  <label class="feedback-scale__option">
+                    <input type="radio" name="impression" value="4" />
+                    <span>4</span>
+                  </label>
+                  <label class="feedback-scale__option">
+                    <input type="radio" name="impression" value="5" />
+                    <span>5</span>
+                  </label>
+                </div>
+                <div id="feedback-scale-labels" class="feedback-scale__labels" aria-hidden="true">
+                  <span>Forgettable</span>
+                  <span>Compelling</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <label class="feedback-form__group feedback-form__group--field">
+              <span class="feedback-form__legend">What's one thing that almost stopped you from engaging? <span class="feedback-form__optional">(optional)</span></span>
+              <textarea name="friction" rows="4" placeholder="Be honest, every feedback is useful!"></textarea>
+            </label>
+
+            <label class="feedback-form__group feedback-form__group--field">
+              <span class="feedback-form__legend">What would make this more compelling for a hiring decision? <span class="feedback-form__optional">(optional)</span></span>
+              <textarea name="improvement" rows="4" placeholder="Specific to recruiters, but anyone's welcome to weigh in."></textarea>
+            </label>
+
+            <p class="feedback-form__status" data-feedback-status role="status" aria-live="polite" hidden></p>
+
+            <div class="feedback-form__footer">
+              <p class="feedback-form__note">Takes about 30 seconds</p>
+              <button type="submit" class="btn-cta feedback-form__submit">Share feedback</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="feedback-modal__panel feedback-modal__panel--confirmation" data-feedback-panel="confirmation" hidden>
+          <h2 class="feedback-modal__title feedback-modal__title--confirmation">Thank you!</h2>
+          <button type="button" class="btn-cta" data-feedback-close>Get back to the portfolio</button>
+        </section>
+      </div>
+    </dialog>
+  </body>
+</html>
