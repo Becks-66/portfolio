@@ -2111,6 +2111,30 @@
   }
 }
 
+/* Meridian persona grids (Target users + Planned agents) bleed wider than the
+   608px reading column on desktop (Figma: 928px row, 448px cards). */
+@media (min-width: 1024px) {
+  .persona-grid--agents,
+  .persona-grid--users {
+    /* clamp keeps it from ever causing horizontal scroll on narrow desktops */
+    width: min(928px, calc(100vw - 80px));
+    grid-template-columns: repeat(2, minmax(0, 448px));
+    justify-content: center;
+    gap: 32px;
+    /* center the wider grid on the column's center */
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Tutor solo card: single centered 448px card on its own row */
+  .persona-grid--agents .persona-card--solo {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 448px;
+  }
+}
+
 /* Left-aligned subsection subtitle (e.g. logo Direction A/B) */
 .section__subtitle--start {
   text-align: left;
