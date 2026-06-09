@@ -1693,10 +1693,6 @@
     line-height: 24px;
   }
 
-  .case-study-index__meta {
-    display: block;
-  }
-
   .case-study-panel {
     width: 640px;
     max-width: 100%;
@@ -2380,4 +2376,15 @@ span.mode-group {
 .case-study-page--indexed:not(.case-study-index-ready):has(#meridian-ai-workflow:target) .case-study-index__card[data-panel-target="meridian-ai-workflow"] .case-study-index__number,
 .case-study-page--indexed:not(.case-study-index-ready):has(#meridian-whats-next:target) .case-study-index__card[data-panel-target="meridian-whats-next"] .case-study-index__number {
   color: var(--color-white);
+}
+
+.case-study-page--indexed:not(.case-study-index-ready):not(:has(.case-study-panel:target)) .case-study-index__card[data-panel-target="meridian-introduction"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-agent-system:target) .case-study-index__card[data-panel-target="meridian-agent-system"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-tag-system:target) .case-study-index__card[data-panel-target="meridian-tag-system"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-calendar-events:target) .case-study-index__card[data-panel-target="meridian-calendar-events"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-strategy:target) .case-study-index__card[data-panel-target="meridian-strategy"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-ai-workflow:target) .case-study-index__card[data-panel-target="meridian-ai-workflow"] .case-study-index__arrow,
+.case-study-page--indexed:not(.case-study-index-ready):has(#meridian-whats-next:target) .case-study-index__card[data-panel-target="meridian-whats-next"] .case-study-index__arrow {
+  color: var(--color-white);
+  opacity: 1;
 }
