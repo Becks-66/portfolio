@@ -2328,6 +2328,12 @@ span.mode-group {
   width: 100%;
 }
 
+/* Mobile: show the description above the video (DOM order is video-first to keep
+   the desktop side-by-side layout; the row rule below overrides this at >=768px). */
+.meridian-media--reverse {
+  flex-direction: column-reverse;
+}
+
 .meridian-media__text {
   width: 100%;
 }
