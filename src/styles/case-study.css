@@ -2280,6 +2280,47 @@ span.mode-group {
   max-width: 252px;
   height: auto;
   border-radius: 12px;
+  box-shadow: var(--shadow-card);
+}
+
+/* Agent screens trio (User–agents interaction): stacked + larger on mobile/tablet,
+   bleeding wider than the 608px text column on desktop (Figma: 252px screens). */
+.meridian-screens--trio {
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.meridian-screens--trio .meridian-screens__img {
+  flex: 0 0 auto;
+  width: min(320px, 100%);
+  max-width: none;
+}
+
+@media (min-width: 1024px) {
+  .meridian-screens--trio {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    /* clamp keeps it from causing horizontal scroll on narrow desktops */
+    width: min(804px, calc(100vw - 80px));
+    max-width: none;
+    /* center the wider row on the column's center (Figma: ~98px bleed each side) */
+    margin-left: 50%;
+    margin-right: 0;
+    transform: translateX(-50%);
+  }
+
+  .meridian-screens--trio .meridian-screens__img {
+    flex: 0 1 252px;
+    width: auto;
+    max-width: 252px;
+  }
 }
 
 /* Text + single phone mockup, side by side on desktop (DOM order = left→right) */
@@ -2300,6 +2341,7 @@ span.mode-group {
   max-width: 252px;
   height: auto;
   border-radius: 12px;
+  box-shadow: var(--shadow-card);
 }
 
 @media (min-width: 768px) {
